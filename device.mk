@@ -91,6 +91,14 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.3-service.clearkey
 
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
@@ -157,8 +165,9 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-	fstab.qcom \
-	init.sanders.rc \
+    fstab.qcom \
+    fstab.qcom_ramdisk \
+    init.sanders.rc \
     init.class_main.sh \
     init.mmi.usb.sh \
     init.qcom.early_boot.sh \
