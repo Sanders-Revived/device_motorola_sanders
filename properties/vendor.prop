@@ -41,6 +41,7 @@ vendor.audio.offload.min.duration.secs=30
 bluetooth.hfp.client=1
 vendor.qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.7
+bluetooth.device.default_name=Moto G(5S) Plus
 
 # Camera
 persist.vendor.camera.expose.aux=1
