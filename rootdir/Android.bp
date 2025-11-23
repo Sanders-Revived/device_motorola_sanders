@@ -22,8 +22,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.mmi.usb.rc",
-    src: "etc/init.mmi.usb.rc",
+    name: "init.msm.usb.configfs.rc",
+    src: "etc/init.msm.usb.configfs.rc",
     sub_dir: "init/hw",
     soc_specific: true,
 }
