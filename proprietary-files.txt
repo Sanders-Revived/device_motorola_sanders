@@ -732,15 +732,6 @@ vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice|615061720c7
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/lib/com.fingerprints.extension@1.0_vendor.so
 
-# Firmwares - emmc
-vendor/firmware/emmc_ffu_15_FE12MB.fw
-vendor/firmware/emmc_ffu_15_QE13MB.fw
-vendor/firmware/emmc_ffu_15_RC14MB.fw
-vendor/firmware/emmc_ffu_15_RC1BMB.fw
-vendor/firmware/emmc_ffu_15_RE1BMB.fw
-vendor/firmware/emmc_ffu_15_RX14MB.fw
-vendor/firmware/emmc_ffu_15_RX1BMB.fw
-
 # GPS - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti|d458a2aadc1d00df4696d6793e550f4a9422a2c9
 vendor/bin/loc_launcher|684028ffab3ef293a241386710fe5855d2b2f70a
@@ -832,15 +823,6 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so
 
 # Graphics - Firmwares - from deen_sprout
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a225p5_pm4.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a420_pfp.fw
-vendor/firmware/a420_pm4.fw
 vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
@@ -850,8 +832,6 @@ vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 vendor/firmware/a540_gpmu.fw2
-vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
 
 # Graphics - from river:10/QPUS30.52-33-11
 vendor/lib/egl/eglSubDriverAndroid.so|c1bbd0acd7b4e5f04f1e5a4c763862396a565be3
@@ -948,11 +928,6 @@ vendor/lib64/libmmosal_proprietary.so
 # Media - from - LA.UM.9.6.2.r1-04200-89xx.0
 vendor/lib/libmmosal.so|e23d6d1b2a035c08ffd7ac72d5241ebff37f0d14
 vendor/lib64/libmmosal.so|e9fdb48163e92b089cea0c397723a8416436c272
-
-# Misc
-vendor/firmware/FT8006U_Pramboot.bin
-vendor/firmware/leia_pfp_470.fw
-vendor/firmware/leia_pm4_470.fw
 
 # NFC
 vendor/lib/libpn548ad_fw.so
