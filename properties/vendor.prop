@@ -55,6 +55,10 @@ debug.media.codec2=2
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
+
+# LMKD/PSI
+ro.lmk.kill_heaviest_task=false
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
