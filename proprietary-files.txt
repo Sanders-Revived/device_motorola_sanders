@@ -1278,11 +1278,10 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Thermal - from deen_sprout
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/thermal-engine|9e48fd5d3bf6414db4d844b421b45f6b6a2f17d4
+-vendor/lib/libthermalclient.so|248fda00d69a626ee8e24159b704a6ae95eceb99
+-vendor/lib64/libthermalclient.so|d042cc537de4950837a5b928f6283fb238a9c59c
 
 # Time services - from deen_sprout
 -vendor/app/TimeService/TimeService.apk

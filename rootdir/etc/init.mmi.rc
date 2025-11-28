@@ -278,11 +278,6 @@ service vendor.charge_only_mode /vendor/bin/charge_only_mode
     group graphics system input
     disabled
 
-service vendor.thermal-com /vendor/bin/thermal-engine --minimode
-    class main
-    user root
-    disabled
-
 service vendor.adspd /vendor/bin/adspd
    class main
    socket adspdsock stream 0660 system audio
