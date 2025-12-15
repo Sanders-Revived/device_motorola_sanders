@@ -310,15 +310,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.esepowermanager</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IEsePowerManager</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.gnss</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -385,7 +376,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.perf</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>2.2</version>
         <interface>
             <name>IPerf</name>
             <instance>default</instance>
@@ -537,15 +528,6 @@
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.iop</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IIop</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
