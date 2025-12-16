@@ -133,10 +133,6 @@ TARGET_FS_CONFIG_GEN := \
     $(DEVICE_PATH)/configs/config.fs \
     $(DEVICE_PATH)/configs/mot_aids.fs
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_sanders
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sanders
-
 # Kernel
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x80000000
