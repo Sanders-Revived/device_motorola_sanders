@@ -777,8 +777,8 @@ vendor/lib64/vendor.qti.gnss@3.0.so|f13c5fffe0fbe5bfc1384d7449f5820f75104c33
 vendor/lib64/vendor.qti.gnss@4.0.so|cc2504016d0ce0afbc58ac95207a4b913f2ccfe9
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
 
-# Gatekeeper - from LA.UM.8.6.r1-04700-89xx.0
-vendor/lib64/hw/gatekeeper.msm8953.so|b3a9d78faa65029b0a20f2ff6dfe986bc80b64c1
+# Gatekeeper - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/lib64/hw/gatekeeper.msm8953.so
 
 # Graphics (Postprocessing) - from river:10/QPUS30.52-33-11
 etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
@@ -879,8 +879,8 @@ vendor/lib64/librs_adreno.so|3d0a23777e7bdd979a0c84d9da731ae15d58af68
 vendor/lib64/librs_adreno_sha1.so|152cdd391b9b2d369ee132529b725d3141ee9b8e
 vendor/lib64/libsdedrm.so|fe62b1ccc1a815b9ceea1807734c11b9c89fbcca
 
-# Keystore - from LA.UM.8.6.r1-04700-89xx.0
-vendor/lib64/hw/keystore.msm8953.so|1c0fd8bfd45877c40b72aa2714055cddd2104133
+# Keystore - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/lib64/hw/keystore.msm8953.so
 
 # MOTO RIL - from deen_sprout
 vendor/lib64/libsensorndkbridge.so
