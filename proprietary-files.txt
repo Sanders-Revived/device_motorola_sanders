@@ -670,42 +670,34 @@ product/lib64/libdpmctmgr.so
 product/lib64/libdpmfdmgr.so
 product/lib64/libdpmtcm.so
 
-# DRM - from deen_sprout
-vendor/bin/qseecomd
-vendor/lib/libQSEEComAPI.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libqisl.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
+# DRM - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/qseecomd|12fde638ad4528c06fe336342862fd0ffc033dd0
+vendor/lib/libQSEEComAPI.so|961b8c99bf5d2a53b607cebf399fbdafb48c9bc6
+vendor/lib64/libGPreqcancel.so|d851bcc3e1b982d8403dc86921c5dd9274f71dc5
+vendor/lib64/libGPreqcancel_svc.so|760427f2139aec09a74b50a80153e461fbc6b272
+vendor/lib64/libQSEEComAPI.so|17cf281138050f87e29b2b71e63d131249b10f6f
+vendor/lib64/libSecureUILib.so|e9dd8017f40691925c59a074705be7cf11130780
+vendor/lib64/libStDrvInt.so|7c921ee6db896233f9ea03f1fb3a9b7d9434e7dc
+vendor/lib64/libcpion.so|602ffa6e92be0f2a19c8de782e1601135c7dd2a8
+vendor/lib64/libdrmfs.so|1654e650448a464b9de765c9ce80ba5a29e8b9c1
+vendor/lib64/libdrmtime.so|b3f024dae4aaa62c4fc33965847d1627387c6b56
+vendor/lib64/libhdcpsrm.so|8822f0408bdcc11dfc661321bfd3c253f0306e0c
+vendor/lib64/liboemcrypto.so|cff69ca64f9015e17cdcc2c45c992d262d864013
+vendor/lib64/libqisl.so|e9c402aed643ee094daaf495f1a3a1f29542d602
+vendor/lib64/librpmb.so|a5ee7dfbbae868a253d7413c866800ea1146d7c8
+vendor/lib64/libsecureui.so|eef8db680df8e9b47d4725433cd0d3886cc8aa25
+vendor/lib64/libsecureui_svcsock.so|2232f56927964f10d41868919d94711930d50ed0
+vendor/lib64/libssd.so|6dcbfc531e69a3c7eeaf21e85ac0202b8fa82d55
 
-# DRM-Qualcomm Trusted Execution Enviornment - from deen_sprout
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+# DRM - from LMI 11/RKQ1.200826.002/V12.2.4.0.RJKMIXM
+vendor/lib64/libops.so|b2223e64db9d8f84262da7a8621013d3c63b6c98
+vendor/lib64/libspl.so|0fa8c0711f72fc8a914dce044cf8dddd79ee62e1
 
-# DRM-Widevine - from deen_sprout
-#vendor/lib/liboemcrypto.so
-#vendor/lib64/liboemcrypto.so
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libcpion.so
-vendor/lib/libhdcpsrm.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-vendor/lib64/mediadrm/libwvdrmengine.so
-vendor/lib64/libcpion.so
-vendor/lib64/libhdcpsrm.so
-vendor/lib64/libwvhidl.so
+# DRM - Widevine - from Crosshatch - 11/RQ3A.210605.005/7349499
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|57d280849768bc5d5e9e954b9ac90a5a31c54172
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|6b00f42dc85becc58f303bc4588331239c5c83aa
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
+vendor/lib64/libwvhidl.so|ae215b1afd38cda71818dfde44c6186bd4ec2cb1
 
 # Display-calibration
 vendor/etc/qdcm_calib_data_mipi_mot_vid_djn_1080p_550.xml
@@ -1258,11 +1250,11 @@ vendor/lib64/sensor_calibrate.so
 vendor/lib64/sensors.rp.so
 vendor/lib64/sensors.ssc.so
 
-# TUI - from deen_sprout
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+# TUI - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d13bcbbd10f03572c9218
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
 # Thermal - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/thermal-engine|9e48fd5d3bf6414db4d844b421b45f6b6a2f17d4

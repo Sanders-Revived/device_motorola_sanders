@@ -55,21 +55,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.drm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.2::ICryptoFactory/widevine</fqname>
-        <fqname>@1.2::IDrmFactory/widevine</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -397,19 +382,6 @@
         <version>1.0</version>
         <interface>
             <name>IQSEECom</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qteeconnector</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAppConnector</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGPAppConnector</name>
             <instance>default</instance>
         </interface>
     </hal>
