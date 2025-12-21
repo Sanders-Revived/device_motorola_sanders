@@ -16,9 +16,6 @@ use.voice.path.for.pcm.voip=false
 # Bluetooth
 bluetooth.hfp.client=1
 
-# CNE
-persist.vendor.cne.feature=1
-
 # Charger
 ro.charger.enable_suspend=true
 
@@ -66,15 +63,6 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 
-# Radio
-persist.vendor.cne.feature=1
-persist.vendor.dpm.feature=0
-DEVICE_PROVISIONED=1
-ril.subscription.types=NV,RUIM
-rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-rild.libargs=-d /dev/smd0
-telephony.lteOnCdmaDevice=1
-
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
@@ -89,3 +77,6 @@ debug.sf.early_phase_offset_ns=1500000
 debug.sf.early_app_phase_offset_ns=1500000
 debug.sf.early_gl_phase_offset_ns=3000000
 debug.sf.early_gl_app_phase_offset_ns=15000000
+
+# Radio
+ro.telephony.block_binder_thread_on_incoming_calls=false

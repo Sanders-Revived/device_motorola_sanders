@@ -230,8 +230,8 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
-TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
-CUSTOM_APNS_FILE := $(DEVICE_PATH)/configs/sprint_apns.xml
+ENABLE_VENDOR_RIL_SERVICE := true
+TARGET_USES_OLD_MNC_FORMAT := true
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := persist

@@ -46,6 +46,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.broadcastradio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBroadcastRadioFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
         <version>2.4</version>
@@ -172,6 +181,10 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
+        <fqname>@1.2::ISap/slot1</fqname>
+        <fqname>@1.2::ISap/slot2</fqname>
+        <fqname>@1.5::IRadio/slot1</fqname>
+        <fqname>@1.5::IRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.radio.config</name>
@@ -190,6 +203,18 @@
             <name>IDevice</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.secure_element</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISecureElement</name>
+            <instance>SIM1</instance>
+            <instance>SIM2</instance>
+        </interface>
+        <fqname>@1.2::ISecureElement/SIM1</fqname>
+        <fqname>@1.2::ISecureElement/SIM2</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.sensors</name>
@@ -230,7 +255,7 @@
     <hal format="hidl">
         <name>com.qualcomm.qti.uceservice</name>
         <transport>hwbinder</transport>
-        <version>2.1</version>
+        <version>2.3</version>
         <interface>
             <name>IUceService</name>
             <instance>com.qualcomm.qti.uceservice</instance>
@@ -293,6 +318,9 @@
             <name>IFactory</name>
             <instance>default</instance>
         </interface>
+        <fqname>@2.1::IFactory/default</fqname>
+        <fqname>@2.2::IFactory/default</fqname>
+        <fqname>@2.3::IFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.gnss</name>
@@ -340,6 +368,16 @@
             <instance>slot2</instance>
         </interface>
     </hal>
+	<hal format="hidl">
+        <name>vendor.qti.hardware.data.iwlan</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IIWlan</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.data.latency</name>
         <transport>hwbinder</transport>
@@ -368,6 +406,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.mwqemadapter</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMwqemAdapter</name>
+            <instance>MwqemAdapter</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.qdutils_disp</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -386,7 +433,7 @@
         </interface>
     </hal>
     <hal format="hidl">
-       <name>vendor.qti.hardware.radio.am</name>
+        <name>vendor.qti.hardware.radio.am</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
@@ -397,18 +444,18 @@
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
-         <transport>hwbinder</transport>
-         <version>1.5</version>
-         <interface>
-             <name>IImsRadio</name>
-             <instance>imsradio0</instance>
-             <instance>imsradio1</instance>
+        <transport>hwbinder</transport>
+        <version>1.7</version>
+        <interface>
+            <name>IImsRadio</name>
+            <instance>imsradio0</instance>
+            <instance>imsradio1</instance>
         </interface>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.lpa</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
@@ -428,7 +475,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>
-        <version>2.3</version>
+        <version>2.4</version>
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
@@ -493,10 +540,19 @@
             <instance>default</instance>
         </interface>
     </hal>
+	<hal format="hidl">
+        <name>vendor.qti.ims.factory</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IImsFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
         <transport>hwbinder</transport>
-        <version>2.1</version>
+        <version>3.0</version>
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>

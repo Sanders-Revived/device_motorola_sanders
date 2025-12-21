@@ -56,11 +56,6 @@ fi
 function blob_fixup() {
     case "${1}" in
 
-        # Fix xml version
-        product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-            sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-            ;;
-
         # Fix fingerprint UHID
         vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
             sed -i 's/group system input 9015/group system uhid input 9015/' "${2}"
@@ -71,18 +66,8 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed libmemset_shim.so "${2}"
             ;;
 
-        # qsap shim
-        vendor/lib64/libmdmcutback.so)
-            "${PATCHELF}" --add-needed libqsap_shim.so "${2}"
-            ;;
-
         vendor/lib/libmot_gpu_mapper.so)
             sed -i "s/libgui/libwui/" "${2}"
-            ;;
-
-        # Fix missing symbols
-        vendor/lib64/libril-qc-hal-qmi.so)
-            "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
             ;;
 
         vendor/lib/hw/camera.msm8953.so)
