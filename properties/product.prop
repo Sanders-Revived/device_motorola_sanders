@@ -1,11 +1,3 @@
-# ART
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-filter=speed
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.image-dex2oat-filter=speed
-ro.sys.fw.dex2oat_thread_count=8
-ro.vendor.qti.am.reschedule_service=true
-
 # Audio
 af.fast_track_multiplier=2
 audio.deep_buffer.media=true
@@ -50,9 +42,6 @@ media.stagefright.thumbnail.prefer_hw_codecs=true
 # Rank OMX SW codecs lower than OMX HW codecs
 debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
-
-# QC framework value-adds
-ro.vendor.qti.va_aosp.support=1
 
 # SurfaceFlinger
 debug.sf.early_phase_offset_ns=1500000

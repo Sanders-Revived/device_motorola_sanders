@@ -24,14 +24,6 @@ on boot
     chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
     chmod 0440 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
 
-   # Change ownership and permission for laser_sensor
-   chown system system /sys/kernel/range/enable_sar
-   chmod 0660 /sys/kernel/range/enable_sar
-   chown system system /sys/kernel/range/set_delay_ms
-   chmod 0660 /sys/kernel/range/set_delay_ms
-   chown system system /sys/kernel/range/near
-   chmod 0660 /sys/kernel/range/near
-
    # Change the ownership of display TE files for tcmds
    chown root oem_5004 /sys/class/graphics/fb0/te_test
    chown root oem_5004 /sys/class/graphics/fb0/te_enable

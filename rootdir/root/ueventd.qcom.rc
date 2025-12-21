@@ -275,14 +275,6 @@ firmware_directories /vendor/firmware_mnt/image/
 # GNSS PPS Device premissions
 /dev/pps*                  0660   gps     gps
 
-# Laser device
-/dev/laser                0660   system     camera
-
-# laser sensor access
-/sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
-/sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
-/sys/devices/virtual/input/input*                   do_flush         0660  system   input
-
 # vm_bms
 /dev/vm_bms               0660   system     system
 /dev/battery_data         0660   system     system
@@ -410,35 +402,3 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #DTV
 /dev/isdbt                 0660 oem_5019  oem_5019
-
-# MOD device
-/sys/devices/soc/75b5000.i2c/i2c-7/7-0072 irq_enable 0660 oem_5004 oem_5004
-/sys/devices/soc/0.apba_ctrl apba_enable 0660 oem_5004 oem_5020
-/sys/devices/soc/0.apba_ctrl apba_mode 0660 oem_5004 oem_5020
-/sys/devices/soc/0.apba_ctrl flash_partition 0220 oem_5004 oem_5020
-/sys/devices/soc/0.apba_ctrl unipro_mid 0440 root oem_5020
-/sys/devices/soc/0.apba_ctrl unipro_pid 0440 root oem_5020
-/sys/devices/soc/0.apba_ctrl vid 0440 root oem_5020
-/sys/devices/soc/0.apba_ctrl pid 0440 root oem_5020
-/sys/devices/soc/0.apba_ctrl fw_version 0440 root oem_5020
-/sys/devices/soc/0.apba_ctrl fw_version_str 0440 root oem_5020
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* hotplug 0660 root oem_5020
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* uevent 0660 root oem_5020
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* current_limit 0220 root oem_5020
-/sys/devices/soc/soc:muc_svc@0/mods_interfaces/* rtc_sync 0220 root oem_5020
-/sys/devices/soc/soc:muc_svc@0 flashmode 0660 root oem_5020
-/sys/devices/soc/soc:muc_svc@0 reset 0660 root oem_5020
-/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* hotplug 0660 root oem_5020
-/sys/devices/soc/0.muc/0.muc:muc_svc@0/mods_interfaces/* uevent 0660 root oem_5020
-/sys/devices/soc/0.muc/0.muc:muc_svc@0 flashmode 0660 root oem_5020
-/sys/devices/platform/mods_ap uevent 0660 root oem_5020
-/sys/devices/platform/mods_ap/* uevent 0660 root oem_5020
-/sys/devices/platform/mods_ap/greybus1 uevent 0664 root oem_5020
-
-# MOD display device
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* state 0660 root oem_5020
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* config 0444 root oem_5020
-/sys/devices/platform/mods_ap/greybus1/*/*/display/display* notification 0660 root oem_5020
-
-# MOD light device
-/sys/devices/platform/mods_ap/greybus1/*/*/leds/mod_light*::backlight brightness 0660 root oem_5020
