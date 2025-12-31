@@ -226,14 +226,6 @@
 	<ctl name="IIR1 Enable Band5" value="0" />
 	<!-- IIR -->
 
-	<ctl name="AMP Audio Gain" value="4" />
-	<ctl name="OSPL Ext RxConfig" value="NONE" />
-	<ctl name="OSPL Ext TxConfig" value="NONE" />
-	<ctl name="OSPL Int RxConfig" value="NONE" />
-	<ctl name="OSPL Int TxConfig" value="NONE" />
-	<ctl name="OSPL Rx" value="Enable" />
-	<ctl name="OSPL Tx" value="Enable" />
-
 	<!-- ADSP testfwk -->
 	<!-- ADSP testfwk end-->
 
@@ -844,7 +836,6 @@
 		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="EAR PA Gain" value="POS_6_DB" />
 		<ctl name="EAR_S" value="Switch" />
-		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
 	<path name="handset-mic">
@@ -862,7 +853,6 @@
 		<ctl name="RDAC2 MUX" value="RX2" />
 		<ctl name="HPHL" value="Switch" />
 		<ctl name="HPHR" value="Switch" />
-		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
 	<path name="headset-mic">
@@ -933,7 +923,6 @@
 		<ctl name="RDAC2 MUX" value="RX1" />
 		<ctl name="HPHL" value="Switch" />
 		<ctl name="HPHR" value="Switch" />
-		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
 	<path name="voice-headset-mic">
@@ -1081,7 +1070,6 @@
 		<ctl name="RDAC2 MUX" value="RX2" />
 		<ctl name="HPHL" value="Switch" />
 		<ctl name="HPHR" value="Switch" />
-		<ctl name="OSPL Rx" value="Disable" />
 	</path>
 
 	<path name="voice-line">
