@@ -1,0 +1,4 @@
+set_prop(netmgrd, property_socket)
+
+# Allow set persist.vendor.data.qmipriod_load
+set_prop(netmgrd, vendor_radio_prop);
