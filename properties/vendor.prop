@@ -89,6 +89,10 @@ telephony.lteOnCdmaDevice=1 \
 vendor.service.qti.ims.enabled=1 \
 ro.telephony.default_network=22,22
 
+# SOC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=MSM8953
+
 # Sensors
 ro.hardware.sensors=sanders
 
