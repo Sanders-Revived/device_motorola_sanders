@@ -133,6 +133,11 @@ TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r5
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
+
+# TMP - A13 Bring
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
