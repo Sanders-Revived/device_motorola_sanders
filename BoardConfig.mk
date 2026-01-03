@@ -127,12 +127,8 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 TARGET_KERNEL_CONFIG := sanders_defconfig
 TARGET_KERNEL_VERSION := 4.9
 
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r522817
-
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-
+# LLVM
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1
 
 # TMP - A13 Bring
 SELINUX_IGNORE_NEVERALLOWS := true
