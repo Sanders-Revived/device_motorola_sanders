@@ -73,12 +73,12 @@ AUDIO_FEATURE_ENABLED_VORBIS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_VBAT_MONITOR := true
 AUDIO_FEATURE_ENABLED_WMA_OFFLOAD := true
 
+# Bluetooth
+BOARD_HAVE_BLUETOOTH_QCOM := true
+
 # Build
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH_QCOM := true
 
 # Camera
 USE_CAMERA_STUB := true
@@ -104,7 +104,7 @@ TARGET_NO_RPC := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
-DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN := \
     $(DEVICE_PATH)/configs/config.fs \
     $(DEVICE_PATH)/configs/mot_aids.fs
@@ -127,18 +127,18 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 TARGET_KERNEL_CONFIG := sanders_defconfig
 TARGET_KERNEL_VERSION := 4.9
 
-# LLVM
-TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1
-
-# TMP - A13 Bring
-SELINUX_IGNORE_NEVERALLOWS := true
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
+
+# LLVM
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 LLVM_IAS=1
+
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+BOARD_SUPER_PARTITION_METADATA_DEVICE := system
 
 # NFC
 NXP_CHIP_TYPE := PN551
@@ -154,10 +154,6 @@ TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_ODM := odm
-
-# Metadata
-BOARD_USES_METADATA_PARTITION := true
-BOARD_SUPER_PARTITION_METADATA_DEVICE := system
 
 # Partitions - FS
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -190,10 +186,6 @@ endif
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/persist:/persist
 
-# Treble
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-BOARD_VNDK_VERSION := current
-
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
@@ -222,6 +214,14 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
+# TMP - A13 Bring
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+BOARD_VNDK_VERSION := current
 
 # Wifi
 BOARD_WLAN_DEVICE                := qcwcn
