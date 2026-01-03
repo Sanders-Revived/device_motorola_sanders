@@ -1,2 +1,13 @@
 #============= vold ==============
-allow vold system_data_file:file { ioctl open };
+allow vold system_data_file:file { ioctl open read };
+allow vold keystore:dir {search};
+allow vold keystore:file {read open};
+allow vold keystore:process {getattr};
+
+typeattribute vold system_executes_vendor_violators;
+allow vold vendor_file:file read;
+
+allow vold rootfs:dir { add_name create setattr write };
+allow vold {
+         mnt_product_file
+}:dir r_dir_perms;
