@@ -56,31 +56,26 @@ function blob_fixup() {
             sed -i 's/group system input 9015/group system uhid input 9015/' "${2}"
             ;;
 
-        # memset shim
+        # Memset shim
         vendor/bin/charge_only_mode)
-            "${PATCHELF}" --add-needed libmemset_shim.so "${2}"
+            for LIBMEMSET in $(grep -L "libmemset_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libmemset_shim.so" "$LIBMEMSET"
+            done
             ;;
 
-        vendor/lib/libmot_gpu_mapper.so)
-            sed -i "s/libgui/libwui/" "${2}"
+        # Fix missing symbols
+        vendor/lib/libmot_gpu_mapper.so|vendor/lib/libmmcamera_vstab_module.so|vendor/lib/libmmcamera2_stats_modules.so|vendor/lib/libmmcamera_ppeiscore.so)
+            "${PATCHELF}" --replace-needed "libgui.so" "libgui_shim_vendor.so" "${2}"
+
+            if [[ "${1}" != "vendor/lib/libmot_gpu_mapper.so" ]]; then
+                if grep -q "libandroid.so" "${2}"; then
+                    "${PATCHELF}" --remove-needed "libandroid.so" "${2}"
+                fi
+            fi
             ;;
 
         vendor/lib/hw/camera.msm8953.so)
             sed -i "s|service.bootanim.exit|service.bootanim.hold|g" "${2}"
-            ;;
-
-        vendor/lib/libmot_gpu_mapper.so)
-            sed -i "s/libgui/libwui/" "${2}"
-            ;;
-
-        vendor/lib/libmmcamera_vstab_module.so)
-            sed -i "s/libgui/libwui/" "${2}"
-            patchelf --remove-needed libandroid.so "${2}"
-            ;;
-
-        vendor/lib/libmmcamera2_stats_modules.so)
-            sed -i "s/libgui/libwui/" "${2}"
-            patchelf --remove-needed libandroid.so "${2}"
             ;;
 
         vendor/lib/libmmcamera2_sensor_modules.so)

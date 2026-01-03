@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
-    camera.device@1.0-impl \
-    libwui
+    camera.device@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
@@ -339,9 +338,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcutils_shim \
+    libgui_shim_vendor \
     libmemset_shim \
-    libqsap_shim
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 25
