@@ -26,12 +26,6 @@
 # Dev block nodes for eMMC
 /dev/block/platform/soc/7824900\.sdhci/by-name/persist2          u:object_r:persist_block_device:s0
 
-# Dolby
-/vendor/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
-
-# DTV
-/dev/isdbt                                               u:object_r:isdbt_device:s0
-
 # EMMC A/B partitions
 /dev/block/platform/soc/7824900\.sdhci/by-name/dto_[ab]          u:object_r:custom_ab_block_device:s0
 /dev/block/platform/soc/7824900\.sdhci/by-name/fsg_[ab]          u:object_r:modem_efs_partition_device:s0
@@ -73,15 +67,11 @@
 /sys/devices/soc/caa4000\.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
 /sys/devices/soc/ca0c000\.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
 /(mnt/vendor)/persist/camera(/.*)?                            u:object_r:persist_camera_file:s0
-/sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
-/dev/laser                                                    u:object_r:laser_device:s0
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets   u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8953                u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
-/(vendor|system/vendor)/bin/init\.mmi\.(laser|usb)\.sh                          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.power\.sh                               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/perfd                                               u:object_r:perfd_exec:s0
 
@@ -90,8 +80,6 @@
 
 /sys/kernel/debug/rmt_storage(/.*)?                           u:object_r:debugfs_rmts:s0
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
-
-/(vendor|system/vendor)/bin/vl53l1_daemon                     u:object_r:vl53l1_exec:s0
 
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
 /sys/devices/soc/0.et320(/.*)?                                u:object_r:sysfs_fingerprint:s0
