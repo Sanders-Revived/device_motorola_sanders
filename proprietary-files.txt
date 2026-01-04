@@ -773,7 +773,7 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so|3c75d133af5193436167380aa89abcf05d07
 vendor/lib64/vendor.qti.gnss@4.0.so|cc2504016d0ce0afbc58ac95207a4b913f2ccfe9
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
 
-# Gatekeeper - from LA.UM.9.6.2.r1-04200-89xx.0
+# Gatekeeper - from FP3-REL-6.A.039.7-gms-44ba459b-user
 vendor/lib64/hw/gatekeeper.msm8953.so
 
 # Graphics (SDM) - from river - QPUS30.52-33-11
@@ -837,7 +837,7 @@ vendor/firmware/a530v3_gpmu.fw2|0a2f6f450231673d75ba39e5d28776db3becf810
 vendor/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
 vendor/firmware/a540_gpmu.fw2|3530f10b4825a3b08c79e0bcfaf6471ec8422f24
 
-# Keystore - from LA.UM.9.6.2.r1-04200-89xx.0
+# Keystore - from FP3-REL-6.A.039.7-gms-44ba459b-user
 vendor/lib64/hw/keystore.msm8953.so
 
 # Media - from LA.UM.9.6.2.r1-04200-89xx.0
