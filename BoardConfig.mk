@@ -33,7 +33,6 @@ BOARD_SUPPORTS_SOUND_TRIGGER_HAL := true
 DTS_CODEC_M_ := true
 MM_AUDIO_ENABLED_FTM := true
 MM_AUDIO_ENABLED_SAFX := true
-USE_XML_AUDIO_POLICY_CONF := 1
 
 # Audio Features
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -48,7 +47,6 @@ AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_DEV_ARBI := false
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
 AUDIO_FEATURE_ENABLED_DLKM := false
-AUDIO_FEATURE_ENABLED_EXT_HDMI := true
 AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER := true
 AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
@@ -57,8 +55,6 @@ AUDIO_FEATURE_ENABLED_FLAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_HFP := true
 AUDIO_FEATURE_ENABLED_HIFI_AUDIO := true
 AUDIO_FEATURE_ENABLED_HW_ACCELERATED_EFFECTS := false
-AUDIO_FEATURE_ENABLED_HDMI_EDID := true
-AUDIO_FEATURE_ENABLED_HDMI_SPK := true
 AUDIO_FEATURE_ENABLED_INCALL_MUSIC := false
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := false
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -115,8 +111,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x1000000
 BOARD_RAMDISK_USE_XZ := true
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.usbconfigfs=true
-BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.bootdevice=7824900.sdhci androidboot.boot_devices=soc/7824900.sdhci earlycon=msm_serial_dm,0x78af000 msm_rtb.filter=0x237 lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.usbconfigfs=true
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.bootdevice=7824900.sdhci androidboot.boot_devices=soc/7824900.sdhci lpm_levels.sleep_disabled=1
 
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
