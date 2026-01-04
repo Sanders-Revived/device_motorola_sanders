@@ -1,4 +1,7 @@
-# ACDB
+# deen_sprout package version: QPKS30.54-22-21
+# sanders_retail package version: OPSS28.65-36-11-4
+
+# ACDB - from sanders_retail
 vendor/etc/acdbdata/Bluetooth_cal.acdb
 vendor/etc/acdbdata/General_cal.acdb
 vendor/etc/acdbdata/Global_cal.acdb
@@ -127,7 +130,7 @@ vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so|000e0d2ac4450c0ad8baca06985bc
 vendor/lib64/vendor.qti.latency@2.0.so|44e613964229ad11c5a69d1861b24f5897eff1d7
 vendor/lib64/vendor.qti.latency@2.1.so|3f5e3be5fcbc96b5f4c87dd76cfcc0e1dc858ad0
 
-# Camera
+# Camera - from sanders_retail
 lib/motorola.hardware.camera.device@1.0.so
 lib/motorola.hardware.camera.provider@2.4.so
 vendor/lib/hw/camera.msm8953.so
@@ -169,7 +172,7 @@ vendor/lib/libvideoutils.so
 # Camera - from deen_sprout
 vendor/lib/libmot_gpu_mapper.so
 
-# Camera-actuators
+# Camera-actuators - from sanders_retail
 vendor/lib/libactuator_dw9718s.so
 vendor/lib/libactuator_dw9763.so
 vendor/lib/libactuator_dw9767.so
@@ -179,10 +182,10 @@ vendor/lib/libactuator_mot_ak7371_bear.so
 vendor/lib/libactuator_mot_ak7371_mono.so
 vendor/lib/libactuator_pseudo.so
 
-# Camera-bin
+# Camera-bin - from sanders_retail
 vendor/bin/mm-qcamera-daemon
 
-# Camera-chromatix
+# Camera-chromatix - from sanders_retail
 vendor/lib/libchromatix_ar1335_common.so
 vendor/lib/libchromatix_ar1335_cpp_hfr_120.so
 vendor/lib/libchromatix_ar1335_cpp_liveshot.so
@@ -543,7 +546,7 @@ vendor/lib/libchromatix_s5k4h8_video_full.so
 vendor/lib/libchromatix_s5k4h8_zsl_preview_3a.so
 vendor/lib/libchromatix_s5k4h8_zsl_video_3a.so
 
-# Camera-firmware
+# Camera-firmware - from sanders_retail
 vendor/firmware/cpp_firmware_v1_10_0.fw
 vendor/firmware/cpp_firmware_v1_12_0.fw
 vendor/firmware/cpp_firmware_v1_1_1.fw
@@ -556,7 +559,7 @@ vendor/firmware/cpp_firmware_v1_5_2.fw
 vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
 
-# Camera-sensors
+# Camera-sensors - from sanders_retail
 vendor/lib/libllvd_smore.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
@@ -665,9 +668,11 @@ vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmcamera_vstab_module.so
 vendor/lib/libtrueportrait.so
 
-# Charger - from deen_sprout & sanders_retail
-vendor/bin/charge_only_mode
+# Charger - from deen_sprout
 vendor/bin/hvdcp_opti
+
+# Charger - from sanders_retail
+vendor/bin/charge_only_mode
 
 # DRM - Widevine - from Crosshatch - 11/RQ3A.210605.005/7349499
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|57d280849768bc5d5e9e954b9ac90a5a31c54172
@@ -1135,5 +1140,3 @@ vendor/etc/wifi/WCNSS_wlan_dictionary.dat
 # Wi-Fi - from deen_sprout
 vendor/bin/cnss-daemon
 vendor/bin/wcnss_service
-
-# deen_sprout package version: QPKS30.54-22-21, unless stated otherwise
