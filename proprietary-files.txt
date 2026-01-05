@@ -1117,10 +1117,11 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|933eb7026797f3dadad3d10fd69443b11f6563f3
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
-# Thermal - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/thermal-engine|9e48fd5d3bf6414db4d844b421b45f6b6a2f17d4
--vendor/lib/libthermalclient.so|248fda00d69a626ee8e24159b704a6ae95eceb99
--vendor/lib64/libthermalclient.so|d042cc537de4950837a5b928f6283fb238a9c59c
+# Thermal - from FP3-REL-6.A.039.7-gms-44ba459b-user
+-vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 
 # Time services - from LA.UM.9.6.2.r1-04200-89xx.0
 -vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
