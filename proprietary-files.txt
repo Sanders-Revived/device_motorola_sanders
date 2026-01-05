@@ -899,10 +899,10 @@ vendor/lib64/libqti-perfd.so|3546caa5eae1d68078af1558ca2525afcf1dff11
 vendor/lib64/libqti-util-vendor.so|bdc34fa1fdafffbbbd16ab1b8c031371013ea907
 vendor/lib64/libqti-util.so|834cc98315887e57a5f229f9ee1a0d20d0d8f4c3
 
-# Peripheral manager - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/pm-proxy|782599642da7fbfc21f5e9a9965d898efeb75859
-vendor/bin/pm-service|212168358c65533c434e54be7b6fed0fd02a099c
-vendor/lib64/libperipheral_client.so|0820ee76c595691935b7d8896471ea0b172b0f58
+# Peripheral manager - from FP3-REL-6.A.039.7-gms-44ba459b-user
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib64/libperipheral_client.so
 
 # Postprocessing - from river - QPUS30.52-33-11
 vendor/bin/hw/vendor.display.color@1.0-service|e8c561e3a169c3007b117515f2946f23a195a5e5
