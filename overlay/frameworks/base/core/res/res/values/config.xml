@@ -235,24 +235,10 @@
         <item>"softap0"</item>
     </string-array>
 
-    <!-- List of regexpressions describing the interface (if any) that represent tetherable
-         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
-         should be empty. -->
-    <string-array translatable="false" name="config_tether_bluetooth_regexs">
-         <item>"bnep\\d"</item>
-         <item>"bt-pan"</item>
-    </string-array>
-
     <!-- When true, the tethering upstream network follows the current default
          Internet network (except when the current default network is mobile,
          in which case a DUN network will be used if required). -->
     <bool translatable="false" name="config_tether_upstream_automatic">true</bool>
-
-    <!-- Boolean indicating if current platform supports BLE peripheral mode -->
-    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-
-    <!-- Boolean indicating if current platform supports HFP inband ringing -->	
-    <bool name="config_bluetooth_hfp_inband_ringing_support">true</bool>
 
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>

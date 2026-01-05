@@ -26,10 +26,6 @@
     <item name="modem.controller.rx">170.273</item>
     <item name="modem.controller.tx">146.062</item>
     <item name="modem.controller.voltage">866.419</item>
-    <item name="bluetooth.controller.idle">1.133</item>
-    <item name="bluetooth.controller.rx">26.438</item>
-    <item name="bluetooth.controller.tx">63.683</item>
-    <item name="bluetooth.controller.voltage">112.528</item>
     <array name="cpu.clusters.cores">
         <value>8</value>
     </array>
