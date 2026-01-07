@@ -107,11 +107,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor
 
-# FM
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
-
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Fwk-detect
