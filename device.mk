@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
 
 # FM
 $(call soong_config_set_bool,libfmjni,no_fm_firmware,true)
+$(call soong_config_set,libfmjni,vendor,qcom)
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
