@@ -6,36 +6,7 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),sanders)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
-
 include $(CLEAR_VARS)
-
-FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
-
-BT_FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/bt_firmware
-DSP_MOUNT_POINT := $(TARGET_OUT_VENDOR)/dsp
-FSG_MOUNT_POINT := $(TARGET_OUT_VENDOR)/fsg
-
-ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) \
-	$(BT_FIRMWARE_MOUNT_POINT) \
-				 $(DSP_MOUNT_POINT) \
-				 $(FSG_MOUNT_POINT)
-
-$(FIRMWARE_MOUNT_POINT):
-	@echo "Creating $(FIRMWARE_MOUNT_POINT)"
-	@mkdir -p $(TARGET_OUT_VENDOR)/firmware_mnt
-	@ln -sf /vendor/firmware_mnt $(TARGET_OUT_VENDOR)/f
-
-$(BT_FIRMWARE_MOUNT_POINT):
-	@echo "Creating $(BT_FIRMWARE_MOUNT_POINT)"
-	@mkdir -p $(TARGET_OUT_VENDOR)/bt_firmware
-
-$(DSP_MOUNT_POINT):
-	@echo "Creating $(DSP_MOUNT_POINT)"
-	@mkdir -p $(TARGET_OUT_VENDOR)/dsp
-
-$(FSG_MOUNT_POINT):
-	@echo "Creating $(FSG_MOUNT_POINT)"
-	@mkdir -p $(TARGET_OUT_VENDOR)/fsg
 
 IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
 IMS_SYMLINKS := $(addprefix $(TARGET_OUT_PRODUCT_APPS_PRIVILEGED)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
