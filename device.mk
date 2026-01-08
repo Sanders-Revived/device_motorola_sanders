@@ -273,6 +273,10 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
+# Partitions
+PRODUCT_PACKAGES += \
+    dsp_symlink \
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
