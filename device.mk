@@ -110,6 +110,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor
 
+# FM
+$(call soong_config_set_bool,libfmjni,no_fm_firmware,true)
+
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Fwk-detect
