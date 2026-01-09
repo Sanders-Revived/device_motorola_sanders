@@ -128,8 +128,8 @@ vendor/lib64/vendor.qti.latency@2.0.so|44e613964229ad11c5a69d1861b24f5897eff1d7
 vendor/lib64/vendor.qti.latency@2.1.so|3f5e3be5fcbc96b5f4c87dd76cfcc0e1dc858ad0
 
 # Camera - from sanders_retail
-lib/motorola.hardware.camera.device@1.0.so
-lib/motorola.hardware.camera.provider@2.4.so
+vendor/lib/motorola.hardware.camera.device@1.0.so
+vendor/lib/motorola.hardware.camera.provider@2.4.so
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/camera.device@1.0-impl.so|13a93ca1a2e58e813f32f0c6348f6c1ad7937454
 vendor/lib/lib_mot_app6_metadata.so
@@ -137,7 +137,6 @@ vendor/lib/lib_mot_led_calibration.so
 vendor/lib/lib_motsensorlistener.so
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_aw3641.so
-vendor/lib/libflash_pmic.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libflash_sky81298.so
 vendor/lib/libflash_wd3100.so
@@ -710,11 +709,9 @@ vendor/firmware/focaltech-djn-ft5436-02-0001-sanders.bin
 vendor/firmware/focaltech-toptouch-ft5436-0a-0001-sanders.bin
 
 # FM - from deen_sprout
-lib/libfm-hci.so
-lib64/fm_helium.so
-lib64/libfm-hci.so
--product/lib/vendor.qti.hardware.fm@1.0.so
--product/lib64/vendor.qti.hardware.fm@1.0.so
+vendor/lib/libfm-hci.so
+vendor/lib64/fm_helium.so
+vendor/lib64/libfm-hci.so
 vendor/bin/fm_qsoc_patches
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
@@ -838,14 +835,12 @@ vendor/firmware/a540_gpmu.fw2|3530f10b4825a3b08c79e0bcfaf6471ec8422f24
 vendor/lib64/hw/keystore.msm8953.so
 
 # Media - from LA.UM.9.6.2.r1-04200-89xx.0
-lib/libFileMux.so|4e05cd5e9913311ad17543d204adcd6d60cc8754
-lib/libOmxMux.so|1f861cbf34f5e885fb4f9637b4aab53a3c59691b
+vendor/lib/libFileMux.so|4e05cd5e9913311ad17543d204adcd6d60cc8754
+vendor/lib/libOmxMux.so|1f861cbf34f5e885fb4f9637b4aab53a3c59691b
 system_ext/lib/libavenhancements.so|248d6cf0db255fb2cf5e077e7127f510036f7ec0
-system_ext/lib/libmmosal.so|8c7f0a071f84ec2ac9522bf448cb902a3ece2405
 system_ext/lib/libmmparser_lite.so|18cf2b71e517e651e35b931261f0c63783813ff6
 system_ext/lib/extractors/libmmparserextractor.so|5135a95473e887749100c7f84f5f659630c80193
 system_ext/lib64/libavenhancements.so|642292eeef580a33fec54b4505c1b6cecffde5a3
-system_ext/lib64/libmmosal.so|ef19a38be8283c87eabe96f74bc8a71881ab1f0a
 vendor/etc/seccomp_policy/mediacodec.policy|3dec19ed56099a36b44cc72ad04ab23b9cc22ace
 vendor/etc/seccomp_policy/mediaextractor.policy|4234a844e9b1aef37397c8cfbd19566966ecd622
 vendor/lib/libmmosal.so|e23d6d1b2a035c08ffd7ac72d5241ebff37f0d14
