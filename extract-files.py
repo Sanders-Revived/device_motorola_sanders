@@ -47,6 +47,18 @@ blob_fixups: blob_fixups_user_type = {
 
     'vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice': blob_fixup()
         .binary_regex_replace(b'/firmware/image', b'/vendor/f/image'),
+
+(
+        'vendor/lib/libchromaflash.so',
+        'vendor/lib/libmmcamera_hdr_gb_lib.so',
+        'vendor/lib/liboptizoom.so',
+        'vendor/lib/libseemore.so',
+        'vendor/lib/libtrueportrait.so',
+        'vendor/lib/libts_detected_face_hal.so',
+        'vendor/lib/libts_face_beautify_hal.so',
+        'vendor/lib/libubifocus.so',
+    ): blob_fixup()
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
 }
 
 module = ExtractUtilsModule(
