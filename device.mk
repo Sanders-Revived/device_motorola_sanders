@@ -7,7 +7,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl \
     audio.r_submix.default \
     audio.usb.default \
-    libaacwrapper \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -48,10 +47,8 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl \
-    camera.device@1.0-impl
+    android.hardware.camera.provider@2.4-service \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
@@ -243,7 +240,6 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
     com.android.nfc_extras \
     SecureElement \
-    NfcNci \
     Tag
 
 PRODUCT_COPY_FILES += \
