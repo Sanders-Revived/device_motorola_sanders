@@ -119,6 +119,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $
 
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 TARGET_KERNEL_CONFIG := sanders_defconfig
+TARGET_KERNEL_RECOVERY_CONFIG := sanders_recovery_defconfig
 TARGET_KERNEL_VERSION := 4.9
 
 # Keymaster
