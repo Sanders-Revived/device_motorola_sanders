@@ -2,9 +2,9 @@
 PRODUCT_PACKAGES += \
     audio.primary.msm8953 \
     libqcompostprocbundle \
-    android.hardware.audio@4.0-impl \
+    android.hardware.audio@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.audio.effect@4.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
