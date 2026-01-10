@@ -1113,4 +1113,3 @@ vendor/etc/wifi/WCNSS_wlan_dictionary.dat;SYMLINK=vendor/firmware/wlan/prima/WCN
 
 # Wi-Fi - from deen_sprout
 vendor/bin/cnss-daemon
-vendor/bin/wcnss_service
