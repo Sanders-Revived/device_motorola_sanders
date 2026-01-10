@@ -22,11 +22,27 @@ namespace_imports = [
 ]
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
-        .regex_replace('group system input 9015', 'group system uhid input 9015'),
-    
+
     'vendor/bin/charge_only_mode': blob_fixup()
         .add_needed('libmemset_shim.so'),
+
+    'vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice': blob_fixup()
+        .binary_regex_replace(b'/firmware/image', b'/vendor/f/image'),
+
+    'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
+        .regex_replace('group system input 9015', 'group system uhid input 9015'),
+
+    (
+        'vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice',
+        'vendor/lib/com.fingerprints.extension@1.0_vendor.so',
+    ): blob_fixup()
+        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
+
+    'vendor/lib/hw/camera.msm8953.so': blob_fixup()
+        .binary_regex_replace(b'service.bootanim.exit', b'service.bootanim.hold'),
+
+    'vendor/lib/libmmcamera2_sensor_modules.so': blob_fixup()
+        .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
 
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so'),
@@ -39,16 +55,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so'),
 
-    'vendor/lib/hw/camera.msm8953.so': blob_fixup()
-        .binary_regex_replace(b'service.bootanim.exit', b'service.bootanim.hold'),
-
-    'vendor/lib/libmmcamera2_sensor_modules.so': blob_fixup()
-        .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
-
-    'vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice': blob_fixup()
-        .binary_regex_replace(b'/firmware/image', b'/vendor/f/image'),
-
-(
+    (
         'vendor/lib/libchromaflash.so',
         'vendor/lib/libmmcamera_hdr_gb_lib.so',
         'vendor/lib/liboptizoom.so',

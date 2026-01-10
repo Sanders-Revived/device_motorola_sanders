@@ -713,9 +713,9 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/vendor.qti.hardware.fm@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS
 
 # Fingerprint
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice|615061720c7da889c92e38c197042a2a32ca071d
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
-vendor/lib/com.fingerprints.extension@1.0_vendor.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice|615061720c7da889c92e38c197042a2a32ca071d|29a4f771d34fcc1cacecb117da2ef2d05a751fcb
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|7574aa1db5fc0a8343cdd8910e62994d650fbe59|7574aa1db5fc0a8343cdd8910e62994d650fbe59
+vendor/lib/com.fingerprints.extension@1.0_vendor.so|8d367c200fb1bc6e6e1cde06008c783d3873caf7|f2fc9d60f97583ae2accbcaed7fb4c7a90cea3fe
 
 # GPS - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti|d458a2aadc1d00df4696d6793e550f4a9422a2c9

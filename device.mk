@@ -258,6 +258,7 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
     libOmxCore \
+    libhidlbase-v32 \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
