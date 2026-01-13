@@ -267,7 +267,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Partitions
 PRODUCT_PACKAGES += \
-    dsp_symlink
+    dsp_symlink \
+    firmware_mount_symlink
 
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \

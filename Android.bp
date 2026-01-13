@@ -7,3 +7,10 @@ install_symlink {
     installed_location: "lib/dsp",
     symlink_target: "/vendor/dsp",
 }
+
+install_symlink {
+    name: "firmware_mount_symlink",
+    vendor: true,
+    installed_location: "f",
+    symlink_target: "/vendor/firmware_mnt",
+}
