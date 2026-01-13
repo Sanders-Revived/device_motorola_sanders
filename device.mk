@@ -91,6 +91,8 @@ PRODUCT_PACKAGES += \
     libvulkan \
     libtinyxml
 
+$(call soong_config_set,qtidisplay,display_config_variable_info_has_pixel_formats,true)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
