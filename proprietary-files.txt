@@ -12,36 +12,36 @@ vendor/etc/acdbdata/Speaker_cal.acdb
 
 # ADSP - from deen_sprout
 vendor/bin/adsprpcd
-vendor/lib/libadsp_default_listener.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libadsprpc.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libfastcvadsp_stub.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libfastcvopt.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libadsp_default_listener.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libadsprpc.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libfastcvadsp_stub.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libfastcvopt.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
+vendor/lib/libfastcvadsp_stub.so
+vendor/lib/libfastcvopt.so
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libfastcvadsp_stub.so
+vendor/lib64/libfastcvopt.so
 
 # ANT+ - from LA.UM.9.6.2.r1-04200-89xx.0
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS|7fffcdca309796183708d9e345d3cd97461d901d
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so;DISABLE_CHECKELF;DISABLE_DEPS|b5c57fdf48447c68b6308fdcb167d0d21b5c56ed
 
 # Audio - from deen_sprout
-vendor/lib/libacdb-fts.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libacdbloader.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libacdbrtac.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libadiertac.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libaudcal.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libaudioalsa.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libaudioparsers.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libqtigef.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libacdb-fts.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libacdbloader.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libacdbrtac.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libadiertac.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libaudcal.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libaudioalsa.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libaudioparsers.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib64/libqtigef.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libaudcal.so
+vendor/lib/libaudioalsa.so
+vendor/lib/libaudioparsers.so
+vendor/lib/libqtigef.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
+vendor/lib64/libadiertac.so
+vendor/lib64/libaudcal.so
+vendor/lib64/libaudioalsa.so
+vendor/lib64/libaudioparsers.so
+vendor/lib64/libqtigef.so
 
 # Bluetooth - from FP3-REL-6.A.039.7-gms-44ba459b-user
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -62,7 +62,7 @@ system_ext/lib64/com.quicinc.cne.api@1.1.so;DISABLE_CHECKELF;DISABLE_DEPS|0b7d8b
 system_ext/lib64/com.quicinc.cne.constants@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS|e700fbf189a96fe1821a89d59d04c7d14ab14cf7
 system_ext/lib64/com.quicinc.cne.constants@2.0.so;DISABLE_CHECKELF;DISABLE_DEPS|a5d80268d940651509d9bfc10f38538d6da04580
 system_ext/lib64/com.quicinc.cne.constants@2.1.so;DISABLE_CHECKELF;DISABLE_DEPS|cf8a4412ca6ee339ac0dc2a14a9fad3091874c6f
-system_ext/lib64/libmwqemiptablemgr.so;DISABLE_CHECKELF;DISABLE_DEPS;DISABLE_DEPS|b45bd5f4e8d0905ea287af059bd7b06df0552127
+system_ext/lib64/libmwqemiptablemgr.so;DISABLE_CHECKELF;DISABLE_DEPS|b45bd5f4e8d0905ea287af059bd7b06df0552127
 -vendor/app/CneApp/CneApp.apk|6e355ca21e53c8a84794f06e1057e62ff2df1a58
 -vendor/app/IWlanService/IWlanService.apk|08472592f4a21ad806c487fc0c70c10bbe7c7ac2
 vendor/bin/cnd|9073b58b10ec0e5e0af3e0f65dcc815cb2b150b9
@@ -781,9 +781,9 @@ vendor/lib64/libtinyxml2_1.so;DISABLE_CHECKELF;DISABLE_DEPS|70942325afdd14eedcf1
 
 # Graphics - from river - QPUS30.52-33-11
 vendor/lib/egl/eglSubDriverAndroid.so;DISABLE_CHECKELF;DISABLE_DEPS|c1bbd0acd7b4e5f04f1e5a4c763862396a565be3
-vendor/lib/egl/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|9f4f8fde0974dc2bf5280a6bc4461a6cd4522790;SYMLINK=vendor/lib/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/egl/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS;SYMLINK=vendor/lib/libEGL_adreno.so|9f4f8fde0974dc2bf5280a6bc4461a6cd4522790
 vendor/lib/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|e5bdebe27271194b315fef65bbc490e4144dd272
-vendor/lib/egl/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|ffa502de44175d16b511e7b6b8181d6d62b20d4e;SYMLINK=vendor/lib/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/egl/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS;SYMLINK=vendor/lib/libGLESv2_adreno.so|ffa502de44175d16b511e7b6b8181d6d62b20d4e
 vendor/lib/egl/libQTapGLES.so;DISABLE_CHECKELF;DISABLE_DEPS|c0e0d96e813716ca8dc3add0e9983a19e8b6d406
 vendor/lib/egl/libq3dtools_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|b970511e8c02f60fad60ee66a4adefcd3e25c6d7
 vendor/lib/libC2D2.so;DISABLE_CHECKELF;DISABLE_DEPS|e85a06abb140e40b88b119a53f62a96c584a4233
@@ -798,11 +798,11 @@ vendor/lib/libllvm-glnext.so;DISABLE_CHECKELF;DISABLE_DEPS|e8d2f857564acf848c8ba
 vendor/lib/libllvm-qcom.so;DISABLE_CHECKELF;DISABLE_DEPS|09ed956b6fcd24169605984bd3ae96170cc3db76
 vendor/lib/libmm-hdcpmgr.so;DISABLE_CHECKELF;DISABLE_DEPS|fe6f9ee46f0ad5117b928f77ac09bfae31da7264
 vendor/lib64/egl/eglSubDriverAndroid.so;DISABLE_CHECKELF;DISABLE_DEPS|5c3a761b201e39d82ac64d86df086d4b02ad3f91
-vendor/lib64/egl/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|7a14e5b6fcb2025ebf3e4d691032ec2adef98ae5;SYMLINK=vendor/lib64/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib64/egl/libEGL_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS;SYMLINK=vendor/lib64/libEGL_adreno.so|7a14e5b6fcb2025ebf3e4d691032ec2adef98ae5
 vendor/lib64/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|ee3604131af93e38baaf0cdff49523514cd1f1b2
-vendor/lib64/egl/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|be9d5bffa62878220caa51f2fd950fe9f7551e78;SYMLINK=vendor/lib64/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib64/egl/libGLESv2_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS;SYMLINK=vendor/lib64/libGLESv2_adreno.so|be9d5bffa62878220caa51f2fd950fe9f7551e78
 vendor/lib64/egl/libQTapGLES.so;DISABLE_CHECKELF;DISABLE_DEPS|3b4bb2ba37ec84a4134816e7ca25d3ed9a806162
-vendor/lib64/egl/libq3dtools_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS|07c3b406aa055abfdb3358833d02cb5133964d37;SYMLINK=vendor/lib64/libq3dtools_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib64/egl/libq3dtools_adreno.so;DISABLE_CHECKELF;DISABLE_DEPS;SYMLINK=vendor/lib64/libq3dtools_adreno.so|07c3b406aa055abfdb3358833d02cb5133964d37
 vendor/lib64/hw/vulkan.msm8953.so;DISABLE_CHECKELF;DISABLE_DEPS|87d7ad3012b60b82abcf012f34ebc1df891e3160
 vendor/lib64/libC2D2.so;DISABLE_CHECKELF;DISABLE_DEPS|802802ac7ce0bb8bfc6918449a89ec820c6cfd53
 vendor/lib64/libCB.so;DISABLE_CHECKELF;DISABLE_DEPS|f14a760c8ceec7a47d32feb7f92cc970a6c68edb
@@ -848,31 +848,28 @@ vendor/lib64/libvpplibrary.so;DISABLE_CHECKELF;DISABLE_DEPS|30e8e7cf1495fb88162b
 # NFC
 vendor/lib/libpn548ad_fw.so;DISABLE_CHECKELF;DISABLE_DEPS
 
+# Perf - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|8661609a6155d1ba635ab867a301455003971842
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
+vendor/lib64/libperfconfig.so|38101a9e2f2ff57df9ef2876a2f966c99e63174d
+vendor/lib64/libperfgluelayer.so|e232a1cee1ac2d7d05ae42cc0d7d09ca3fa911ab
+vendor/lib64/libperfioctl.so|a39729665c0f26c84a3e314bbde3ca72963a4698
+vendor/lib64/libqti-perfd-client-vendor.so|b198200962a1f4f76c26610a96501b2165768551
+vendor/lib64/libqti-perfd-client.so|cf1db630be11536a27a0ac66646c0024d78c80f7
+vendor/lib64/libqti-perfd.so|3546caa5eae1d68078af1558ca2525afcf1dff11
+vendor/lib64/libqti-util-vendor.so|bdc34fa1fdafffbbbd16ab1b8c031371013ea907
+vendor/lib64/libqti-util.so|834cc98315887e57a5f229f9ee1a0d20d0d8f4c3
+
 # Perf (configs) - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/etc/perf/commonresourceconfigs.xml|459a18579580713fd839f93c86d6b1f7f028be1e
-vendor/etc/perf/perfboostsconfig.xml|da5ae082fe1d5d8e6afea68430e12e56cbf168d2
+vendor/etc/perf/perfboostsconfig.xml|02c1edb8c6318bca4f0fe5ccd3795bbdfb942d12
 vendor/etc/perf/perfconfigstore.xml|de7a673eca27fb44b7dcd34c60d21f7ffbd2b9d8
 vendor/etc/perf/targetconfig.xml|aa20c25397df1455206965737f82d44d44430e45
 vendor/etc/perf/targetresourceconfigs.xml|c7575bce83e7d83a68e260437ff0ba164dfcd25c
 
-# Perf - from LA.UM.9.6.2.r1-04200-89xx.0
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|8661609a6155d1ba635ab867a301455003971842
-vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
-vendor/lib/libperfconfig.so;DISABLE_CHECKELF;DISABLE_DEPS|7a13d55a9f906a0336404fbb8e6efc8a4ec75cd0
-vendor/lib/libperfgluelayer.so;DISABLE_CHECKELF;DISABLE_DEPS|45f4ce6664541625983080bd9fbbc5c1c89ab0d8
-vendor/lib/libperfioctl.so;DISABLE_CHECKELF;DISABLE_DEPS|5d1da18ae6860f6c4e185df679bec91ba772d331
-vendor/lib/libqti-perfd-client.so;DISABLE_CHECKELF;DISABLE_DEPS|35c5fb10e0dfc1302460200f7757c3329eb42280
-vendor/lib/libqti-perfd.so;DISABLE_CHECKELF;DISABLE_DEPS|26bf06b78c9ace51c141ceb1a8073528aaf0bcc4
-vendor/lib/libqti-util-vendor.so;DISABLE_CHECKELF;DISABLE_DEPS|8d9a427d36f8cc02015867a6282575f58e88b735
-vendor/lib/libqti-util.so;DISABLE_CHECKELF;DISABLE_DEPS|b90cf5d6dab54445906fd94447d6d624586865ed
-vendor/lib64/libperfconfig.so;DISABLE_CHECKELF;DISABLE_DEPS|38101a9e2f2ff57df9ef2876a2f966c99e63174d
-vendor/lib64/libperfgluelayer.so;DISABLE_CHECKELF;DISABLE_DEPS|e232a1cee1ac2d7d05ae42cc0d7d09ca3fa911ab
-vendor/lib64/libperfioctl.so;DISABLE_CHECKELF;DISABLE_DEPS|a39729665c0f26c84a3e314bbde3ca72963a4698
-vendor/lib64/libqti-perfd-client-vendor.so;DISABLE_CHECKELF;DISABLE_DEPS|b198200962a1f4f76c26610a96501b2165768551
-vendor/lib64/libqti-perfd-client.so;DISABLE_CHECKELF;DISABLE_DEPS|cf1db630be11536a27a0ac66646c0024d78c80f7
-vendor/lib64/libqti-perfd.so;DISABLE_CHECKELF;DISABLE_DEPS|3546caa5eae1d68078af1558ca2525afcf1dff11
-vendor/lib64/libqti-util-vendor.so;DISABLE_CHECKELF;DISABLE_DEPS|bdc34fa1fdafffbbbd16ab1b8c031371013ea907
-vendor/lib64/libqti-util.so;DISABLE_CHECKELF;DISABLE_DEPS|834cc98315887e57a5f229f9ee1a0d20d0d8f4c3
+# Perf (deps) - from FP3-REL-6.A.031.5-gms-fa7632b5-user
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|7e332989976f3549fcdb6c7b990fef3844dd36ae
+vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|4254d087742dd950f0f524106e6262d1e15dda60
 
 # Peripheral manager - from FP3-REL-6.A.039.7-gms-44ba459b-user
 vendor/bin/pm-proxy
@@ -966,7 +963,7 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.0.so;DISABLE_CHECKELF;DISABLE_DEPS|63
 vendor/lib64/com.qualcomm.qti.uceservice@2.1.so;DISABLE_CHECKELF;DISABLE_DEPS|e8721e2676a1bbc7577863c8a7249579f734ed2c
 vendor/lib64/com.qualcomm.qti.uceservice@2.2.so;DISABLE_CHECKELF;DISABLE_DEPS|66833b47d75ab2af6ac78f14ac32e1be50f2d817
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so;DISABLE_CHECKELF;DISABLE_DEPS|d01e1bafe36db7cda145b36145be3b95a968fc65
-vendor/lib64/lib-imsSDP.so;DISABLE_CHECKELF;DISABLE_DEPS;DISABLE_DEPS|22fb91b5c7f614f76b9361ee08104ecdaf0501ef
+vendor/lib64/lib-imsSDP.so;DISABLE_CHECKELF;DISABLE_DEPS|22fb91b5c7f614f76b9361ee08104ecdaf0501ef
 vendor/lib64/lib-imscmservice.so;DISABLE_CHECKELF;DISABLE_DEPS|1256a36db63ed10e3f7f6c659d5086bf1ed8752f
 vendor/lib64/lib-imsdpl.so;DISABLE_CHECKELF;DISABLE_DEPS|b66d4f789c750541f43078f2167870cf904bd67b
 vendor/lib64/lib-imsqimf.so;DISABLE_CHECKELF;DISABLE_DEPS|537d9b4a8038860a2c96a5e8f648930b4334ae17
