@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Display / Graphics
-
+$(call soong_config_set_bool,libui,legacy_gralloc,true)
 $(call soong_config_set_bool,surfaceflinger,register_displayservice,true)
 
 PRODUCT_PACKAGES += \
