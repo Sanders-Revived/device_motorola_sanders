@@ -58,3 +58,6 @@ ro.surface_flinger.use_color_management=true
 
 # Radio
 ro.telephony.block_binder_thread_on_incoming_calls=false
+
+# ADB over WiFi
+persist.adb.tcp.port=5555

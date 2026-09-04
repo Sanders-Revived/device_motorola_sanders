@@ -5080,3 +5080,7 @@ case "$target" in
         echo 5120 > /proc/sys/vm/min_free_kbytes
      ;;
 esac
+
+# Enable persistent ADB over WiFi on port 5555
+setprop service.adb.tcp.port 5555
+setprop persist.adb.tcp.port 5555
