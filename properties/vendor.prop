@@ -94,3 +94,6 @@ ro.hardware.sensors=sanders
 
 # Wifi
 wifi.interface=wlan0
+
+# eBPF
+ro.kernel.ebpf.supported=true
