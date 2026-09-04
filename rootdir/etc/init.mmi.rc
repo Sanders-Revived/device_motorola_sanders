@@ -109,29 +109,10 @@ on post-fs-data
     chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_fail_clear
     chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_usb_otg_ctl
 
-    chown oem_5001 oem_5001 /sys/class/power_supply/wireless/device/chip_id
-    chown oem_5001 oem_5001 /sys/class/power_supply/wireless/current_now
-    chown oem_5001 oem_5001 /sys/class/power_supply/wireless/voltage_now
     chown oem_5001 oem_5001 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_val
     chmod 0664 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_val
     chown oem_5001 oem_5001 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_active
     chmod 0664 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_active
-
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_rechrg_start_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_rechrg_stop_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_attach_start_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_attach_stop_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_start_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_stop_soc
-    chown root oem_5020 /sys/module/qpnp_smbcharger_mmi/parameters/eb_on_sw
-
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_rechrg_start_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_rechrg_stop_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_attach_start_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_attach_stop_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_start_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_low_stop_soc
-    chmod 0664 /sys/module/qpnp_smbcharger_mmi/parameters/eb_on_sw
 
     chown root oem_5020 /sys/class/power_supply/usb/usb_priority
     chmod 0660 /sys/class/power_supply/usb/usb_priority
@@ -214,7 +195,6 @@ on boot
    chmod 0660 /sys/class/leds/vibrator/seq
    chown system system /sys/class/leds/vibrator/extra
    chmod 0660 /sys/class/leds/vibrator/extra
-   chown root oem_5020 /sys/bus/i2c/devices/2-005a/reduce
 
    # Change ownership of aov related sysfs entries
    chown audio audio /sys/kernel/aov/trigger
@@ -266,9 +246,6 @@ on property:persist.vendor.qc.sub.rdump.on=*
 # translate MMI property in order to keep the consistent with QCOM
 on property:ro.vendor.hw.dualsim=true
    setprop persist.radio.multisim.config dsds
-
-on property:persist.vendor.qc.sub.rdump.on=*
-   setprop persist.vendor.ssr.enable_ramdumps ${persist.vendor.qc.sub.rdump.on}
 
 on property:ro.vendor.hw.dualsim=false
    setprop persist.radio.multisim.config ""
