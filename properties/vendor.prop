@@ -77,17 +77,15 @@ persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
 
 # Radio (IMS)
-persist.dbg.volte_avail_ovr=1 \
-persist.dbg.vt_avail_ovr=1 \
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
 # Telephony
-ril.subscription.types=NV,RUIM \
-ro.telephony.call_ring.multiple=false \
-service.qti.ims.enabled=1 \
-telephony.lteOnCdmaDevice=1 \
-vendor.service.qti.ims.enabled=1 \
-ro.telephony.default_network=22,22
+ro.telephony.call_ring.multiple=false
+service.qti.ims.enabled=1
+vendor.service.qti.ims.enabled=1
+ro.telephony.default_network=10,10
 
 # Sensors
 ro.hardware.sensors=sanders
