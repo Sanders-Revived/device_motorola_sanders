@@ -1,4 +1,4 @@
-Device configuration for Moto G5S Plus(sanders)
+Device configuration for Moto G5S Plus (sanders)
 ===========================================
 
 Basic   | Spec Sheet
@@ -11,7 +11,7 @@ Shipped Android Version | 7.0.0
 Storage | 32/64 GB
 MicroSD | Up to 256 GB
 Battery | Li-Ion 3000mAh battery
-Display | 1080 x 1920 pixels, 5.2 inches (~402 ppi pixel density)
+Display | 1080 x 1920 pixels, 5.5 inches (~401 ppi pixel density)
 Camera  | Dual 13 MP, f/2.0, autofocus, dual-LED (dual tone) flash, 2150 x 1440 pixels
 
-![Moto G5S Plus](https://files.catbox.moe/shi6rw.png "Moto G5 Plus")
+![Moto G5S Plus](https://files.catbox.moe/shi6rw.png "Moto G5S Plus")
