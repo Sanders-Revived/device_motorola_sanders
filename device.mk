@@ -95,7 +95,7 @@ $(call soong_config_set,qtidisplay,display_config_variable_info_has_pixel_format
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor \
+    android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
 # Dynamic

@@ -667,34 +667,34 @@ vendor/bin/hvdcp_opti
 # Charger - from sanders_retail
 vendor/bin/charge_only_mode
 
-# DRM - Widevine - from Crosshatch - 11/RQ3A.210605.005/7349499
-vendor/bin/hw/android.hardware.drm@1.3-service.widevine|57d280849768bc5d5e9e954b9ac90a5a31c54172
-vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|6b00f42dc85becc58f303bc4588331239c5c83aa
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
-vendor/lib64/libwvhidl.so;DISABLE_CHECKELF;DISABLE_DEPS|ae215b1afd38cda71818dfde44c6186bd4ec2cb1
+# DRM - Widevine - from LA.UM.10.6.2.r1-02500-89xx.0
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine|0789856c51366175e1e7878e378f586c3eca7bd9
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+vendor/lib64/libwvhidl.so|88780dbc2e14e4e1ff6171085fa0b37fbc8d64f2
 
 # DRM - from LA.UM.9.6.2.r1-04200-89xx.0
 vendor/bin/qseecomd|12fde638ad4528c06fe336342862fd0ffc033dd0
-vendor/lib/libQSEEComAPI.so;DISABLE_CHECKELF;DISABLE_DEPS|961b8c99bf5d2a53b607cebf399fbdafb48c9bc6
-vendor/lib64/libGPreqcancel.so;DISABLE_CHECKELF;DISABLE_DEPS|d851bcc3e1b982d8403dc86921c5dd9274f71dc5
-vendor/lib64/libGPreqcancel_svc.so;DISABLE_CHECKELF;DISABLE_DEPS|760427f2139aec09a74b50a80153e461fbc6b272
-vendor/lib64/libQSEEComAPI.so;DISABLE_CHECKELF;DISABLE_DEPS|17cf281138050f87e29b2b71e63d131249b10f6f
-vendor/lib64/libSecureUILib.so;DISABLE_CHECKELF;DISABLE_DEPS|e9dd8017f40691925c59a074705be7cf11130780
-vendor/lib64/libStDrvInt.so;DISABLE_CHECKELF;DISABLE_DEPS|7c921ee6db896233f9ea03f1fb3a9b7d9434e7dc
-vendor/lib64/libcpion.so;DISABLE_CHECKELF;DISABLE_DEPS|602ffa6e92be0f2a19c8de782e1601135c7dd2a8
-vendor/lib64/libdrmfs.so;DISABLE_CHECKELF;DISABLE_DEPS|1654e650448a464b9de765c9ce80ba5a29e8b9c1
-vendor/lib64/libdrmtime.so;DISABLE_CHECKELF;DISABLE_DEPS|b3f024dae4aaa62c4fc33965847d1627387c6b56
-vendor/lib64/libhdcpsrm.so;DISABLE_CHECKELF;DISABLE_DEPS|8822f0408bdcc11dfc661321bfd3c253f0306e0c
-vendor/lib64/liboemcrypto.so;DISABLE_CHECKELF;DISABLE_DEPS|cff69ca64f9015e17cdcc2c45c992d262d864013
-vendor/lib64/libqisl.so;DISABLE_CHECKELF;DISABLE_DEPS|e9c402aed643ee094daaf495f1a3a1f29542d602
-vendor/lib64/librpmb.so;DISABLE_CHECKELF;DISABLE_DEPS|a5ee7dfbbae868a253d7413c866800ea1146d7c8
-vendor/lib64/libsecureui.so;DISABLE_CHECKELF;DISABLE_DEPS|eef8db680df8e9b47d4725433cd0d3886cc8aa25
-vendor/lib64/libsecureui_svcsock.so;DISABLE_CHECKELF;DISABLE_DEPS|2232f56927964f10d41868919d94711930d50ed0
-vendor/lib64/libssd.so;DISABLE_CHECKELF;DISABLE_DEPS|6dcbfc531e69a3c7eeaf21e85ac0202b8fa82d55
+vendor/lib/libQSEEComAPI.so|961b8c99bf5d2a53b607cebf399fbdafb48c9bc6
+vendor/lib64/libGPreqcancel.so|d851bcc3e1b982d8403dc86921c5dd9274f71dc5
+vendor/lib64/libGPreqcancel_svc.so|760427f2139aec09a74b50a80153e461fbc6b272
+vendor/lib64/libQSEEComAPI.so|17cf281138050f87e29b2b71e63d131249b10f6f
+vendor/lib64/libSecureUILib.so|e9dd8017f40691925c59a074705be7cf11130780
+vendor/lib64/libStDrvInt.so|7c921ee6db896233f9ea03f1fb3a9b7d9434e7dc
+vendor/lib64/libcpion.so|602ffa6e92be0f2a19c8de782e1601135c7dd2a8
+vendor/lib64/libdrmfs.so|1654e650448a464b9de765c9ce80ba5a29e8b9c1
+vendor/lib64/libdrmtime.so|b3f024dae4aaa62c4fc33965847d1627387c6b56
+vendor/lib64/libhdcpsrm.so|8822f0408bdcc11dfc661321bfd3c253f0306e0c
+vendor/lib64/liboemcrypto.so|cff69ca64f9015e17cdcc2c45c992d262d864013
+vendor/lib64/libqisl.so|e9c402aed643ee094daaf495f1a3a1f29542d602
+vendor/lib64/librpmb.so|a5ee7dfbbae868a253d7413c866800ea1146d7c8
+vendor/lib64/libsecureui.so|eef8db680df8e9b47d4725433cd0d3886cc8aa25
+vendor/lib64/libsecureui_svcsock.so|2232f56927964f10d41868919d94711930d50ed0
+vendor/lib64/libssd.so|6dcbfc531e69a3c7eeaf21e85ac0202b8fa82d55
 
 # DRM - from LMI 11/RKQ1.200826.002/V12.2.4.0.RJKMIXM
-vendor/lib64/libops.so;DISABLE_CHECKELF;DISABLE_DEPS|b2223e64db9d8f84262da7a8621013d3c63b6c98
-vendor/lib64/libspl.so;DISABLE_CHECKELF;DISABLE_DEPS|0fa8c0711f72fc8a914dce044cf8dddd79ee62e1
+vendor/lib64/libops.so|b2223e64db9d8f84262da7a8621013d3c63b6c98
+vendor/lib64/libspl.so|0fa8c0711f72fc8a914dce044cf8dddd79ee62e1
 
 # Display-calibration
 vendor/etc/qdcm_calib_data_mipi_mot_vid_djn_1080p_550.xml
