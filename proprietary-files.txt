@@ -899,6 +899,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so;DISABLE_CHECKELF;DISABLE_DE
 # QC RIL - from LA.UM.9.6.3.r1-04400-89xx.0
 vendor/bin/hw/qcrild|77d0168fbad7db01eec8abd9df25f19c05411eb4
 vendor/etc/init/qcrild.rc|f9c32f5e7a8e7f4a0df1dcce174de169b8d7c060
+vendor/lib64/deviceInfoServiceModule.so|8b6d404718acd310d47ddce007b5e05fa17e3266
 vendor/lib64/libqcrilFramework.so;DISABLE_CHECKELF;DISABLE_DEPS|dc62bd4f3685c420d43f4f5f4141d5908212df86
 vendor/lib64/libqcrildatactl.so;DISABLE_CHECKELF;DISABLE_DEPS|716112f6bdbbe968f867b7ad73c7b0a12d1be6e1
 vendor/lib64/libril-qc-hal-qmi.so;DISABLE_CHECKELF;DISABLE_DEPS|65b9c44406ca302facf87038b5b223f6977e0f79
@@ -950,6 +951,7 @@ vendor/lib64/libqmiservices.so;DISABLE_CHECKELF;DISABLE_DEPS|52770edf3e35f5376f3
 
 # Radio (IMS) - from LA.UM.9.6.3.r1-04400-89xx.0
 -system_ext/app/imssettings/imssettings.apk|8b47c43d56228dcce93cc8c07c6ceb08cb3d2fe5
+-system_ext/priv-app/ims/ims.apk|bcb4343b282907a642ae888bfaede63e9159894e
 vendor/bin/imsdatadaemon|476fb2c270ca3352ee41ca3dc8c49b86517830a5
 vendor/bin/imsqmidaemon|44b0d218106ce8124ca6c2cc956c26f7119645ca
 vendor/bin/imsrcsd|bf29aac14856f29268c01599e5f6c7c6ae520685
