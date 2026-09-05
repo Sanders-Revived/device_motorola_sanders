@@ -31,7 +31,7 @@
          This mechanism allows the host to remain in suspend state and the dongle to actively
          scan and wake the host when a configured SSID is detected by the dongle. This chipset
          capability can provide power savings when wifi needs to be always kept on. -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
+    <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
 
    <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
@@ -44,7 +44,7 @@
     <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-82</integer>
 
     <!-- Indicates that a full bugreport should be triggered when wifi diagnostics detects an error on non-user (i.e debug) builds -->
-    <bool translatable="false" name="config_wifi_diagnostics_bugreport_enabled">true</bool>
+    <bool translatable="false" name="config_wifi_diagnostics_bugreport_enabled">false</bool>
 
     <!-- Enable WPA2 to WPA3 auto-upgrade -->
     <bool translatable="false" name="config_wifiSaeUpgradeEnabled">false</bool>
