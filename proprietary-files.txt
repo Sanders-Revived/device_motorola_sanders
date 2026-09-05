@@ -889,7 +889,7 @@ vendor/lib/vendor.display.color@1.2.so;DISABLE_CHECKELF;DISABLE_DEPS|9a1497cf76a
 vendor/lib/vendor.display.postproc@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS|e979f09c3bc5be29c6ae07dbcc5518986a1afefe
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS|48ce093219f51a7d27d87f479545dcd2fb04b1a2
 vendor/lib64/libdisp-aba.so;DISABLE_CHECKELF;DISABLE_DEPS|9404f35516077caabcaa06e9c62e142feee1fe26
-vendor/lib64/libdisplayconfig.qti.so;DISABLE_CHECKELF;DISABLE_DEPS|e2a3971b331620828a6a7163b15170aad9935754
+vendor/lib64/libdisplayconfig.qti.so|e2a3971b331620828a6a7163b15170aad9935754
 vendor/lib64/vendor.display.color@1.0.so;DISABLE_CHECKELF;DISABLE_DEPS|c61cb9344eef21f508e909470e27a7fc35aa1014
 vendor/lib64/vendor.display.color@1.1.so;DISABLE_CHECKELF;DISABLE_DEPS|b54b98b7fd155090fd2df43af1f80e1f5a31b7eb
 vendor/lib64/vendor.display.color@1.2.so;DISABLE_CHECKELF;DISABLE_DEPS|e31187043db05574236c647a9572c9f3e67ba713
