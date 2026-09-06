@@ -119,7 +119,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 # Fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor \
+    CneApp.libvndfwk_detect_jni.qti_symlink
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
