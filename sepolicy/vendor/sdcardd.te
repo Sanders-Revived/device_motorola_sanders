@@ -1,2 +1,0 @@
-allow sdcardd sdcard_type:dir mounton;
-allow sdcardd sdcard_type:filesystem unmount;

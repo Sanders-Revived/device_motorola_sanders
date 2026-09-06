@@ -8,15 +8,8 @@
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0\.so            u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/motorola\.hardware\.audio\.adspd@1\.0_vendor\.so     u:object_r:same_process_hal_file:s0
 
-# Battery and healthd
+# Battery
 /(mnt/vendor)/persist/battery(/.*)?                               u:object_r:persist_battery_file:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/battery(/.*)?      u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/dc(/.*)?           u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/main(/.*)?         u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/pc_port(/.*)?      u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/usb(/.*)?          u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/usbeb(/.*)?        u:object_r:sysfs_healthd:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-00/800f000\.qcom,spmi:qcom,pm660@0:qcom,qpnp-smb2/power_supply/wireless(/.*)?     u:object_r:sysfs_healthd:s0
 
 # Charger
 /data/vendor/chargeonly(/.*)?                            u:object_r:chargeonly_data_file:s0
@@ -25,14 +18,6 @@
 
 # Dev block nodes for eMMC
 /dev/block/platform/soc/7824900\.sdhci/by-name/persist2          u:object_r:persist_block_device:s0
-
-# EMMC A/B partitions
-/dev/block/platform/soc/7824900\.sdhci/by-name/dto_[ab]          u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7824900\.sdhci/by-name/fsg_[ab]          u:object_r:modem_efs_partition_device:s0
-/dev/block/platform/soc/7824900\.sdhci/by-name/logo_[ab]         u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7824900\.sdhci/by-name/oem_[ab]          u:object_r:system_block_device:s0
-/dev/block/platform/soc/7824900\.sdhci/by-name/prov_[ab]         u:object_r:custom_ab_block_device:s0
-/dev/block/platform/soc/7824900\.sdhci/by-name/storsec_[ab]      u:object_r:custom_ab_block_device:s0
 
 # Homebutton
 /sys/homebutton(/.*)?                                         u:object_r:sysfs_homebutton:s0
@@ -70,20 +55,15 @@
 /sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets   u:object_r:hal_fingerprint_fpc_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.power\.sh                               u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/perfd                                               u:object_r:perfd_exec:s0
 
 /sys/devices/soc/c900000\.qcom,mdss_mdp/c900000\.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?                  u:object_r:sysfs_leds:s0
-/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-03/800f000\.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/charging(/.*)?        u:object_r:sysfs_leds:s0
 
 /sys/kernel/debug/rmt_storage(/.*)?                           u:object_r:debugfs_rmts:s0
 /sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
 
 /sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
-/sys/devices/soc/0.et320(/.*)?                                u:object_r:sysfs_fingerprint:s0
-/(mnt/vendor)/persist/egis(/.*)?                              u:object_r:fingerprint_data_file:s0
-/dev/esfp0                                                    u:object_r:tee_device:s0
 /data/\.fps(/.*)?                                             u:object_r:system_fps_data_file:s0
 /data/vendor/misc/cutback(/.*)?                               u:object_r:vendor_radio_data_file:s0
 /data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0

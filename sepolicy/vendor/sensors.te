@@ -1,2 +1,2 @@
-allow sensors moto_boot_prop:file { getattr open read };
+get_prop(sensors, moto_boot_prop)
 allow sensors sysfs:file read;
