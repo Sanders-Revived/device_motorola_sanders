@@ -81,6 +81,7 @@ persist.vendor.cne.feature=1
 persist.vendor.mwqem.enable=1
 
 # Display
+ro.sf.lcd_density=420
 ro.sf.hwc_set_default_colormode=true
 debug.renderengine.backend=skiaglthreaded
 debug.sf.hw=1
