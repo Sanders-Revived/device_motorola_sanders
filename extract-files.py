@@ -50,9 +50,13 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so'),
 
+    'vendor/lib/libmmcamera2_stats_modules.so': blob_fixup()
+        .replace_needed('libgui.so', 'libgui_shim_vendor.so')
+        .remove_needed('libandroid.so')
+        .binary_regex_replace(b'\x60\xf9\x5f\x07', b'\x60\xf9\x4f\x07'),
+
     (
         'vendor/lib/libmmcamera_vstab_module.so',
-        'vendor/lib/libmmcamera2_stats_modules.so',
         'vendor/lib/libmmcamera_ppeiscore.so',
     ): blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
