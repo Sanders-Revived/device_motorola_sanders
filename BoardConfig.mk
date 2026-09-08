@@ -111,7 +111,6 @@ BOARD_RAMDISK_USE_XZ := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.usbconfigfs=true
 BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.bootdevice=7824900.sdhci androidboot.boot_devices=soc/7824900.sdhci lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
@@ -209,7 +208,6 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
