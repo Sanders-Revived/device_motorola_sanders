@@ -87,7 +87,9 @@ ro.telephony.block_binder_thread_on_incoming_calls=false
 ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=20,20
 ro.telephony.iwlan_operation_mode=legacy
+ro.telephony.sim_slots.count=2
 service.qti.ims.enabled=1
+telephony.active_modems.max_count=2
 
 # SurfaceFlinger
 debug.sf.early_phase_offset_ns=1500000
