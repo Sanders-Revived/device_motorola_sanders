@@ -22,4 +22,5 @@ dontaudit system_app {
 allow system_app hal_power_default:binder call;
 
 # FM Radio
-allow system_app fm_radio_device:chr_file { ioctl open read };
+allow system_app fm_radio_device:chr_file rw_file_perms;
+get_prop(system_app, vendor_bluetooth_prop)
