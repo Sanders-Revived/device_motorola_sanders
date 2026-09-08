@@ -1,4 +1,4 @@
 get_prop(wcnss_service, moto_boot_prop);
 set_prop(wcnss_service, vendor_wifi_prop);
 
-dontaudit wcnss_service system_prop:file read;
+dontaudit wcnss_service { default_prop system_prop }:file r_file_perms;

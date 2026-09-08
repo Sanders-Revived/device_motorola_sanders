@@ -5,6 +5,9 @@ init_daemon_domain(vendor_toolbox)
 # Allow vendor_toolbox to use sys_admin capability
 allow vendor_toolbox self:capability sys_admin;
 
+# Silence DAC override denials - granting dac_override violates neverallow
+dontaudit vendor_toolbox self:capability dac_override;
+
 # Allow vendor_toolbox to execute /vendor/bin/toybox_vendor
 allow vendor_toolbox vendor_toolbox_exec:file execute_no_trans;
 
@@ -21,6 +24,7 @@ allow vendor_toolbox {
     persist_bluetooth_file
     persist_bms_file
     persist_camera_file
+    persist_chargeonly_file
     persist_display_file
     persist_drm_file
     persist_file
@@ -56,5 +60,3 @@ allow vendor_toolbox {
 }:file { r_file_perms setattr };
 
 allow vendor_toolbox persist_audio_file:file { getattr };
-allow vendor_toolbox persist_chargeonly_file:dir { getattr setattr read open };
-allow vendor_toolbox persist_chargeonly_file:file { getattr };
