@@ -42,9 +42,6 @@ ro.charger.enable_suspend=true
 camera.disable_zsl_mode=true
 vidc.enc.dcvs.extra-buff-count=2
 
-# Codec2 switch
-debug.media.codec2=2
-
 # Display & Graphics
 ro.sf.lcd_density=420
 ro.sf.hwc_set_default_colormode=true
@@ -61,9 +58,6 @@ drm.service.enabled=true
 
 # Fingerprint
 persist.qfp=false
-
-# FM
-ro.vendor.fm.use_audio_session=true
 
 # LMKD/PSI
 ro.lmk.kill_heaviest_task=false
