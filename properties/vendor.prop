@@ -97,3 +97,9 @@ persist.vendor.lte.pco_supported=true
 ro.vendor.telephony.default_network=20,20
 ro.vendor.use_data_netmgrd=true
 vendor.service.qti.ims.enabled=1
+
+# FM
+ro.vendor.fm.use_audio_session=true
+
+# Sensors
+ro.vendor.sensors.smd=false
