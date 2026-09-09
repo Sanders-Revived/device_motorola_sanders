@@ -42,5 +42,4 @@ on boot
     chown system system /sys/homebutton/key_screenoff_right
 
 on post-fs-data
-    mkdir /data/fpc 0700 system system
     mkdir /data/.fps 0770 system oem_5015

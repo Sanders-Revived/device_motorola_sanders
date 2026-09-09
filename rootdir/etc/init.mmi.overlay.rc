@@ -1,12 +1,5 @@
 import init.hidl.sensor.rc
 
-service capsense_set_threshold /system/vendor/bin/capsense_set_threshold
-	class core
-	user system
-	group system
-	disabled
-	oneshot
-
 on init
 
    # Change ownership for HBM feature

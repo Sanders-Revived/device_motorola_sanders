@@ -252,12 +252,6 @@ service vendor.charge_only_mode /vendor/bin/charge_only_mode
     group graphics system input
     disabled
 
-service vendor.adspd /vendor/bin/adspd
-   class main
-   socket adspdsock stream 0660 system audio
-   user audio
-   group audio input diag
-
 on property:vendor.wifi.tethering=false
     write /sys/module/wlan/parameters/sar_mhs disabled
 
