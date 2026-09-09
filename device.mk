@@ -172,7 +172,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    fstab.qcom_ramdisk \
+    fstab.qcom.ramdisk \
     init.sanders.rc \
     init.class_main.sh \
     init.qcom.early_boot.sh \
