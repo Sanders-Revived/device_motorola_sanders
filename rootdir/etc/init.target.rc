@@ -144,11 +144,6 @@ service vendor.qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
-
 on boot
     start rmt_storage
     insmod /system/lib/modules/adsprpc.ko

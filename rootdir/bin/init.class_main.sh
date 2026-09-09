@@ -1,4 +1,4 @@
-#! /vendor/bin/sh
+#!/vendor/bin/sh
 
 # Copyright (c) 2013-2014, 2019 The Linux Foundation. All rights reserved.
 #
@@ -31,18 +31,18 @@
 # start ril-daemon only for targets on which radio is present
 #
 baseband=`getprop ro.baseband`
-sgltecsfb=`getprop persist.vendor.radio.sglte_csfb`
 datamode=`getprop persist.vendor.data.mode`
 qcrild_status=true
 
 case "$baseband" in
     "apq" | "sda" | "qcs" )
-    setprop ro.vendor.radio.noril yes
-    stop vendor.qcrild
+        setprop ro.vendor.radio.noril yes
+        stop vendor.qcrild
+        ;;
 esac
 
 case "$baseband" in
-    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
+    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
 
     # For older modem packages launch ril-daemon.
     modem_info=/vendor/firmware_mnt/verinfo/ver_info.txt
@@ -97,34 +97,13 @@ case "$baseband" in
         start vendor.ril-daemon
     fi
 
-    case "$baseband" in
-        "svlte2a" | "csfb")
-          start qmiproxy
-        ;;
-        "sglte" | "sglte2" )
-          if [ "x$sgltecsfb" != "xtrue" ]; then
-              start qmiproxy
-          else
-              setprop persist.vendor.radio.voice.modem.index 0
-          fi
-        ;;
-    esac
-
     multisim=`getprop persist.radio.multisim.config`
 
     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
         if [ "$qcrild_status" = "true" ]; then
-          start vendor.qcrild2
+            start vendor.qcrild2
         else
-          start vendor.ril-daemon2
-        fi
-    elif [ "$multisim" = "tsts" ]; then
-        if [ "$qcrild_status" = "true" ]; then
-          start vendor.qcrild2
-          start vendor.qcrild3
-        else
-          start vendor.ril-daemon2
-          start vendor.ril-daemon3
+            start vendor.ril-daemon2
         fi
     fi
 
@@ -148,8 +127,8 @@ esac
 #
 fake_batt_capacity=`getprop persist.vendor.bms.fake_batt_capacity`
 case "$fake_batt_capacity" in
-    "") ;; #Do nothing here
+    "") ;; # Do nothing here
     * )
-    echo "$fake_batt_capacity" > /sys/class/power_supply/battery/capacity
-    ;;
+        echo "$fake_batt_capacity" > /sys/class/power_supply/battery/capacity
+        ;;
 esac

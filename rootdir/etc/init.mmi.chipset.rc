@@ -1,11 +1,6 @@
 # Chipset-specific init settings
 on boot
     # Change permission for fingerprint sensor
-    chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/nav
-    chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/dev_enable
-    chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/irq
-    chown system oem_5004 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
-    chmod 0440 /sys/devices/soc/soc:fpc_fpc1020/irq_cnt
     chown system oem_5004 /sys/bus/spi/devices/spi8.0/nav
     chown system oem_5004 /sys/bus/spi/devices/spi8.0/clk_enable
     chown system oem_5004 /sys/bus/spi/devices/spi8.0/dev_enable
@@ -25,4 +20,3 @@ on moto-charger
     start vendor.batt_health
     start vendor.thermal-com
     start system_suspend
-
