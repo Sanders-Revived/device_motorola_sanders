@@ -1,13 +1,8 @@
-unix_socket_connect(hal_audio_default, perfd, perfd)
-
 allow hal_audio_default persist_audio_file:dir rw_dir_perms;
 allow hal_audio_default persist_audio_file:file create_file_perms;
 allow hal_audio_default sysfs:dir { open read };
 
-allow hal_audio_server adspd_device:chr_file rw_file_perms;
 allow hal_audio_server audio_device:chr_file rw_file_perms;
-allow hal_audio_server sysfs_adspd:dir r_dir_perms;
-allow hal_audio_server sysfs_adspd:file rw_file_perms;
 
 binder_call(hal_audio_default, hal_audio_server)
 binder_call(hal_audio_server, hal_audio_default)

@@ -15,6 +15,5 @@ genfscon sysfs /devices/soc/c176000.i2c/i2c-2/2-005b/leds/vibrator            u:
 genfscon sysfs /devices/soc/soc:mmi_pl_chg_manager/power_supply/mmi_pl_chg_manager          u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/soc/qpnp-smbcharger-17/power_supply/battery/system_temp_level u:object_r:sysfs_batteryinfo:s0
 
-genfscon sysfs /kernel/aov    u:object_r:sysfs_adspd:s0
-
 genfscon sysfs /devices/soc/soc:gpio_keys/input/input7    u:object_r:sysfs_input:s0
+genfscon sysfs /devices/platform/soc/7af8000.spi/spi_master/spi8/spi8.0 u:object_r:sysfs_fingerprint:s0
