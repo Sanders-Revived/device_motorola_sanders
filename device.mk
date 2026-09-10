@@ -269,9 +269,12 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResSanders \
+    SettingsResSanders \
+    SystemUIResSanders \
+    TelephonyResSanders
 
 # Partitions
 PRODUCT_PACKAGES += \
