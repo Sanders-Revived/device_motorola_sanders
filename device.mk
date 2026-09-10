@@ -80,7 +80,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     camera.msm8953 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
@@ -98,6 +97,7 @@ PRODUCT_COPY_FILES += \
 
 # Display / Graphics
 $(call soong_config_set_bool,libui,legacy_gralloc,true)
+$(call soong_config_set_bool,surfaceflinger,register_displayservice,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl:64 \
@@ -110,6 +110,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libtinyxml \
     libvulkan \
+    lineage.frameworks.displayservice@1.0.vendor \
     vendor.display.config@1.0.vendor \
     vendor.qti.hardware.memtrack-service
 
