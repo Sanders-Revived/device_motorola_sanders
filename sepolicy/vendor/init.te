@@ -15,6 +15,7 @@ allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
 
 allow init system_file:system module_load;
+allow init vendor_file:system module_load;
 
 allow init hal_perf_default:binder call;
 allow init sysfs_healthd:file setattr;

@@ -694,6 +694,16 @@ vendor/firmware/focaltech-biel-ft5436-06-0001-sanders.bin
 vendor/firmware/focaltech-djn-ft5436-02-0001-sanders.bin
 vendor/firmware/focaltech-toptouch-ft5436-0a-0001-sanders.bin
 
+# DTV (ISDB-T)
+product/app/DTVPlayer/DTVPlayer.apk|3f406169f5b32a7a64095af996f8140243795add
+product/app/DTVService/DTVService.apk|6524e775b94dfdc4aac282b43d90f37506942bb3
+product/etc/permissions/sku_XT1802/com.motorola.hardware.dtv.xml|61586f6ebec246762ce0f1f2d8e2e2ad2db87a81
+product/etc/permissions/sku_XT1802/mot_dtv_permissions.xml|e0eefd7aae374919549a4523d4eea76c9e8f2bd3
+vendor/lib/modules/isdbt.ko|a24576abfb23c3816a8a2f5ab97fe7cece2462a3
+
+product/lib64/libdtvhal.so|f2ac1307ed9dbe3da1b3a1da5b947da1b085b62c
+product/lib64/libdtvtuner.so|1667ff29c199f9ae9abe1d57f9a43300ab594b07
+
 # FM - from deen_sprout
 vendor/lib64/fm_helium.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libfm-hci.so

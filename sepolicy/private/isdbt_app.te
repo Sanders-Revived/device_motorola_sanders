@@ -1,0 +1,24 @@
+type isdbt_app, domain, coredomain;
+app_domain(isdbt_app)
+binder_use(isdbt_app)
+
+allow isdbt_app isdbt_device:chr_file rw_file_perms;
+
+allow isdbt_app media_rw_data_file:dir create_dir_perms;
+allow isdbt_app media_rw_data_file:file create_file_perms;
+
+allow isdbt_app isdbt_app:unix_stream_socket connectto;
+
+allow isdbt_app app_api_service:service_manager find;
+allow isdbt_app system_api_service:service_manager find;
+
+allow isdbt_app {
+    audioserver_service
+    mediametrics_service
+    mediaserver_service
+    radio_service
+}:service_manager find;
+
+get_prop(isdbt_app, default_prop)
+get_prop(isdbt_app, system_prop)
+
