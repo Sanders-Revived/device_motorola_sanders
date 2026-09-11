@@ -60,7 +60,7 @@ drm.service.enabled=true
 persist.qfp=false
 
 # LMKD/PSI
-ro.lmk.kill_heaviest_task=false
+ro.lmk.kill_heaviest_task=true
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
