@@ -71,12 +71,6 @@ on fs
     exec u:r:vendor_toolbox:s0 root audio bluetooth graphics media net_raw system vendor_rfs vendor_rfs_shared -- /vendor/bin/toybox_vendor find /mnt/vendor/persist -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
     restorecon_recursive /mnt/vendor/persist
 
-    write /proc/sys/vm/swappiness 100
-    #write /sys/kernel/boot_adsp/boot 1
-
-    #wait /dev/block/bootdevice/by-name/oem
-    #mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
-
 on late-fs
     # Start services for bootanim
     start servicemanager
@@ -228,12 +222,7 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
-on charger
-    wait /dev/block/bootdevice/by-name/system
-    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    setprop persist.sys.usb.config mass_storage
-    start qcom-post-boot
-    setprop persist.sys.usb.config mass_storage
+
 
 on charger && property:ro.boot.usbconfigfs=true
     setprop sys.usb.configfs 1
