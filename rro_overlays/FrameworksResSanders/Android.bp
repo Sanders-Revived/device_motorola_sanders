@@ -1,8 +1,6 @@
 runtime_resource_overlay {
     name: "FrameworksResSanders",
     theme: "FrameworksResSanders",
-    sdk_version: "current",
-    resource_dirs: ["res"],
     vendor: true,
     aaptflags: ["--keep-raw-values"],
 }

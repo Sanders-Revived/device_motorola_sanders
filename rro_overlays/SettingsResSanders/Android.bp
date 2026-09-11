@@ -1,7 +1,5 @@
 runtime_resource_overlay {
     name: "SettingsResSanders",
     theme: "SettingsResSanders",
-    sdk_version: "current",
-    resource_dirs: ["res"],
     vendor: true,
 }
