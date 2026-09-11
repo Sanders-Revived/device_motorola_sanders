@@ -24,4 +24,7 @@
     -->
     <integer name="config_fingerprintSensorLocation">1</integer>
 
+    <!-- Indicates whether device has a front facing fingerprint sensor (not udfps). -->
+    <bool name="config_is_front_facing_fps" translatable="false">true</bool>
+
 </resources>
