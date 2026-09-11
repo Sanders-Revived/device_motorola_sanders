@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 #ifndef VENDOR_LINEAGE_TOUCH_V1_0_KEYDISABLER_H
 #define VENDOR_LINEAGE_TOUCH_V1_0_KEYDISABLER_H
 
-#include <com/fingerprints/extension/1.0/IFingerprintNavigation.h>
 #include <vendor/lineage/touch/1.0/IKeyDisabler.h>
 
 namespace vendor {
@@ -27,8 +26,6 @@ namespace V1_0 {
 namespace implementation {
 
 using ::android::hardware::Return;
-using ::android::sp;
-using ::com::fingerprints::extension::V1_0::IFingerprintNavigation;
 
 class KeyDisabler : public IKeyDisabler {
   public:
@@ -40,7 +37,6 @@ class KeyDisabler : public IKeyDisabler {
 
   private:
     bool mHasKeyDisabler;
-    sp<IFingerprintNavigation> mFingerprintNavigation;
 };
 
 }  // namespace implementation

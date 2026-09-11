@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
+#include <unistd.h>
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/strings.h>
 
 #include "KeyDisabler.h"
+
+namespace {
+constexpr const char* kControlPath = "/sys/homebutton/enable";
+}  // anonymous namespace
 
 namespace vendor {
 namespace lineage {
@@ -27,25 +32,25 @@ namespace V1_0 {
 namespace implementation {
 
 KeyDisabler::KeyDisabler() {
-    mHasKeyDisabler = false;
-
-    mFingerprintNavigation = IFingerprintNavigation::getService();
-    if (mFingerprintNavigation != nullptr)
-        mHasKeyDisabler = true;
+    mHasKeyDisabler = !access(kControlPath, F_OK);
 }
 
 // Methods from ::vendor::lineage::touch::V1_0::IKeyDisabler follow.
 Return<bool> KeyDisabler::isEnabled() {
     if (!mHasKeyDisabler) return false;
 
-    return mFingerprintNavigation->isEnabled();
+    std::string buf;
+    if (android::base::ReadFileToString(kControlPath, &buf)) {
+        return android::base::Trim(buf) == "0";
+    }
+
+    return false;
 }
 
 Return<bool> KeyDisabler::setEnabled(bool enabled) {
     if (!mHasKeyDisabler) return false;
 
-    mFingerprintNavigation->setNavigation(!enabled);
-    return true;
+    return android::base::WriteStringToFile(enabled ? "0" : "1", kControlPath);
 }
 
 }  // namespace implementation
