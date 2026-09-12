@@ -917,7 +917,7 @@ vendor/lib64/com.qualcomm.qti.uceservice@2.0.so|59b9d9b1ae34af6c77fd4dca9edb4864
 vendor/lib64/com.qualcomm.qti.uceservice@2.1.so|3df66fe5fd93dbf51fb5e846fb1a72f7341e5108
 vendor/lib64/com.qualcomm.qti.uceservice@2.2.so|75e2e073e4de97032361811e7b2787902b043445
 vendor/lib64/com.qualcomm.qti.uceservice@2.3.so|31540a04bd3f966dcae4964dbd47aa119d31b2ed
-vendor/lib64/lib-imsSDP.so;DISABLE_CHECKELF;DISABLE_DEPS|03774afac47d61b06b77e2c7a85824951f6a9181
+vendor/lib64/lib-imsSDP.so|03774afac47d61b06b77e2c7a85824951f6a9181
 vendor/lib64/lib-imscmservice.so|fed08078453f641f76052b67c56663d3e3c16a4e
 vendor/lib64/lib-imsdpl.so|4a7eae64755f5566c09cf9c2cf65c8027cf86ebf
 vendor/lib64/lib-imsqimf.so|b9ebe0ed5688ca802886d3aaf9950ad2c94bf7e5
@@ -925,6 +925,7 @@ vendor/lib64/lib-imsrcs-v2.so|84c043dac9ad07b27407ef993d7f76c79bee275d
 vendor/lib64/lib-imsrcsbaseimpl.so|136f870dcc53fd36965037be68d3b250878c30ae
 vendor/lib64/lib-imsxml.so|7259b2dea7a1592f169cd436728c23b880fa0951
 vendor/lib64/lib-rcsconfig.so|64fdbea9d39194169dfe5c45b1d7a6da2eb2c632
+vendor/lib64/lib-rtpcommon.so|e33b65edf1a206ac39268544f38d0878004e928b
 vendor/lib64/lib-siputility.so|58ff55516bc78bfc30d72981f95142ce4b10223b
 vendor/lib64/lib-uceservice.so|1cf1ff29cc7420eceffc90ebabb053221c83e971
 vendor/lib64/vendor.qti.ims.callcapability@1.0.so|e3d011ca96c3904dd06078e0688d15fbc35ebee7
