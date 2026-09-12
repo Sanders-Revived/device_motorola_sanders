@@ -17,6 +17,7 @@
 */
 -->
 <apns version="8">
+  <!-- KDDI / povo -->
   <apn carrier="povo 2.0"
       carrier_id="2514"
       mcc="440"
@@ -54,4 +55,101 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6" />
+
+  <!-- NTT DOCOMO / ahamo -->
+  <apn carrier="DOCOMO initial attach"
+      carrier_id="850"
+      mcc="440"
+      mnc="10"
+      apn=""
+      type="ia" />
+
+  <apn carrier="DOCOMO IMS"
+      carrier_id="850"
+      mcc="440"
+      mnc="10"
+      apn="ims"
+      type="ims"
+      protocol="IPV6" />
+
+  <apn carrier="sp-mode"
+      carrier_id="850"
+      mcc="440"
+      mnc="10"
+      apn="spmode.ne.jp"
+      type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      user_visible="true" />
+
+  <!-- DOCOMO MVNOs -->
+  <apn carrier="日本通信SIM"
+      mcc="440"
+      mnc="10"
+      apn="dm.jplat.net"
+      user="jci@jci"
+      password="jci"
+      authtype="3"
+      type="default,supl"
+      protocol="IP"
+      roaming_protocol="IP"
+      user_visible="true" />
+
+  <apn carrier="HIS Mobile"
+      mcc="440"
+      mnc="10"
+      apn="dm.jplat.net"
+      user="his@his"
+      password="his"
+      authtype="3"
+      type="default,supl"
+      protocol="IP"
+      roaming_protocol="IP"
+      user_visible="true" />
+
+  <apn carrier="IIJmio (docomo)"
+      mcc="440"
+      mnc="10"
+      apn="iijmio.jp"
+      user="mio@iij"
+      password="iij"
+      authtype="3"
+      type="default,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IP"
+      user_visible="true" />
+
+  <!-- Rakuten Mobile -->
+  <apn carrier="Rakuten (rakuten.jp)"
+      carrier_id="2429"
+      mcc="440"
+      mnc="11"
+      apn="rakuten.jp"
+      type="default,supl,dun"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+      user_visible="true" />
+
+  <!-- SoftBank -->
+  <apn carrier="SoftBank 4G LTE"
+      carrier_id="1894"
+      mcc="440"
+      mnc="20"
+      apn="plus.4g"
+      user="plus"
+      password="4g"
+      authtype="2"
+      mmsc="http://mms-s"
+      mmsproxy="andmms.plusacs.ne.jp"
+      mmsport="8080"
+      type="default,ia,mms,supl,hipri"
+      user_visible="true" />
+
+  <apn carrier="SoftBank IMS"
+      carrier_id="1894"
+      mcc="440"
+      mnc="20"
+      apn="IMS"
+      type="ims"
+      protocol="IPV6" />
 </apns>

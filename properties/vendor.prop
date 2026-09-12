@@ -92,9 +92,12 @@ persist.vendor.radio.snapshot_enabled=1
 persist.vendor.radio.lte_vrte_ltd=1
 persist.vendor.radio.enable_temp_dds=true
 persist.vendor.lte.pco_supported=true
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.bar_fake_gcell=1
+persist.vendor.radio.ignore_dom_time=10
 
 # Telephony
-ro.vendor.telephony.default_network=20,20
+ro.vendor.telephony.default_network=9,9
 ro.vendor.use_data_netmgrd=true
 vendor.service.qti.ims.enabled=1
 
