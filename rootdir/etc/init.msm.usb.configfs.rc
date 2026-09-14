@@ -62,8 +62,6 @@ on init
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     symlink /config/usb_gadget/g1/configs/b.1 /config/usb_gadget/g1/os_desc/b.1
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
-    chown system system /sys/class/android_usb/android0/secure
-    chmod 0660 /sys/class/android_usb/android0/secure
 
 #  This is a good place to write these, since system props would be loaded.
 on firmware_mounts_complete
@@ -337,8 +335,6 @@ on property:sys.usb.config=diag,serial_cdev,rmnet,adb && property:sys.usb.config
     start adbd
 
 on boot
-    chown root system /sys/module/uvcvideo/parameters/quirks
-    chmod 0660 /sys/module/uvcvideo/parameters/quirks
     setprop sys.usb.configfs 1
 
 on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,rmnet,adb && property:sys.usb.configfs=1

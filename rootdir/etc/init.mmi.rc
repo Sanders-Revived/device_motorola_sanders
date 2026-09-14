@@ -90,36 +90,11 @@ on post-fs-data
     chown oem_5001 oem_5001 /sys/class/power_supply/battery/cycle_count
     chmod 0664 /sys/class/power_supply/battery/cycle_count
 
-    # Permissions for Factory Test of Charging Paths
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_auto_enable
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_ibatt
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_itrick
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_iusb
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_idc
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_usb_suspend
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_fail_clear
-    chown oem_5001 oem_5001 /sys/class/power_supply/battery/device/force_chg_usb_otg_ctl
-
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_auto_enable
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_ibatt
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_itrick
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_iusb
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_idc
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_usb_suspend
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_fail_clear
-    chown oem_5001 oem_5001 /sys/class/power_supply/mmi_battery/device/force_chg_usb_otg_ctl
-
     chown oem_5001 oem_5001 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_val
     chmod 0664 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_val
     chown oem_5001 oem_5001 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_active
     chmod 0664 /sys/kernel/debug/pmic-votable/CHG_DISABLE/force_active
 
-    chown root oem_5020 /sys/class/power_supply/usb/usb_priority
-    chmod 0660 /sys/class/power_supply/usb/usb_priority
-    chown root oem_5020 /sys/module/dwc3_msm/parameters/usb_priority
-    chmod 0660 /sys/module/dwc3_msm/parameters/usb_priority
-    chown root oem_5020 /sys/module/usbnet/parameters/force_on
-    chmod 0666 /sys/module/usbnet/parameters/force_on
 
     # Setup folder for native to transfer data to NativeDropBoxAgent
     mkdir /data/vendor/dropbox-add 0730 log diag

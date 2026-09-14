@@ -219,10 +219,7 @@ on boot
 # access permission for wlan
     chown system system /mnt/vendor/persist/WCNSS_qcom_wlan_nv.bin
 
-#USB controller configuration
-    write /sys/module/g_android/parameters/mtp_tx_req_len 131072
-    write /sys/module/g_android/parameters/mtp_rx_req_len 131072
-    write /sys/class/android_usb/android0/f_rndis_qc/rndis_transports BAM2BAM_IPA
+# USB controller configuration
     setprop vendor.usb.rndis.func.name "rndis_bam"
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet"
@@ -260,9 +257,9 @@ service wcnss-service /system/vendor/bin/wcnss_service
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config charging
     start qcom-post-boot
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config charging
 
 on charger && property:ro.boot.usbconfigfs=true
     setprop sys.usb.configfs 1

@@ -251,23 +251,6 @@ echo "mmi-usb-sh: persist usb configs = \"$usb_config\", \"$mot_usb_config\", \"
 
 phonelock_type=`getprop persist.sys.phonelock.mode`
 usb_restricted=`getprop persist.sys.usb.policylocked`
-if [ "$securehw" == "1" ] && [ "$buildtype" == "user" ] && [ "$(($cid))" != 0 ]
-then
-    if [ "$usb_restricted" == "1" ]
-    then
-        echo 1 > /sys/class/android_usb/android0/secure
-    else
-        case "$phonelock_type" in
-            "1" )
-                echo 1 > /sys/class/android_usb/android0/secure
-            ;;
-            * )
-                echo 0 > /sys/class/android_usb/android0/secure
-            ;;
-        esac
-    fi
-fi
-
 # ##DIAG# mode option
 case "$diagmode" in
     "1" )
@@ -335,8 +318,6 @@ case "$bootmode" in
                 fi
             ;;
         esac
-	# Disable Host Mode LPM for Factory mode
-	echo 1 > /sys/module/dwc3_msm/parameters/disable_host_mode_pm
     ;;
     "qcom" )
         case "$usb_config" in
@@ -359,12 +340,6 @@ case "$bootmode" in
         esac
     ;;
     * )
-        if [ "$buildtype" == "user" ] && [ "$phonelock_type" != "1" ] && [ "$usb_restricted" != "1" ]
-        then
-            echo 1 > /sys/class/android_usb/android0/secure
-            echo "Disabling enumeration until bootup!"
-        fi
-
         case "$usb_config" in
             "mtp,adb" | "mtp" | "adb")
             ;;
@@ -389,7 +364,6 @@ case "$bootmode" in
 
         adb_early=`getprop ro.boot.adb_early`
         if [ "$adb_early" == "1" ]; then
-            echo 0 > /sys/class/android_usb/android0/secure
             echo "Enabling enumeration after bootup, count =  $count !"
             new_persist_usb_config=`getprop persist.vendor.usb.config`
             if [[ "$new_persist_usb_config" != *adb* ]]; then
@@ -417,7 +391,6 @@ case "$bootmode" in
                 fi
                 bootcomplete=`getprop vendor.boot_completed`
             done
-            echo 0 > /sys/class/android_usb/android0/secure
             echo "Enabling enumeration after bootup, count =  $count !"
             exit 0
         fi
