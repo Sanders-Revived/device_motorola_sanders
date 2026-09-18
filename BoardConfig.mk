@@ -102,8 +102,8 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
-TARGET_KERNEL_CONFIG := sanders_defconfig
-TARGET_KERNEL_RECOVERY_CONFIG := sanders_recovery_defconfig
+TARGET_KERNEL_CONFIG := vendor/sanders-perf_defconfig
+TARGET_KERNEL_RECOVERY_CONFIG := vendor/sanders-recovery_defconfig
 TARGET_KERNEL_VERSION := 4.19
 
 # Keymaster
