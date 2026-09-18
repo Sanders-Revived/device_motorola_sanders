@@ -95,7 +95,7 @@ BOARD_RAMDISK_OFFSET := 0x1000000
 BOARD_RAMDISK_USE_XZ := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.usbconfigfs=true
-BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.bootdevice=7824900.sdhci androidboot.boot_devices=soc/7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.bootdevice=7824900.sdhci androidboot.boot_devices=soc/7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
