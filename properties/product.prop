@@ -35,6 +35,9 @@ bluetooth.profile.sap.server.enabled?=true
 bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 
+# BPF
+ro.bpf.kver_override=5.10.239
+
 # Charger
 ro.charger.enable_suspend=true
 
