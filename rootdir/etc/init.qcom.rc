@@ -515,7 +515,7 @@ service vendor.msm_irqbal_lb /vendor/bin/msm_irqbalance -f /system/vendor/etc/ms
     disabled
 
 on charger
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config charging
     start qcom-post-boot
 
 on property:vendor.display.lcd_density=*
