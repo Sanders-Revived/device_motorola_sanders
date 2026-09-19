@@ -19,9 +19,11 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/sanders',
     'hardware/motorola',
-    'hardware/qcom-caf/msm8996',
+    'hardware/qcom-caf/msm8953',
     'hardware/qcom-caf/wlan',
     'vendor/qcom/opensource/dataservices',
+    'vendor/qcom/opensource/commonsys/display',
+    'vendor/qcom/opensource/display',
 ]
 
 blob_fixups: blob_fixups_user_type = {
