@@ -28,6 +28,8 @@ PRODUCT_COPY_FILES += \
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+$(call inherit-product-if-exists, hardware/mithorium/mithorium_qcom_hals.mk)
+
 # AB Updater
 AB_OTA_UPDATER := false
 
@@ -77,21 +79,13 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Display
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.memtrack-service \
     gralloc.msm8953 \
-    hwcomposer.qcom \
-    libdisplayconfig \
-    libqdMetaData.system \
-    libvulkan \
-    libtinyxml
-
-$(call soong_config_set,qtidisplay,display_config_variable_info_has_pixel_formats,true)
+    hwcomposer.msm8953 \
+    vendor.qti.hardware.memtrack-service
 
 # DRM
 PRODUCT_PACKAGES += \

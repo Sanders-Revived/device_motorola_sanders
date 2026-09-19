@@ -83,11 +83,9 @@
         <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32+64">passthrough</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IMapper</name>
-            <instance>default</instance>
-        </interface>
+        <fqname>@2.1::IMapper/default</fqname>
+        <fqname>@3.0::IMapper/default</fqname>
+        <fqname>@4.0::IMapper/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
@@ -230,7 +228,7 @@
     <hal format="hidl">
         <name>vendor.display.config</name>
         <transport>hwbinder</transport>
-        <version>1.9</version>
+        <version>2.0</version>
         <interface>
             <name>IDisplayConfig</name>
             <instance>default</instance>
@@ -329,15 +327,6 @@
         <interface>
             <name>IMwqemAdapter</name>
             <instance>MwqemAdapter</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qdutils_disp</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQdutilsDisp</name>
-            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl">
