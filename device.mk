@@ -354,6 +354,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libgralloc1_shim \
     libgui_shim_vendor \
     libmemset_shim
 
