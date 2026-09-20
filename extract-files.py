@@ -49,6 +49,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/libmmcamera2_sensor_modules.so': blob_fixup()
         .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
 
+    'vendor/lib/libgralloc1.so': blob_fixup()
+        .replace_needed('libgrallocutils.so', 'libgralloc1_shim.so'),
+
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so'),
 
