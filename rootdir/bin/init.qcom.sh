@@ -438,23 +438,40 @@ esac
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #
+# ver_info.txt lives in verinfo/ on newer modem firmware, or as
+# Ver_Info.txt in image/ on legacy modem firmware (e.g. LA.3.0).
+if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then
+    VERINFO=/vendor/firmware_mnt/verinfo/ver_info.txt
+elif [ -f /vendor/firmware_mnt/image/Ver_Info.txt ]; then
+    VERINFO=/vendor/firmware_mnt/image/Ver_Info.txt
+fi
+
 if [ -f /data/vendor/modem_config/ver_info.txt ]; then
     prev_version_info=`cat /data/vendor/modem_config/ver_info.txt`
 else
     prev_version_info=""
 fi
 
-cur_version_info=`cat /vendor/firmware_mnt/verinfo/ver_info.txt`
-if [ ! -f /vendor/firmware_mnt/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_version_info" ]; then
+if [ -n "$VERINFO" ]; then
+    cur_version_info=`cat $VERINFO`
+else
+    cur_version_info=""
+fi
+
+# Only refresh modem config when firmware provides it; never wipe
+# /data/vendor/modem_config if there is nothing to copy from.
+if [ -n "$VERINFO" -a -d /vendor/firmware_mnt/image/modem_pr ]; then
+if [ "$prev_version_info" != "$cur_version_info" ]; then
     # add W for group recursively before delete
     chmod g+w -R /data/vendor/modem_config/*
     rm -rf /data/vendor/modem_config/*
     # preserve the read only mode for all subdir and files
     cp --preserve=m -dr /vendor/firmware_mnt/image/modem_pr/mcfg/configs/* /data/vendor/modem_config
-    cp --preserve=m -d /vendor/firmware_mnt/verinfo/ver_info.txt /data/vendor/modem_config/
+    cp --preserve=m -d $VERINFO /data/vendor/modem_config/ver_info.txt
     cp --preserve=m -d /vendor/firmware_mnt/image/modem_pr/mbn_ota.txt /data/vendor/modem_config/
     # the group must be root, otherwise this script could not add "W" for group recursively
     chown -hR radio.root /data/vendor/modem_config/*
+fi
 fi
 chmod g-w /data/vendor/modem_config
 setprop ro.vendor.ril.mbn_copy_completed 1

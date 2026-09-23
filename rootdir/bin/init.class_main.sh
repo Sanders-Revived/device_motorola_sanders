@@ -46,13 +46,21 @@ esac
 case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
 
-    # For older modem packages launch ril-daemon.
+    # ver_info.txt lives in verinfo/ on newer modem firmware, or as
+    # Ver_Info.txt in image/ on legacy modem firmware (e.g. LA.3.0).
     if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then
-        modem=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+        VERINFO=/vendor/firmware_mnt/verinfo/ver_info.txt
+    elif [ -f /vendor/firmware_mnt/image/Ver_Info.txt ]; then
+        VERINFO=/vendor/firmware_mnt/image/Ver_Info.txt
+    fi
+
+    # For older modem packages launch ril-daemon.
+    if [ -n "$VERINFO" ]; then
+        modem=`cat $VERINFO |
                 sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                 sed 's/.*MPSS.\(.*\)/\1/g' | cut -d \. -f 1`
         if [ "$modem" = "AT" ]; then
-            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+            version=`cat $VERINFO |
                     sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                     sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1`
             if [ ! -z $version ]; then
@@ -61,7 +69,7 @@ case "$baseband" in
                 fi
             fi
         elif [ "$modem" = "TA" ]; then
-            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+            version=`cat $VERINFO |
                     sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                     sed 's/.*TA.\(.*\)/\1/g' | cut -d \- -f 1`
             if [ ! -z $version ]; then
@@ -70,7 +78,7 @@ case "$baseband" in
                 fi
             fi
         elif [ "$modem" = "JO" ]; then
-            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+            version=`cat $VERINFO |
                     sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                     sed 's/.*JO.\(.*\)/\1/g' | cut -d \- -f 1`
             if [ ! -z $version ]; then
