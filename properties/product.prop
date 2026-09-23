@@ -58,3 +58,7 @@ ro.surface_flinger.use_color_management=true
 
 # Radio
 ro.telephony.block_binder_thread_on_incoming_calls=false
+rild.libargs=-d /dev/smd0
+persist.data.netmgrd.qos.enable=true
+persist.radio.DROPSETENABLE=1
+persist.rcs.supported=1
