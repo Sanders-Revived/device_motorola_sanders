@@ -46,6 +46,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
 
@@ -77,21 +78,18 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Display
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.memtrack-service \
     gralloc.msm8953 \
     hwcomposer.qcom \
     libdisplayconfig \
-    libqdMetaData.system \
+    libqdMetaData \
+    libtinyxml \
     libvulkan \
-    libtinyxml
-
-$(call soong_config_set,qtidisplay,display_config_variable_info_has_pixel_formats,true)
+    vendor.display.config@1.0.vendor \
+    vendor.qti.hardware.memtrack-service
 
 # DRM
 PRODUCT_PACKAGES += \
