@@ -1,0 +1,5 @@
+# Allow binder communication with the FPC fingerprint HAL
+binder_call(hal_lineage_touch_default, hal_fingerprint)
+
+# Allow the Touch HAL to find the FPC navigation extension service
+allow hal_lineage_touch_default fpc_extension_service:hwservice_manager find;
