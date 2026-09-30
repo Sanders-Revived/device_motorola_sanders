@@ -44,7 +44,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
 
     'vendor/lib/hw/camera.msm8953.so': blob_fixup()
-        .binary_regex_replace(b'service.bootanim.exit', b'service.bootanim.hold'),
+        .binary_regex_replace(b'service.bootanim.exit', b'service.bootanim.hold')
+        .binary_regex_replace(b'\x62\x6b\x03\x92', b'\xe2\x69\x03\x92')
+        .binary_regex_replace(b'\x41\x6b\x79\x61', b'\xc1\x69\x79\x61'),
 
     'vendor/lib/libmmcamera2_sensor_modules.so': blob_fixup()
         .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
