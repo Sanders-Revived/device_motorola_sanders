@@ -1039,11 +1039,11 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0
 vendor/etc/init/init_thermal-engine.rc
 -vendor/lib64/libthermalclient.so;DISABLE_CHECKELF;DISABLE_DEPS
 
-# Time services - from LA.UM.9.6.2.r1-04200-89xx.0
--vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
-vendor/bin/time_daemon|737bbb156a23d114aafd4b4bb9adc38e8d965391
+# Time services - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
+vendor/app/TimeService/TimeService.apk|258cf62182f96b07f04d053b8245f99ed2176f5d
+vendor/bin/time_daemon|3fdbe5c7aeee2fc7e8b699bedd7309f768aae5c7
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
-vendor/lib64/libtime_genoff.so|3f57de1aeb7aa113a0a579cebed85ab4405b9b49
+vendor/lib64/libtime_genoff.so|5f9b4a016db1f2d96a6b8281b6cb88d87e4cdd63
 
 # Wi-Fi - Firmware - from deen_sprout
 vendor/etc/motorola/mdmctbk/ctbk_cfg.xml
