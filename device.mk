@@ -112,10 +112,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 # Fwk-detect
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti.vendor \
-    CneApp.libvndfwk_detect_jni.qti_symlink
+    libvndfwk_detect_jni.qti.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -160,21 +157,37 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# IMS
+# Telephony
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
     ims-ext-common \
-    ims_ext_common.xml
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti-telephony-hidl-wrapper-prd \
+    qti_telephony_hidl_wrapper.xml \
+    qti_telephony_hidl_wrapper_prd.xml \
+    qti-telephony-utils \
+    qti-telephony-utils-prd \
+    qti_telephony_utils.xml \
+    qti_telephony_utils_prd.xml \
+    telephony-ext \
+    sanders-telephony-stub
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext \
+    sanders-telephony-stub
 
 PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager
+    CarrierConfigOverlay
 
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom.ramdisk \
     init.sanders.rc \
-    init.class_main.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
@@ -245,7 +258,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
     com.android.nfc_extras \
-    SecureElement \
     Tag
 
 PRODUCT_COPY_FILES += \
@@ -305,37 +317,10 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
-# QMI
-PRODUCT_PACKAGES += \
-    libjson
-
 # Qualcomm
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
-
-# RFS MSM MPSS symlinks
-PRODUCT_PACKAGES += \
-    rfs_msm_mpss_readonly_vendor_fsg_symlink
-
-# Radio
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    libprotobuf-cpp-full
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    extphonelib \
-    extphonelib.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
