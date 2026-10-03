@@ -5,3 +5,9 @@ vendor_internal_prop(vendor_aov_prop)
 vendor_internal_prop(vendor_wifi_prop)
 vendor_public_prop(vendor_fp_prop)
 vendor_internal_prop(moto_sensor_prop)
+
+# MWQEM
+vendor_restricted_prop(vendor_mwqem_prop)
+
+# SLM
+vendor_restricted_prop(vendor_slm_prop)
