@@ -17,4 +17,4 @@ vndbinder_use(mm-qcamerad);
 get_prop(mm-qcamerad, moto_boot_prop);
 
 allow mm-qcamerad vendor_camera_data_file:file { create };
-allow mm-qcamerad camera_prop:file { getattr open read };
+get_prop(mm-qcamerad, camera_prop)
