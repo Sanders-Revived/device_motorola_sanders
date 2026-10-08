@@ -52,9 +52,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/mot_imx258_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_bear_chromatix.xml \
-    $(LOCAL_PATH)/configs/camera/mot_imx258_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_mono_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_s5k3l8_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_bear_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_s5k3l8_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_mono_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_mot_sanders_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8953_mot_sanders_camera.xml \
