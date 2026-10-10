@@ -261,6 +261,7 @@ typedef struct{
     uint32_t sensor_mount_angle;                            /* sensor mount angle */
 
     float focal_length;                                     /* focal length */
+    float f_number;                                         /* Motorola lens aperture */
     float hor_view_angle;                                   /* horizontal view angle */
     float ver_view_angle;                                   /* vertical view angle */
 
@@ -451,6 +452,10 @@ typedef struct{
     size_t scale_picture_sizes_cnt;
     cam_dimension_t scale_picture_sizes[MAX_SCALE_SIZES_CNT];
 
+    /* Motorola extensions, shared with the proprietary camera daemon. */
+    int32_t recommended_multishot_mode;
+    char sensor_name[32];
+
     uint8_t flash_available;
 
     cam_rational_type_t base_gain_factor;    /* sensor base gain factor */
@@ -559,6 +564,33 @@ typedef struct{
     cam_sub_format_type_t sub_fmt[CAM_FORMAT_SUBTYPE_MAX];
 } cam_capability_t;
 
+/* The Sanders proprietary daemon and libmmcamera2_mct.so use this 32-bit
+ * capability ABI. Keep the offsets stable when updating the shared headers. */
+#if UINTPTR_MAX == UINT32_MAX
+#define CAM_CAPABILITY_OFFSET_CHECK(field, offset) \
+    typedef char cam_capability_##field##_abi_check[ \
+        __builtin_offsetof(cam_capability_t, field) == (offset) ? 1 : -1]
+typedef char cam_capability_size_abi_check[
+    sizeof(cam_capability_t) == 0x54e8 ? 1 : -1];
+typedef char cam_capability_iso_mode_abi_check[
+    CAM_ISO_MODE_50 == 2 && CAM_ISO_MODE_100 == 3 && CAM_ISO_MODE_MAX == 9 ? 1 : -1];
+CAM_CAPABILITY_OFFSET_CHECK(picture_sizes_tbl_cnt, 0x05c8);
+CAM_CAPABILITY_OFFSET_CHECK(picture_sizes_tbl, 0x05cc);
+CAM_CAPABILITY_OFFSET_CHECK(picture_min_duration, 0x0710);
+CAM_CAPABILITY_OFFSET_CHECK(preview_sizes_tbl_cnt, 0x0868);
+CAM_CAPABILITY_OFFSET_CHECK(raw_dim, 0x2ae8);
+CAM_CAPABILITY_OFFSET_CHECK(raw_min_duration, 0x2e20);
+CAM_CAPABILITY_OFFSET_CHECK(active_array_size, 0x3418);
+CAM_CAPABILITY_OFFSET_CHECK(white_level, 0x342c);
+CAM_CAPABILITY_OFFSET_CHECK(sensor_name, 0x3748);
+CAM_CAPABILITY_OFFSET_CHECK(flash_available, 0x3768);
+CAM_CAPABILITY_OFFSET_CHECK(opaque_raw_fmt, 0x3dcc);
+CAM_CAPABILITY_OFFSET_CHECK(analysis_info, 0x3df8);
+CAM_CAPABILITY_OFFSET_CHECK(max_pixel_bandwidth, 0x3f38);
+#undef CAM_CAPABILITY_OFFSET_CHECK
+#endif
+
+
 typedef enum {
     CAM_STREAM_PARAM_TYPE_DO_REPROCESS = CAM_INTF_PARM_DO_REPROCESS,
     CAM_STREAM_PARAM_TYPE_SET_BUNDLE_INFO = CAM_INTF_PARM_SET_BUNDLE,
@@ -585,6 +617,7 @@ typedef struct {
     /* opaque metadata required for reprocessing */
     int32_t private_data[MAX_METADATA_PRIVATE_PAYLOAD_SIZE_IN_BYTES];
     cam_rect_t crop_rect;
+    uint32_t motorola_reserved;
 } cam_reprocess_param;
 
 typedef struct {
@@ -601,7 +634,7 @@ typedef struct {
 } cam_stream_img_prop_t;
 
 typedef struct {
-    uint8_t enableStream; /*0 � stop and 1-start */
+    uint8_t enableStream; /*0 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ stop and 1-start */
 } cam_request_frames;
 
 typedef struct {
@@ -788,6 +821,10 @@ typedef struct {
     INCLUDE(CAM_INTF_META_AUTOFOCUS_DATA,               cam_auto_focus_data_t,          1);
     INCLUDE(CAM_INTF_META_CDS_DATA,                     cam_cds_data_t,                 1);
     INCLUDE(CAM_INTF_PARM_UPDATE_DEBUG_LEVEL,           uint32_t,                       1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_266,                uint8_t,                        1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_267,                uint32_t,                       1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_269,                uint64_t,                       3);
+    INCLUDE(CAM_INTF_META_MOTOROLA_270,                uint64_t,                       3);
 
     /* Specific to HAl1 */
     INCLUDE(CAM_INTF_META_CROP_DATA,                    cam_crop_data_t,                1);
@@ -812,6 +849,7 @@ typedef struct {
     INCLUDE(CAM_INTF_META_FRAME_DROPPED,                cam_stream_ID_t,             1);
     INCLUDE(CAM_INTF_META_FRAME_NUMBER,                 uint32_t,                    1);
     INCLUDE(CAM_INTF_META_URGENT_FRAME_NUMBER,          uint32_t,                    1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_113,                uint32_t,                    1);
     INCLUDE(CAM_INTF_META_COLOR_CORRECT_MODE,           uint32_t,                    1);
     INCLUDE(CAM_INTF_META_COLOR_CORRECT_TRANSFORM,      cam_color_correct_matrix_t,  1);
     INCLUDE(CAM_INTF_META_COLOR_CORRECT_GAINS,          cam_color_correct_gains_t,   1);
@@ -849,6 +887,7 @@ typedef struct {
     INCLUDE(CAM_INTF_META_NOISE_REDUCTION_STRENGTH,     uint32_t,                    1);
     INCLUDE(CAM_INTF_META_SCALER_CROP_REGION,           cam_crop_region_t,           1);
     INCLUDE(CAM_INTF_META_SCENE_FLICKER,                uint32_t,                    1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_145,                uint32_t,                    1);
     INCLUDE(CAM_INTF_META_SENSOR_EXPOSURE_TIME,         int64_t,                     1);
     INCLUDE(CAM_INTF_META_SENSOR_FRAME_DURATION,        int64_t,                     1);
     INCLUDE(CAM_INTF_META_SENSOR_SENSITIVITY,           int32_t,                     1);
@@ -961,7 +1000,9 @@ typedef struct {
 
 
     /* HAL3 specific */
-    INCLUDE(CAM_INTF_META_STREAM_INFO,                  cam_stream_size_info_t,      1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_102,                uint32_t,                 1);
+    INCLUDE(CAM_INTF_META_MOTOROLA_182,                uint8_t,                  1);
+    INCLUDE(CAM_INTF_META_STREAM_INFO,                 cam_stream_size_info_t,   1);
     INCLUDE(CAM_INTF_META_AEC_MODE,                     uint32_t,                    1);
     INCLUDE(CAM_INTF_META_AEC_PRECAPTURE_TRIGGER,       cam_trigger_t,               1);
     INCLUDE(CAM_INTF_META_AF_TRIGGER,                   cam_trigger_t,               1);
@@ -1013,6 +1054,7 @@ typedef struct {
     INCLUDE(CAM_INTF_PARM_JPEG_ENCODE_CROP,             cam_stream_crop_info_t,      1);
     INCLUDE(CAM_INTF_PARM_JPEG_SCALE_DIMENSION,         cam_dimension_t,             1);
     INCLUDE(CAM_INTF_META_FOCUS_DEPTH_INFO,             uint8_t,                     1);
+    uint32_t motorola_metadata_tail[4];
 } metadata_data_t;
 
 /* Update clear_metadata_buffer() function when a new is_xxx_valid is added to
@@ -1089,5 +1131,7 @@ static inline void clear_metadata_buffer(metadata_buffer_t *meta)
 #ifdef  __cplusplus
 }
 #endif
+
+#include "cam_sanders_abi.h"
 
 #endif /* __QCAMERA_INTF_H__ */

@@ -39,6 +39,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/motorola \
     vendor/qcom/opensource/usb/etc
 
+# ANT+ interface required by com.dsi.ant@1.0-impl and libbt-hidlclient
+PRODUCT_PACKAGES += \
+    com.dsi.ant@1.0.vendor
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
@@ -76,6 +80,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.msm8953 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
@@ -379,9 +384,9 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcamera_graphicbuffer_shim \
     libgui_shim_vendor \
-    libmemset_shim \
-    libmmcamera_ppeiscore_shim
+    libmemset_shim
 
 # Thermal
 PRODUCT_PACKAGES += \

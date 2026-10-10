@@ -3042,8 +3042,8 @@ void QCamera3HardwareInterface::handleMetadataWithLock(
                     j != i->buffers.end(); j++) {
                 QCamera3ProcessingChannel *channel = (QCamera3ProcessingChannel *)j->stream->priv;
                 uint32_t streamID = channel->getStreamID(channel->getStreamTypeMask());
-                for (uint32_t k = 0; k < p_cam_frame_drop->num_streams; k++) {
-                    if (streamID == p_cam_frame_drop->streamID[k]) {
+                for (uint32_t k = 0; k < p_cam_frame_drop->num_streams && k < MAX_NUM_STREAMS; k++) {
+                    if (streamID == p_cam_frame_drop->stream_request[k].streamID) {
                         // Send Error notify to frameworks with CAMERA3_MSG_ERROR_BUFFER
                         LOGE("Start of reporting error frame#=%u, streamID=%u",
                                  i->frame_number, streamID);
@@ -3977,7 +3977,7 @@ no_error:
     }
 
     uint32_t frameNumber = request->frame_number;
-    cam_stream_ID_t streamID;
+    cam_stream_ID_t streamID = {};
 
     if (mFlushPerf) {
         //we cannot accept any requests during flush
@@ -4006,6 +4006,9 @@ no_error:
                                     frameNumber);
     // Acquire all request buffers first
     streamID.num_streams = 0;
+    for (auto &entry : streamID.stream_request) {
+        entry.buf_index = -1;
+    }
     int blob_request = 0;
     uint32_t snapshotStreamId = 0;
     for (size_t i = 0; i < request->num_output_buffers; i++) {
@@ -4033,7 +4036,12 @@ no_error:
            }
         }
 
-        streamID.streamID[streamID.num_streams] =
+        if (streamID.num_streams == MAX_NUM_STREAMS) {
+            LOGE("Too many requested streams for the Motorola camera ABI");
+            pthread_mutex_unlock(&mMutex);
+            return BAD_VALUE;
+        }
+        streamID.stream_request[streamID.num_streams].streamID =
             channel->getStreamID(channel->getStreamTypeMask());
         streamID.num_streams++;
 
@@ -4047,7 +4055,12 @@ no_error:
     }
     if (blob_request && mRawDumpChannel) {
         LOGD("Trigger Raw based on blob request if Raw dump is enabled");
-        streamID.streamID[streamID.num_streams] =
+        if (streamID.num_streams == MAX_NUM_STREAMS) {
+            LOGE("Too many requested streams for the Motorola camera ABI");
+            pthread_mutex_unlock(&mMutex);
+            return BAD_VALUE;
+        }
+        streamID.stream_request[streamID.num_streams].streamID =
             mRawDumpChannel->getStreamID(mRawDumpChannel->getStreamTypeMask());
         streamID.num_streams++;
     }
@@ -4294,6 +4307,16 @@ no_error:
                 return rc;
             }
         }
+        if (!request->input_buffer && !mBatchSize) {
+            const uint32_t serverId = channel->getStreamID(channel->getStreamTypeMask());
+            for (uint32_t j = 0; j < streamID.num_streams; ++j) {
+                if (streamID.stream_request[j].streamID == serverId) {
+                    const int32_t index = channel->getRequestedBufferIndex(frameNumber);
+                    streamID.stream_request[j].buf_index = index >= 0 ? index : -1;
+                    break;
+                }
+            }
+        }
         pendingBufferIter++;
     }
 
@@ -4318,6 +4341,12 @@ no_error:
             LOGD("set_parms  batchSz: %d IsVidBufReq: %d vidBufTobeQd: %d ",
                      mBatchSize, isVidBufRequested,
                     mToBeQueuedVidBufs);
+            /* Buffer indices are known only after channel->request() queues them.
+             * Batch requests use the stock -1 sentinel instead of individual indices. */
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_META_STREAM_ID, streamID)) {
+                pthread_mutex_unlock(&mMutex);
+                return BAD_VALUE;
+            }
             rc = mCameraHandle->ops->set_parms(mCameraHandle->camera_handle,
                     mParameters);
             if (rc < 0) {
@@ -6304,6 +6333,7 @@ void QCamera3HardwareInterface::convertFromRegions(cam_area_t &roi,
     roi.rect.top = y_min;
     roi.rect.width = x_max - x_min;
     roi.rect.height = y_max - y_min;
+    roi.rect.motorola_reserved = 0;
 }
 
 /*===========================================================================
@@ -8055,6 +8085,9 @@ int32_t QCamera3HardwareInterface::getSensorSensitivity(int32_t iso_mode)
     int32_t sensitivity;
 
     switch (iso_mode) {
+    case CAM_ISO_MODE_50:
+        sensitivity = 50;
+        break;
     case CAM_ISO_MODE_100:
         sensitivity = 100;
         break;
@@ -9647,7 +9680,7 @@ int QCamera3HardwareInterface::translateToHalMetadata
     }
 
     if (frame_settings.exists(ANDROID_CONTROL_AE_REGIONS)) {
-        cam_area_t roi;
+        cam_area_t roi = {};
         bool reset = true;
         convertFromRegions(roi, request->settings, ANDROID_CONTROL_AE_REGIONS);
 
@@ -9664,7 +9697,7 @@ int QCamera3HardwareInterface::translateToHalMetadata
     }
 
     if (frame_settings.exists(ANDROID_CONTROL_AF_REGIONS)) {
-        cam_area_t roi;
+        cam_area_t roi = {};
         bool reset = true;
         convertFromRegions(roi, request->settings, ANDROID_CONTROL_AF_REGIONS);
 
@@ -9697,7 +9730,7 @@ int QCamera3HardwareInterface::translateToHalMetadata
     // TNR
     if (frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_ENABLE) &&
         frame_settings.exists(QCAMERA3_TEMPORAL_DENOISE_PROCESS_TYPE)) {
-        cam_denoise_param_t tnr;
+        cam_denoise_param_t tnr = {};
         tnr.denoise_enable = frame_settings.find(QCAMERA3_TEMPORAL_DENOISE_ENABLE).data.u8[0];
         tnr.process_plates =
             (cam_denoise_process_type_t)frame_settings.find(

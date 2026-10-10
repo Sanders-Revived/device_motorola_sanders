@@ -15,7 +15,7 @@ cc_library_shared {
         "-Wno-implicit-function-declaration",
     ],
     include_dirs: [
-        "device/xiaomi/mido/camera/QCamera2/stack/common",
+        "device/motorola/sanders/camera/QCamera2/stack/common",
         "system/media/camera/include",
     ],
     local_include_dirs: ["inc"],

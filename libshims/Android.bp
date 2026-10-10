@@ -5,11 +5,10 @@
 //
 
 cc_library_shared {
-    name: "libmmcamera_ppeiscore_shim",
+    name: "libcamera_graphicbuffer_shim",
     vendor: true,
     compile_multilib: "32",
-    srcs: ["libmmcamera_ppeiscore_shim.cpp"],
-    shared_libs: [
-        "libui",
-    ],
+    srcs: ["camera_graphicbuffer_shim.cpp"],
+    shared_libs: ["libui", "libutils"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
 }
