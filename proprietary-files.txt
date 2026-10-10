@@ -535,6 +535,7 @@ vendor/lib64/qtimutex.so|f61dff26927367a34b141fd20acb2c9155cf2265
 system_ext/lib64/libdiag_system.so|3bb25441d9036534ddbd4e6a30bf8de99d1a0d92
 system_ext/lib64/vendor.qti.diaghal@1.0.so|4cecf6db124db9bfab5ea7821d9a76c1018db575
 vendor/bin/irsc_util|6cc3acb110bb90949631e59e06ed00f2d9d2ae3c
+vendor/lib/libdiag.so|880a60ae1c104bff1dbe0abe55e515547625a2dc
 vendor/lib64/libdiag.so|251b4b7edff74627b5c349b382a3fd292a87f352
 
 # QMI (shared dependencies) - LA.UM.10.6.2.r1-02500-89xx.0
