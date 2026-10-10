@@ -1,3 +1,7 @@
+# ANT+ interface required by com.dsi.ant@1.0-impl and libbt-hidlclient
+PRODUCT_PACKAGES += \
+    com.dsi.ant@1.0.vendor
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.msm8953 \
@@ -337,6 +341,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcamera_graphicbuffer_shim \
     libgralloc1_shim \
     libgui_shim_vendor \
     libmemset_shim

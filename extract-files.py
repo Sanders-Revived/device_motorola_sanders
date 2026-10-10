@@ -57,19 +57,24 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libgrallocutils.so', 'libgralloc1_shim.so'),
 
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
-        .replace_needed('libgui.so', 'libgui_shim_vendor.so'),
+        .replace_needed('libgui.so', 'libgui_shim_vendor.so')
+        .add_needed('libcamera_graphicbuffer_shim.so')
+        .binary_regex_replace(b'(_ZNK?7android13)GraphicBuffer', rb'\1SandersBuffer'),
 
     'vendor/lib/libmmcamera2_stats_modules.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so')
         .binary_regex_replace(b'\x60\xf9\x5f\x07', b'\x60\xf9\x4f\x07'),
 
-    (
-        'vendor/lib/libmmcamera_vstab_module.so',
-        'vendor/lib/libmmcamera_ppeiscore.so',
-    ): blob_fixup()
+    'vendor/lib/libmmcamera_vstab_module.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so'),
+
+    'vendor/lib/libmmcamera_ppeiscore.so': blob_fixup()
+        .replace_needed('libgui.so', 'libgui_shim_vendor.so')
+        .remove_needed('libandroid.so')
+        .add_needed('libcamera_graphicbuffer_shim.so')
+        .binary_regex_replace(b'(_ZNK?7android13)GraphicBuffer', rb'\1SandersBuffer'),
 
     (
         'vendor/lib/libchromaflash.so',
