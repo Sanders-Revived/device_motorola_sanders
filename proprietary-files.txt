@@ -32,6 +32,14 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
 
+# Audio - 32-bit ACDB closure required by audio.primary.msm8953.so
+# Hashes identify the tested compatible donor set; source the blobs from an authorized image.
+vendor/lib/libacdb-fts.so|010d1cc4e07ce0e6ca489bfb310d00f3112e9ff9
+vendor/lib/libacdbloader.so|ca55798714f6c877ee499e4b676ab0d0ec62112d
+vendor/lib/libacdbrtac.so|bfebd31e1ae1ad69bdb0f852cf769cd0df0fa89d
+vendor/lib/libadiertac.so|e1e2f8370431717ede77b55b412bdba9f8793c97
+vendor/lib/libaudcal.so|4dff962fe34f6e8fcb53c8248ec72229212e546d
+
 # Bluetooth - from FP3-REL-6.A.039.7-gms-44ba459b-user
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
