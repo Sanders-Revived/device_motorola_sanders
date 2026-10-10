@@ -117,7 +117,7 @@
 #define MAX_INFLIGHT_HFR_REQUESTS (48)
 #define MIN_INFLIGHT_HFR_REQUESTS (40)
 
-#define QCAMERA_DUMP_FRM_LOCATION "/data/vendor/qcam/"
+#define QCAMERA_DUMP_FRM_LOCATION "/data/vendor/camera/"
 #define QCAMERA_MAX_FILEPATH_LENGTH 64
 
 #define LIKELY(x)       __builtin_expect((x), true)
@@ -1476,9 +1476,8 @@ typedef struct {
 typedef struct {
   cam_auto_scene_t      detected_scene;
   uint8_t               max_n_scenes;
-//  xiaomi added 48 custom auto scenes or some other field with total size of 576 bytes
-  cam_asd_scene_info_t  scene_info[S_MAX+48];
-//  volatile char         xiaomi_reserved1[576];
+  /* This layout is shared with the Motorola camera vendor modules. */
+  cam_asd_scene_info_t  scene_info[S_MAX];
 } cam_asd_decision_t;
 
 

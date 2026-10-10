@@ -17,4 +17,6 @@ vndbinder_use(mm-qcamerad);
 get_prop(mm-qcamerad, moto_boot_prop);
 
 allow mm-qcamerad vendor_camera_data_file:file { create };
+allow mm-qcamerad vendor_camera_data_file:dir { create_dir_perms };
+allow mm-qcamerad vendor_camera_data_file:sock_file { create unlink write };
 get_prop(mm-qcamerad, camera_prop)

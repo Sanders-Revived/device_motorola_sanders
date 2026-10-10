@@ -97,7 +97,6 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor|d9f1aa7f93b92
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # Camera - from sanders_retail
-vendor/lib/hw/camera.msm8953.so
 vendor/lib/lib_mot_app6_metadata.so
 vendor/lib/lib_mot_led_calibration.so
 vendor/lib/lib_motsensorlistener.so
@@ -108,9 +107,7 @@ vendor/lib/libgralloc1.so;DISABLE_CHECKELF
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
-vendor/lib/libmm-qcamera.so
 vendor/lib/libmmjpeg.so
-vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
 vendor/lib/libmot_afd.so
@@ -118,14 +115,11 @@ vendor/lib/libmot_lux_standardization.so
 vendor/lib/libmotimager_utils.so
 vendor/lib/libmotocalibration.so
 vendor/lib/liboptizoom.so
-vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libremosaic_daemon.so
 vendor/lib/libseemore.so
-vendor/lib/libts_detected_face_hal.so
-vendor/lib/libts_face_beautify_hal.so
 vendor/lib/libubifocus.so
 vendor/lib/libvideoutils.so
 
@@ -237,7 +231,6 @@ vendor/lib/libmmcamera_gt24c64_bear_eeprom.so
 vendor/lib/libmmcamera_gt24c64_mono_eeprom.so
 vendor/lib/libmmcamera_hdr_gb_lib.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib/libmmcamera_imglib.so
-vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_isp_abf40.so
 vendor/lib/libmmcamera_isp_bcc40.so
 vendor/lib/libmmcamera_isp_be_stats44.so
