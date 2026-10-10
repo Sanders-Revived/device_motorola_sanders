@@ -884,6 +884,13 @@ void QCamera3YUVChannel::putStreamBufs()
     mOfflinePpInfoList.clear();
 }
 
+int32_t QCamera3ProcessingChannel::getRequestedBufferIndex(uint32_t frameNumber)
+{
+    /* YUV postprocessing may queue a heap buffer instead of the framework buffer. */
+    int32_t index = mMemory.getHeapBufferIndex(frameNumber);
+    return index >= 0 ? index : mMemory.getGrallocBufferIndex(frameNumber);
+}
+
 /*===========================================================================
  * FUNCTION   : request
  *
@@ -3283,6 +3290,11 @@ int32_t QCamera3PicChannel::initialize(cam_is_type_t isType)
     }
 
     return rc;
+}
+
+int32_t QCamera3PicChannel::getRequestedBufferIndex(uint32_t frameNumber)
+{
+    return mYuvMemory ? mYuvMemory->getBufferIndex(frameNumber) : -1;
 }
 
 /*===========================================================================

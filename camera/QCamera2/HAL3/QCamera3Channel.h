@@ -89,6 +89,8 @@ public:
     int32_t bufDone(mm_camera_super_buf_t *recvd_frame);
     int32_t setBundleInfo(const cam_bundle_config_t &bundleInfo);
 
+    /* Index of the camera stream buffer queued for this frame, not the JPEG output. */
+    virtual int32_t getRequestedBufferIndex(uint32_t /*frameNumber*/) { return -1; }
     virtual uint32_t getStreamTypeMask();
     uint32_t getStreamID(uint32_t streamMask);
     void destroy();
@@ -202,6 +204,8 @@ public:
 
     virtual void reprocessCbRoutine(buffer_handle_t *resultBuffer,
             uint32_t resultFrameNumber);
+
+    int32_t getRequestedBufferIndex(uint32_t frameNumber) override;
 
     int32_t queueReprocMetadata(mm_camera_super_buf_t *metadata);
     int32_t metadataBufDone(mm_camera_super_buf_t *recvd_frame);
@@ -472,6 +476,7 @@ public:
             uint32_t numBuffers = MAX_INFLIGHT_REQUESTS);
     ~QCamera3PicChannel();
 
+    int32_t getRequestedBufferIndex(uint32_t frameNumber) override;
     virtual int32_t initialize(cam_is_type_t isType);
     virtual int32_t flush();
     virtual int32_t request(buffer_handle_t *buffer,

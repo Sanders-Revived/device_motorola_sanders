@@ -83,17 +83,14 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
 
-    'vendor/lib/hw/camera.msm8953.so': blob_fixup()
-        .binary_regex_replace(b'service.bootanim.exit', b'service.bootanim.hold')
-        .binary_regex_replace(b'\x62\x6b\x03\x92', b'\xe2\x69\x03\x92')
-        .binary_regex_replace(b'\x41\x6b\x79\x61', b'\xc1\x69\x79\x61'),
-
     'vendor/lib/libmmcamera2_sensor_modules.so': blob_fixup()
         .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
 
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
-        .add_needed('libgui_vendor.so'),
+        .add_needed('libgui_vendor.so')
+        .add_needed('libcamera_graphicbuffer_shim.so')
+        .binary_regex_replace(b'(_ZNK?7android13)GraphicBuffer', rb'\1SandersBuffer'),
 
     (
         'vendor/lib/libmmcamera_pdaf.so',
@@ -107,7 +104,6 @@ blob_fixups: blob_fixups_user_type = {
 
     'vendor/lib/libmmcamera_hdr_gb_lib.so': blob_fixup()
         .add_needed('liblog.so'),
-
     'vendor/lib/libmmcamera2_stats_modules.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so')
@@ -120,8 +116,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/libmmcamera_ppeiscore.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so')
-        .add_needed('libmmcamera_ppeiscore_shim.so')
-        .call(rename_ppeiscore_symbols),
+        .call(rename_ppeiscore_symbols)
+        .add_needed('libcamera_graphicbuffer_shim.so')
+        .binary_regex_replace(b'(_ZNK?7android13)GraphicBuffer', rb'\1SandersBuffer'),
 
     (
         'vendor/lib/libchromaflash.so',
@@ -129,8 +126,6 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib/liboptizoom.so',
         'vendor/lib/libseemore.so',
         'vendor/lib/libtrueportrait.so',
-        'vendor/lib/libts_detected_face_hal.so',
-        'vendor/lib/libts_face_beautify_hal.so',
         'vendor/lib/libubifocus.so',
     ): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),

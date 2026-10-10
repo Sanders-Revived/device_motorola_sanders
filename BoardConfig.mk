@@ -25,6 +25,10 @@ TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOOTLOADER_BOARD_NAME := msm8953
 TARGET_NO_BOOTLOADER := true
 
+# Camera
+BOARD_QTI_CAMERA_32BIT_ONLY := true
+TARGET_SUPPORT_HAL1 := false
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 # The msm8953 HAL reads feature switches from properties/vendor.prop.

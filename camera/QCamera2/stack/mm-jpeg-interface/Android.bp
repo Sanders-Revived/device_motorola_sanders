@@ -15,11 +15,11 @@ cc_library_shared {
     include_dirs: [
         "system/memory/libion/kernel-headers",
         "system/memory/libion/include",
-        "device/xiaomi/mido/camera/QCamera2/stack/common",
-        "device/xiaomi/mido/camera/QCamera2/stack/mm-camera-interface/inc",
-        "device/xiaomi/mido/camera",
-        "device/xiaomi/mido/camera/mm-image-codec/qexif",
-        "device/xiaomi/mido/camera/mm-image-codec/qomx_core",
+        "device/motorola/sanders/camera/QCamera2/stack/common",
+        "device/motorola/sanders/camera/QCamera2/stack/mm-camera-interface/inc",
+        "device/motorola/sanders/camera",
+        "device/motorola/sanders/camera/mm-image-codec/qexif",
+        "device/motorola/sanders/camera/mm-image-codec/qomx_core",
     ],
     local_include_dirs: ["inc"],
     header_libs: [

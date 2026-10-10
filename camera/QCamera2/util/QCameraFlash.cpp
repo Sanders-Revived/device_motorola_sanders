@@ -30,6 +30,7 @@
 // System dependencies
 #include <stdio.h>
 #include <fcntl.h>
+#include <string.h>
 #include <media/msm_cam_sensor-legacy.h>
 
 // Camera dependencies
@@ -178,7 +179,10 @@ int32_t QCameraFlash::initFlash(const int camera_id)
             struct msm_flash_init_info_t init_info;
             memset(&cfg, 0, sizeof(struct msm_flash_cfg_data_t));
             memset(&init_info, 0, sizeof(struct msm_flash_init_info_t));
-            init_info.flash_driver_type = FLASH_DRIVER_DEFAULT;
+            /* Sanders' front flash is backed by the GPIO flash driver. */
+            init_info.flash_driver_type =
+                    (strstr(flashNode, "gpio") != NULL) ?
+                    FLASH_DRIVER_GPIO : FLASH_DRIVER_DEFAULT;
             cfg.cfg.flash_init_info = &init_info;
             cfg.cfg_type = CFG_FLASH_INIT;
             retVal = ioctl(m_flashFds[camera_id],

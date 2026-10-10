@@ -20,8 +20,8 @@ cc_library_shared {
         "-DVENUS_PRESENT",
     ],
     include_dirs: [
-        "device/xiaomi/mido/camera/mm-image-codec/qexif",
-        "device/xiaomi/mido/camera/mm-image-codec/qomx_core",
+        "device/motorola/sanders/camera/mm-image-codec/qexif",
+        "device/motorola/sanders/camera/mm-image-codec/qomx_core",
         "hardware/qcom-caf/msm8953/media/libstagefrighthw",
         "hardware/qcom-caf/msm8953/media/mm-core/inc",
         "system/memory/libion/kernel-headers",
@@ -32,7 +32,6 @@ cc_library_shared {
         "stack/mm-camera-interface/inc",
         "util",
         "HAL3",
-        "HAL",
     ],
     header_libs: [
         "media_plugin_headers",
