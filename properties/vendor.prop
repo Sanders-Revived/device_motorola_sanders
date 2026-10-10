@@ -1,4 +1,5 @@
 # Audio
+vendor.audio.feature.multi_voice_session.enable=true
 persist.vendor.audio.dualmic.config=endfire
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
