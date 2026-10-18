@@ -83,3 +83,5 @@
 
 # Homebutton
 /sys/homebutton(/.*)?                                         u:object_r:sysfs_homebutton:s0
+
+/dev/mmcblk0rpmb                                             u:object_r:rpmb_device:s0
