@@ -97,6 +97,15 @@ function blob_fixup() {
             ;;
 
     esac
+
+    local needed dependency
+    if needed=$("${PATCHELF}" --print-needed "${2}" 2>/dev/null); then
+        for dependency in libhwbinder.so libhidltransport.so; do
+            if grep -Fxq "${dependency}" <<< "${needed}"; then
+                "${PATCHELF}" --remove-needed "${dependency}" "${2}"
+            fi
+        done
+    fi
 }
 
 # Initialize the helper

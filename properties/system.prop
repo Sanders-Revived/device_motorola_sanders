@@ -1,3 +1,6 @@
+# Bluetooth
+ro.bluetooth.a2dp_offload.supported=false
+
 # Radio/IMS
 ro.com.android.mobiledata=false
 ro.hw_timeout_multiplier=3

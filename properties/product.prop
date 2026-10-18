@@ -5,9 +5,6 @@ audio.offload.min.duration.secs=30
 audio.offload.video=true
 use.voice.path.for.pcm.voip=false
 
-# Bluetooth
-bluetooth.hfp.client=1
-
 # Charger
 ro.charger.enable_suspend=true
 
