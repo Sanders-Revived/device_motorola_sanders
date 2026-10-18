@@ -46,7 +46,7 @@ system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # Bluetooth & FM - LA.UM.9.6.3.r1-06200-89xx.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|7c91cd392b6b1b77e2b05eecdd1d124b9c1dd219
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|8e7d79dd0b1049229b7e7d71a53f784882bb8ef1
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|4efb742576071e0d645cf594f274479e9a94bf17
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|0af6e391d1ce99bef3a17b122c8c8222cff7b0f4
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|a510aa4f1efe9177b5a8696048289f53ae90eea4
@@ -639,6 +639,7 @@ vendor/firmware/focaltech-djn-ft5436-02-0001-sanders.bin
 vendor/firmware/focaltech-toptouch-ft5436-0a-0001-sanders.bin
 
 # FM - from deen_sprout
+lib/fm_helium.so|30a45c8519402c8bd750a006b7fd79600f71af9b
 lib/libfm-hci.so
 lib64/fm_helium.so
 lib64/libfm-hci.so
@@ -646,6 +647,7 @@ lib64/libfm-hci.so
 -product/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/bin/fm_qsoc_patches
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.fm@1.0.so|875d9c252d707ecbe9e94036537b737fbc2187e3
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-fpcservice|615061720c7da889c92e38c197042a2a32ca071d
