@@ -51,6 +51,11 @@ fi
 function blob_fixup() {
     case "${1}" in
 
+        # dpmQmiMgr exposes an obsolete init interface declaration
+        vendor/etc/init/dpmQmiMgr.rc)
+            sed -i '/^[[:space:]]*interface /d' "${2}"
+            ;;
+
         # Fix fingerprint UHID
         vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
             sed -i 's/group system input 9015/group system uhid input 9015/' "${2}"

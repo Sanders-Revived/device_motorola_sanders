@@ -61,33 +61,29 @@ ro.lmk.kill_heaviest_task=false
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
+ro.vendor.build.vendorprefix=/vendor
 persist.radio.multisim.config=dsds
 persist.vendor.data.iwlan.enable=true
+persist.vendor.data.mode=concurrent
+persist.vendor.data.profile_update=true
+persist.vendor.dpmhalservice.enable=1
+persist.vendor.ims.dropset_feature=1
 persist.vendor.radio.add_power_save=1
 persist.vendor.radio.aosp_usr_pref_sel=true
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.data_con_rprt=true
 persist.vendor.radio.data_ltd_sys_ind=1
 persist.vendor.radio.enableadvancedscan=false
+persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.hw_mbn_update=0
+persist.vendor.radio.ignore_dom_time=5
 persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.mt_sms_ack=30
-persist.vendor.radio.rat_on=combine
+persist.vendor.radio.rat_on=other
 persist.vendor.radio.sib16_support=1
-
-# Radio (IMS)
-persist.dbg.volte_avail_ovr=1 \
-persist.dbg.vt_avail_ovr=1 \
-persist.dbg.wfc_avail_ovr=1
-
-# Telephony
-ril.subscription.types=NV,RUIM \
-ro.telephony.call_ring.multiple=false \
-service.qti.ims.enabled=1 \
-telephony.lteOnCdmaDevice=1 \
-vendor.service.qti.ims.enabled=1 \
-ro.telephony.default_network=22,22
+ro.vendor.use_data_netmgrd=true
+vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Sensors
 ro.hardware.sensors=sanders

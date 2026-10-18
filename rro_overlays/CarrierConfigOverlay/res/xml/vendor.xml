@@ -89,6 +89,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <boolean name="carrier_rtt_downgrade_supported" value="false"/>
         <boolean name="show_rtt_visibility_setting_bool" value="false" />
         <boolean name="rtt_always_enabled_bool" value="false" />
+        <boolean name="rtt_auto_upgrade_bool" value="false" />
+        <boolean name="rtt_supported_for_vt_bool" value="false" />
+        <boolean name="rtt_upgrade_supported_bool" value="false" />
+        <boolean name="rtt_downgrade_supported_bool" value="false" />
+        <boolean name="ignore_rtt_mode_setting_bool" value="false" />
         <int name="default_rtt_mode_int" value="0" />
 
         <!-- HD/VOLTE icon support -->
@@ -102,12 +107,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
 
         <!-- Config to allow hold in video calls -->
         <boolean name="allow_holding_video_call" value="true"/>
+        <boolean name="allow_hold_video_call_bool" value="true"/>
         <!-- Config to allow accept one way for video calls -->
         <boolean name="allow_one_way_accept_video_call" value="true"/>
         <!-- Config for multi anchor conference support  -->
         <boolean name="carrier_supports_multianchor_conference" value="false"/>
         <!-- Config for Call Composer Feature support  -->
         <boolean name="carrier_call_composer_supported_bool" value="false"/>
+        <boolean name="carrier_allow_transfer_ims_call_bool" value="true" />
+        <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+        <int name="lte_plus_threshold_bandwidth_khz_int" value="0" />
     </carrier_config>
 
     <carrier_config mcc="001" mnc="01">

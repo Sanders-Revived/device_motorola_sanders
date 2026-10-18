@@ -105,11 +105,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1
 
-# Fwk-detect
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -157,10 +152,6 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     ims-ext-common \
     ims_ext_common.xml
-
-# IMS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -322,6 +313,8 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/telephony_system-ext_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
@@ -332,7 +325,11 @@ PRODUCT_PACKAGES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -348,7 +345,11 @@ PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
-    qti_telephony_utils.xml
+    qti_telephony_utils.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Tethering
 PRODUCT_PACKAGES += \
@@ -372,7 +373,6 @@ PRODUCT_AAPT_CONFIG := normal
 
 # Shims
 PRODUCT_PACKAGES += \
-    libcutils_shim \
     libmemset_shim \
     libqsap_shim
 

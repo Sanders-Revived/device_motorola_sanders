@@ -1,0 +1,15 @@
+# Radio/IMS
+ro.com.android.mobiledata=false
+ro.hw_timeout_multiplier=3
+ril.subscription.types=NV,RUIM
+persist.rcs.supported=1
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# Telephony
+ro.telephony.call_ring.multiple=false
+service.qti.ims.enabled=1
+telephony.lteOnCdmaDevice=1
+vendor.service.qti.ims.enabled=1
+ro.telephony.default_network=22,22

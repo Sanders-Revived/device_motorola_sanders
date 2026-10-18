@@ -3,3 +3,7 @@ type moto_boot_prop, property_type;
 type vendor_aov_prop, property_type;
 type vendor_dolby_loglevel_prop, property_type;
 type hwrev_prop, property_type;
+
+# Data/QMI properties used by the updated netmgrd stack
+vendor_restricted_prop(vendor_data_shsusr_prop)
+vendor_restricted_prop(vendor_data_qmipriod_prop)

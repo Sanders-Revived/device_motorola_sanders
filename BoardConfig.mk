@@ -110,6 +110,7 @@ USE_DEVICE_SPECIFIC_GPS := true
 
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 TARGET_FS_CONFIG_GEN := \
     $(DEVICE_PATH)/configs/config.fs \
@@ -209,6 +210,8 @@ TARGET_USES_INTERACTION_BOOST := true
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/properties/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
 # Recovery
