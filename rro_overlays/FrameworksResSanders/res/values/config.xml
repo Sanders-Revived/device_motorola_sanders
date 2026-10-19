@@ -216,7 +216,7 @@
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
-	<!-- Flag specifying whether VoLTE & VT is available on device -->
+    <!-- Flag specifying whether VoLTE & VT is available on device -->
     <bool name="config_device_volte_available">true</bool>
 
     <!-- Flag specifying whether VoLTE should be available for carrier: independent of
@@ -231,7 +231,7 @@
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->
     <bool name="config_carrier_wfc_ims_available">true</bool>
-	
+
     <!-- Flag specifying whether VT is available on device -->
     <bool name="config_device_vt_available">true</bool>
 
@@ -239,9 +239,9 @@
     <bool name="config_batterySdCardAccessibility">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
-    <bool name="config_unplugTurnsOnScreen">true</bool>	
-	
-    <!-- Enable doze mode 
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Enable doze mode
         ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
@@ -258,10 +258,10 @@
     <bool name="config_enableHapticTextHandle">true</bool>
 
 
-	    <!-- Boolean indicating if restoring network selection should be skipped -->
+    <!-- Boolean indicating if restoring network selection should be skipped -->
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
-	
+
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
@@ -274,8 +274,8 @@
          * The remote submix module "audio.r_submix.default" must be installed on the device.
          * The device must be provisioned with HDCP keys (for protected content).
     -->
-    <bool name="config_enableWifiDisplay">true</bool>	
-	
+    <bool name="config_enableWifiDisplay">true</bool>
+
     <!-- Set to true if the wifi display supports compositing content stored
          in gralloc protected buffers.  For this to be true, there must exist
          a protected hardware path for surface flinger to composite and send
@@ -286,18 +286,18 @@
          This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
          flag is set for wifi displays.
     -->
-    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>	
+    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
     <!-- Integer threshold for low network score, should be somewhat less than the entry threshhold -->
     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-83</integer>
     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-80</integer>
     <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_24GHz">-80</integer>
     <integer name="config_wifi_framework_wifi_score_entry_rssi_threshold_5GHz">-77</integer>
-	
-   <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-   in hardware. -->
-   <bool name="config_setColorTransformAccelerated">true</bool>
-   
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
