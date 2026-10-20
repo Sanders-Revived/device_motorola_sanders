@@ -401,7 +401,7 @@
 	</path>
 
 	<path name="audio-record-voip">
-		<path name="audio-record" />
+		<ctl name="MultiMedia6 Mixer TERT_MI2S_TX" value="1" />
 	</path>
 
 	<path name="audio-record-voip bt-sco">
