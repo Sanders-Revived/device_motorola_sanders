@@ -14,3 +14,13 @@ install_symlink {
     installed_location: "f",
     symlink_target: "/vendor/firmware_mnt",
 }
+
+cc_library_shared {
+    name: "libmmcamera_ppeiscore_shim",
+    vendor: true,
+    compile_multilib: "32",
+    srcs: ["libmmcamera_ppeiscore_shim.cpp"],
+    shared_libs: [
+        "libui",
+    ],
+}

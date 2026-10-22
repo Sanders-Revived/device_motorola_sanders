@@ -47,7 +47,7 @@ vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib64/libbt-hidlclient.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
@@ -63,9 +63,9 @@ system_ext/lib64/com.quicinc.cne.api@1.1.so|a8ae7233799faa710cfea97b740407ef3d92
 system_ext/lib64/com.quicinc.cne.constants@1.0.so|40f21280bfe6b6f38123b81d64dae2573803ef22
 system_ext/lib64/com.quicinc.cne.constants@2.0.so|d2ac43bd34191f4d725fff34f60c00a9012f476d
 system_ext/lib64/com.quicinc.cne.constants@2.1.so|4ec132f33436d3798c40ef3ed701b812efc738a5
-system_ext/lib64/libmwqemiptablemgr.so;DISABLE_CHECKELF;DISABLE_DEPS|50c44dc42ced9639887bccd50b6577bff5f25422
--vendor/app/CneApp/CneApp.apk|6e355ca21e53c8a84794f06e1057e62ff2df1a58
--vendor/app/IWlanService/IWlanService.apk|08472592f4a21ad806c487fc0c70c10bbe7c7ac2
+system_ext/lib64/libmwqemiptablemgr.so|50c44dc42ced9639887bccd50b6577bff5f25422
+vendor/app/CneApp/CneApp.apk|6e355ca21e53c8a84794f06e1057e62ff2df1a58
+vendor/app/IWlanService/IWlanService.apk|08472592f4a21ad806c487fc0c70c10bbe7c7ac2
 vendor/bin/cnd|5b88df83e2db6fa3cd6e0349f17766254ac0ca9f
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml|578f3f8f56059bfdbef926bcc68d01c15e06951f
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml|1fb42c672a12b6660bdce3ea94e0c43719dd9de8
@@ -162,7 +162,7 @@ vendor/lib/libubifocus.so
 vendor/lib/libvideoutils.so
 
 # Camera - from deen_sprout
-vendor/lib/libmot_gpu_mapper.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmot_gpu_mapper.so
 
 # Camera-actuators - from sanders_retail
 vendor/lib/libactuator_mot_ak7371_bear.so
@@ -238,7 +238,7 @@ vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera-sensors - from sanders_retail
-vendor/lib/libllvd_smore.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libllvd_smore.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
@@ -264,10 +264,10 @@ vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
 vendor/lib/libmmcamera_eztune_module.so
 vendor/lib/libmmcamera_facedetection_lib.so
-vendor/lib/libmmcamera_faceproc.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmmcamera_faceproc.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera_gt24c64_bear_eeprom.so
 vendor/lib/libmmcamera_gt24c64_mono_eeprom.so
-vendor/lib/libmmcamera_hdr_gb_lib.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_imglib.so
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmcamera_isp_abf40.so
@@ -310,17 +310,17 @@ vendor/lib/libmmcamera_mot_s5k3l8_bear.so
 vendor/lib/libmmcamera_mot_s5k3l8_mono.so
 vendor/lib/libmmcamera_optizoom_lib.so
 vendor/lib/libmmcamera_paaf_lib.so
-vendor/lib/libmmcamera_pdaf.so;DISABLE_CHECKELF;DISABLE_DEPS
-vendor/lib/libmmcamera_pdafcamif.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmmcamera_pdaf.so
+vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
-vendor/lib/libmmcamera_ppeiscore.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmmcamera_ppeiscore.so
 vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_s5k4h8.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_sw2d_lib.so
 vendor/lib/libmmcamera_thread_services.so
 vendor/lib/libmmcamera_tintless_algo.so
-vendor/lib/libmmcamera_tintless_bg_pca_algo.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 vendor/lib/libmmcamera_vstab_module.so
@@ -335,7 +335,7 @@ vendor/bin/charge_only_mode
 # DRM - Widevine - from LA.UM.10.6.2.r1-02500-89xx.0
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine|0789856c51366175e1e7878e378f586c3eca7bd9
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
 vendor/lib64/libwvhidl.so|88780dbc2e14e4e1ff6171085fa0b37fbc8d64f2
 
 # DRM - from LA.UM.9.6.2.r1-04200-89xx.0
@@ -390,7 +390,7 @@ vendor/lib/com.fingerprints.extension@1.0_vendor.so|8d367c200fb1bc6e6e1cde06008c
 
 # GPS - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/bin/loc_launcher
-vendor/bin/lowi-server;DISABLE_CHECKELF
+vendor/bin/lowi-server
 vendor/bin/xtra-daemon
 vendor/etc/xtwifi.conf
 vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
@@ -559,8 +559,8 @@ vendor/lib64/libqmiservices.so|67bbb4fa339bdd71a79a1e8a845bc84579d6f3c8
 # Radio (IMS) - from LA.UM.10.6.2.r1-02500-89xx.0
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|dce9a9f045179deb1b96af4a9b7a32107d6cdb52
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so|2c1682fb77b814380843553cf0ffe4a280c12797
--system_ext/app/imssettings/imssettings.apk|8b47c43d56228dcce93cc8c07c6ceb08cb3d2fe5
--system_ext/priv-app/ims/ims.apk|60db4414134ac40bb8b32f75c19843c26ad7be50
+system_ext/app/imssettings/imssettings.apk|8b47c43d56228dcce93cc8c07c6ceb08cb3d2fe5
+system_ext/priv-app/ims/ims.apk|60db4414134ac40bb8b32f75c19843c26ad7be50
 vendor/bin/imsdatadaemon|429339be3ff1c02dfe21f4e670e24254843a1df3
 vendor/bin/imsqmidaemon|35d7fb89b7d434f7462cd25f79302877b435e3b3
 vendor/bin/imsrcsd|5840d893f877bb71f5d8c6642202c807d076bd0d
@@ -596,14 +596,14 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|066a07a1d2d11e8bc2d31bdcf7a022f6edf
 
 # Radio - from LA.UM.10.6.2.r1-02500-89xx.0
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml|42f4553b61731e56d253766554d4479519cea3ff
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|c8a2ce9a86e542daf835dc0bfa1a63ed7e412d84
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|c8a2ce9a86e542daf835dc0bfa1a63ed7e412d84
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
 system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|a7e114ea1e6909685ce49717a2b5b66d8275d419
 system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
 system_ext/framework/qcrilhook.jar|f251fd8cf621c66a970597954c257d69b6136eda
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|47ff9a1712950fc9f877691f2712d8aa7fcf3420
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|47ff9a1712950fc9f877691f2712d8aa7fcf3420
 vendor/bin/adpl|faf58bc0f7eb64f2707119da7b372e6980167d6e
 vendor/bin/netmgrd|4912a982d428235d60234235f3d2a585a07f1952
 vendor/bin/port-bridge|78a98cb7d9f2c1c88657e74bf179afdcd2cb8c38
@@ -693,9 +693,9 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
 # Thermal - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
--vendor/bin/thermal-engine
+vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
--vendor/lib64/libthermalclient.so;DISABLE_CHECKELF;DISABLE_DEPS
+vendor/lib64/libthermalclient.so
 
 # Time services - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/app/TimeService/TimeService.apk|258cf62182f96b07f04d053b8245f99ed2176f5d

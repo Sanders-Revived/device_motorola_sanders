@@ -4,6 +4,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+from pathlib import Path
+
+from extract_utils.tools import (
+    DEFAULT_PATCHELF_VERSION,
+    patchelf_version_path_map,
+)
+from extract_utils.utils import run_cmd
+
 from extract_utils.fixups_lib import (
     lib_fixups,
 )
@@ -15,6 +23,38 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
+
+
+PPEISCORE_SYMBOL_RENAMES = (
+    ("glGetProgramBinary", "glGetProgramBinaryOES"),
+    ("glProgramBinary", "glProgramBinaryOES"),
+)
+
+
+# The legacy blob uses core GL names, while the vendor GLES ABI exports OES
+# symbols. Keep this map next to the fixup so extraction stays deterministic.
+def rename_ppeiscore_symbols(
+    _ctx, _file, file_path, *_args, tmp_dir=None, **_kwargs
+):
+    if tmp_dir is None:
+        raise RuntimeError("ppeiscore symbol fixup requires a temporary directory")
+
+    symbol_map = Path(tmp_dir, "ppeiscore-symbols.map")
+    symbol_map.write_text(
+        "\n".join(
+            f"{old} {new}" for old, new in PPEISCORE_SYMBOL_RENAMES
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    run_cmd(
+        [
+            patchelf_version_path_map[DEFAULT_PATCHELF_VERSION],
+            "--rename-dynamic-symbols",
+            str(symbol_map),
+            file_path,
+        ]
+    )
 
 namespace_imports = [
     'device/motorola/sanders',
@@ -52,19 +92,36 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'/system/etc/camera/', b'/vendor/etc/camera/'),
 
     'vendor/lib/libmot_gpu_mapper.so': blob_fixup()
-        .replace_needed('libgui.so', 'libgui_shim_vendor.so'),
+        .replace_needed('libgui.so', 'libgui_shim_vendor.so')
+        .add_needed('libgui_vendor.so'),
+
+    (
+        'vendor/lib/libmmcamera_pdaf.so',
+        'vendor/lib/libmmcamera_pdafcamif.so',
+        'vendor/lib/libmmcamera_tintless_bg_pca_algo.so',
+    ): blob_fixup()
+        .add_needed('liblog.so'),
+
+    'vendor/lib/libllvd_smore.so': blob_fixup()
+        .add_needed('liblog.so'),
+
+    'vendor/lib/libmmcamera_hdr_gb_lib.so': blob_fixup()
+        .add_needed('liblog.so'),
 
     'vendor/lib/libmmcamera2_stats_modules.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so')
         .binary_regex_replace(b'\x60\xf9\x5f\x07', b'\x60\xf9\x4f\x07'),
 
-    (
-        'vendor/lib/libmmcamera_vstab_module.so',
-        'vendor/lib/libmmcamera_ppeiscore.so',
-    ): blob_fixup()
+    'vendor/lib/libmmcamera_vstab_module.so': blob_fixup()
         .replace_needed('libgui.so', 'libgui_shim_vendor.so')
         .remove_needed('libandroid.so'),
+
+    'vendor/lib/libmmcamera_ppeiscore.so': blob_fixup()
+        .replace_needed('libgui.so', 'libgui_shim_vendor.so')
+        .remove_needed('libandroid.so')
+        .add_needed('libmmcamera_ppeiscore_shim.so')
+        .call(rename_ppeiscore_symbols),
 
     (
         'vendor/lib/libchromaflash.so',
