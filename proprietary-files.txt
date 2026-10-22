@@ -18,7 +18,7 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# ANT+ - from FP3-6.A.040.2-gms-d33dc62f-user
+# ANT+ - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so|2bad2579ce576c46af6a50ee6687bd92fa7f76cd
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|6e2b594b44552b42000164c091af5cf7a4c508f5
 
@@ -40,7 +40,7 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
 
-# Bluetooth - from FP3-REL-6.A.039.7-gms-44ba459b-user
+# Bluetooth - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -376,7 +376,7 @@ vendor/lib/modules/isdbt.ko|a24576abfb23c3816a8a2f5ab97fe7cece2462a3
 product/lib64/libdtvhal.so|f2ac1307ed9dbe3da1b3a1da5b947da1b085b62c
 product/lib64/libdtvtuner.so|1667ff29c199f9ae9abe1d57f9a43300ab594b07
 
-# FM - from FP3-6.A.040.2-gms-d33dc62f-user
+# FM - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|a7c3fdcdfdf2d982b04baa89e0e4dc5f5d505bf7
 
 # Fingerprint
@@ -396,8 +396,6 @@ vendor/lib64/libcdfw.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgnsspps.so
-vendor/lib64/libizat_client_api.so
-vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_api_v02.so
 vendor/lib64/liblocationservice_glue.so
@@ -417,7 +415,11 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
-# Gatekeeper - from FP3-REL-6.A.039.7-gms-44ba459b-user
+# GPS dependencies - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/lib64/libizat_client_api.so|a82d387c3095f8b8c48d4e0e076c28412a752ecf
+vendor/lib64/libizat_core.so|a81c4da66d0e03aa5e9088807b2a56d015bc036b
+
+# Gatekeeper - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/lib64/hw/gatekeeper.msm8953.so
 
 # Graphics - SDM - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
@@ -466,10 +468,10 @@ vendor/firmware/a530v3_gpmu.fw2|0a2f6f450231673d75ba39e5d28776db3becf810
 vendor/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
 vendor/firmware/a540_gpmu.fw2|3530f10b4825a3b08c79e0bcfaf6471ec8422f24
 
-# Keystore - from FP3-REL-6.A.039.7-gms-44ba459b-user
+# Keystore - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/lib64/hw/keystore.msm8953.so
 
-# Media - from FP3-6.A.040.2-gms-d33dc62f-user
+# Media - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/etc/seccomp_policy/mediacodec.policy|3dec19ed56099a36b44cc72ad04ab23b9cc22ace
 vendor/etc/seccomp_policy/mediaextractor.policy|4234a844e9b1aef37397c8cfbd19566966ecd622
 vendor/lib/libvqzip.so|c56eaffef2066339493fa6810930e58556891027
@@ -493,11 +495,11 @@ vendor/etc/perf/perfconfigstore.xml|de7a673eca27fb44b7dcd34c60d21f7ffbd2b9d8
 vendor/etc/perf/targetconfig.xml|aa20c25397df1455206965737f82d44d44430e45
 vendor/etc/perf/targetresourceconfigs.xml|c7575bce83e7d83a68e260437ff0ba164dfcd25c
 
-# Perf (deps) - from FP3-REL-6.A.031.5-gms-fa7632b5-user
+# Perf (deps) - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|7e332989976f3549fcdb6c7b990fef3844dd36ae
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|4254d087742dd950f0f524106e6262d1e15dda60
 
-# Peripheral manager - from FP3-REL-6.A.039.7-gms-44ba459b-user
+# Peripheral manager - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
@@ -686,16 +688,16 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|e8d97981d09a4e34907d1
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|16baab27397ad493e845515c20ac0c0c063c775d
 
-# Thermal - from FP3-REL-6.A.039.7-gms-44ba459b-user
+# Thermal - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 -vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
 -vendor/lib64/libthermalclient.so;DISABLE_CHECKELF;DISABLE_DEPS
 
-# Time services - from FP3-6.A.040.2-gms-d33dc62f-user
+# Time services - from FP3-REL-6.A.040.4-gms-c8a26ca8-user
 vendor/app/TimeService/TimeService.apk|258cf62182f96b07f04d053b8245f99ed2176f5d
 vendor/bin/time_daemon|3fdbe5c7aeee2fc7e8b699bedd7309f768aae5c7
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
-vendor/lib64/libtime_genoff.so|5f9b4a016db1f2d96a6b8281b6cb88d87e4cdd639
+vendor/lib64/libtime_genoff.so|5f9b4a016db1f2d96a6b8281b6cb88d87e4cdd63
 
 # Wi-Fi - Firmware - from deen_sprout
 vendor/etc/motorola/mdmctbk/ctbk_cfg.xml
