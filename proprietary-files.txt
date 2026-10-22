@@ -53,6 +53,10 @@ vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
+# DPM - from LA.UM.10.6.2.r1-02500-89xx.0
+system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|bdad0648fa9099bbd8082fa40064116b4f06d1d8
+system_ext/lib64/libdpmframework.so|90c7c6bc5bb70bc5b3124349c22a6c40bbcdc227
+
 # CNE - from LA.UM.10.6.2.r1-02500-89xx.0
 system_ext/lib64/com.quicinc.cne.api@1.0.so|a6e7ece2184c5d0fe627b5f93c5c74bc7ecfb8ea
 system_ext/lib64/com.quicinc.cne.api@1.1.so|a8ae7233799faa710cfea97b740407ef3d921920
