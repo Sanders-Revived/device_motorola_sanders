@@ -72,6 +72,10 @@
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="0" />
 	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia4" value="0" />
+	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+	<ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+	<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia7" value="0" />
+	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia7" value="0" />
 	<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
@@ -84,8 +88,6 @@
 	<ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="MultiMedia5 Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="MultiMedia8 Mixer INTERNAL_BT_SCO_TX" value="0" />
-	<ctl name="PRI_MI2S_RX_Voice Mixer CSVoice" value="0" />
-	<ctl name="Voice_Tx Mixer TERT_MI2S_TX_Voice" value="0" />
 	<ctl name="PRI_MI2S_RX Port Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="HFP_INT_UL_HL Switch" value="0" />
 
@@ -93,48 +95,12 @@
 	<ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="0" />
 	<ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="0" />
 	<ctl name="QUIN_MI2S_RX Port Mixer TERT_MI2S_TX" value="0" />
-	<ctl name="QUIN_MI2S_RX_Voice Mixer CSVoice" value="0" />
 	<ctl name="QUIN_MI2S_RX_Voice Mixer VoiceMMode1" value="0" />
 	<ctl name="QUIN_MI2S_RX_Voice Mixer VoiceMMode2" value="0" />
 
 	<!-- Voice BTSCO -->
 	<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_8KHZ" />
-	<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer CSVoice" value="0" />
-	<ctl name="Voice_Tx Mixer INTERNAL_BT_SCO_TX_Voice" value="0" />
 	<ctl name="MultiMedia6 Mixer TERT_MI2S_TX" value="0" />
-
-	<!-- Voice2 -->
-	<ctl name="PRI_MI2S_RX_Voice Mixer Voice2" value="0" />
-	<ctl name="QUIN_MI2S_RX_Voice Mixer Voice2" value="0" />
-	<ctl name="Voice2_Tx Mixer TERT_MI2S_TX_Voice2" value="0" />
-	<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer Voice2" value="0" />
-	<ctl name="Voice2_Tx Mixer INTERNAL_BT_SCO_TX_Voice2" value="0" />
-	<ctl name="AFE_PCM_RX_Voice Mixer Voice2" value="0" />
-	<ctl name="Voice2_Tx Mixer AFE_PCM_TX_Voice2" value="0" />
-	<!-- Voice2 end -->
-
-	<!-- VoLTE -->
-	<ctl name="PRI_MI2S_RX_Voice Mixer VoLTE" value="0" />
-	<ctl name="QUIN_MI2S_RX_Voice Mixer VoLTE" value="0" />
-	<ctl name="VoLTE_Tx Mixer TERT_MI2S_TX_VoLTE" value="0" />
-	<ctl name="HDMI_RX_Voice Mixer VoLTE" value="0" />
-	<ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="0" />
-	<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoLTE" value="0" />
-	<ctl name="VoLTE_Tx Mixer INTERNAL_BT_SCO_TX_VoLTE" value="0" />
-	<ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="0" />
-	<ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="0" />
-	<!-- VoLTE -->
-
-	<!-- VoWLAN -->
-	<ctl name="PRI_MI2S_RX_Voice Mixer VoWLAN" value="0" />
-	<ctl name="QUIN_MI2S_RX_Voice Mixer VoWLAN" value="0" />
-	<ctl name="VoWLAN_Tx Mixer TERT_MI2S_TX_VoWLAN" value="0" />
-	<ctl name="HDMI_RX_Voice Mixer VoWLAN" value="0" />
-	<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoWLAN" value="0" />
-	<ctl name="VoWLAN_Tx Mixer INTERNAL_BT_SCO_TX_VoWLAN" value="0" />
-	<ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="0" />
-	<ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="0" />
-	<!-- VoWLAN -->
 
 	<!-- Multimode Voice1 -->
 	<ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode1" value="0" />
@@ -230,7 +196,7 @@
 	<!-- ADSP testfwk end-->
 
 	<path name="bt-sco-wb-samplerate">
-		<ctl name="Internal BTSCO SampleRate" value="16000" />
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
 	</path>
 
 	<!-- These are audio route (FE to BE) specific mixer settings -->
@@ -387,6 +353,43 @@
 		<path name="compress-offload-playback bt-sco-wb" />
 	</path>
 
+	<!-- Compress2 remains available at PCM 18 after the kernel HFP fixup. -->
+	<path name="compress-offload-playback2">
+		<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia7" value="1" />
+	</path>
+
+	<path name="compress-offload-playback2 speaker">
+		<ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="1" />
+	</path>
+
+	<path name="compress-offload-playback2 speaker-and-headphones">
+		<path name="compress-offload-playback2" />
+		<path name="compress-offload-playback2 speaker" />
+	</path>
+
+	<path name="compress-offload-playback2 bt-sco">
+		<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia7" value="1" />
+	</path>
+
+	<path name="compress-offload-playback2 bt-sco-wb">
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+		<path name="compress-offload-playback2 bt-sco" />
+	</path>
+
+	<path name="compress-offload-playback2 afe-proxy">
+		<ctl name="AFE_PCM_RX Audio Mixer MultiMedia7" value="1" />
+	</path>
+
+	<path name="compress-offload-playback2 speaker-and-bt-sco">
+		<path name="compress-offload-playback2 speaker" />
+		<path name="compress-offload-playback2 bt-sco" />
+	</path>
+
+	<path name="compress-offload-playback2 speaker-and-bt-sco-wb">
+		<path name="compress-offload-playback2 speaker" />
+		<path name="compress-offload-playback2 bt-sco-wb" />
+	</path>
+
 	<path name="audio-record">
 		<ctl name="MultiMedia1 Mixer TERT_MI2S_TX" value="1" />
 	</path>
@@ -421,7 +424,7 @@
 	</path>
 
 	<path name="audio-record-compress bt-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="16000" />
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
 		<path name="audio-record-compress bt-sco" />
 	</path>
 
@@ -434,7 +437,7 @@
 	</path>
 
 	<path name="low-latency-record bt-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="16000" />
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
 		<path name="low-latency-record bt-sco" />
 	</path>
 
@@ -480,28 +483,23 @@
 	</path>
 
 	<path name="voice2-call">
-		<ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
-		<ctl name="VoiceMMode2_Tx Mixer TERT_MI2S_TX_MMode2" value="1" />
+		<path name="voice-call" />
 	</path>
 
 	<path name="voice2-call speaker">
-		<ctl name="QUIN_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
-		<ctl name="VoiceMMode2_Tx Mixer TERT_MI2S_TX_MMode2" value="1" />
+		<path name="voice-call speaker" />
 	</path>
 
 	<path name="voice2-call bt-sco">
-		<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoiceMMode2" value="1" />
-		<ctl name="VoiceMMode2_Tx Mixer INT_BT_SCO_TX_MMode2" value="1" />
+		<path name="voice-call bt-sco" />
 	</path>
 
 	<path name="voice2-call bt-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
-		<path name="voice2-call bt-sco" />
+		<path name="voice-call bt-sco-wb" />
 	</path>
 
 	<path name="voice2-call usb-headphones">
-		<ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode2" value="1" />
-		<ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="1" />
+		<path name="voice-call usb-headphones" />
 	</path>
 
 	<path name="voice2-call afe-proxy">
@@ -514,33 +512,27 @@
 	</path>
 
 	<path name="vowlan-call">
-		<ctl name="PRI_MI2S_RX_Voice Mixer VoWLAN" value="1" />
-		<ctl name="VoWLAN_Tx Mixer TERT_MI2S_TX_VoWLAN" value="1" />
+		<path name="voice-call" />
 	</path>
 
 	<path name="vowlan-call speaker">
-		<ctl name="QUIN_MI2S_RX_Voice Mixer VoWLAN" value="1" />
-		<ctl name="VoWLAN_Tx Mixer TERT_MI2S_TX_VoWLAN" value="1" />
-	</path>
-
-	<path name="vowlan-call hdmi">
-		<ctl name="HDMI_RX_Voice Mixer VoWLAN" value="1" />
-		<ctl name="VoWLAN_Tx Mixer TERT_MI2S_TX_VoWLAN" value="1" />
+		<path name="voice-call speaker" />
 	</path>
 
 	<path name="vowlan-call bt-sco">
-		<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoWLAN" value="1" />
-		<ctl name="VoWLAN_Tx Mixer INTERNAL_BT_SCO_TX_VoWLAN" value="1" />
+		<path name="voice-call bt-sco" />
 	</path>
 
 	<path name="vowlan-call bt-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="16000" />
-		<path name="vowlan-call bt-sco" />
+		<path name="voice-call bt-sco-wb" />
 	</path>
 
 	<path name="vowlan-call usb-headphones">
-		<ctl name="AFE_PCM_RX_Voice Mixer VoWLAN" value="1" />
-		<ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="1" />
+		<path name="voice-call usb-headphones" />
+	</path>
+
+	<path name="vowlan-call afe-proxy">
+		<path name="vowlan-call usb-headphones" />
 	</path>
 
 	<path name="voicemmode1-call">
@@ -633,7 +625,7 @@
 	</path>
 
 	<path name="hfp-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="16000" />
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
 		<path name="hfp-sco" />
 	</path>
 
@@ -756,33 +748,23 @@
 	</path>
 
 	<path name="volte-call">
-		<ctl name="PRI_MI2S_RX_Voice Mixer VoLTE" value="1" />
-		<ctl name="VoLTE_Tx Mixer TERT_MI2S_TX_VoLTE" value="1" />
+		<path name="voice-call" />
 	</path>
 
 	<path name="volte-call speaker">
-		<ctl name="QUIN_MI2S_RX_Voice Mixer VoLTE" value="1" />
-		<ctl name="VoLTE_Tx Mixer TERT_MI2S_TX_VoLTE" value="1" />
-	</path>
-
-	<path name="volte-call hdmi">
-		<ctl name="HDMI_RX_Voice Mixer VoLTE" value="1" />
-		<ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
+		<path name="voice-call speaker" />
 	</path>
 
 	<path name="volte-call bt-sco">
-		<ctl name="INTERNAL_BT_SCO_RX_Voice Mixer VoLTE" value="1" />
-		<ctl name="VoLTE_Tx Mixer INTERNAL_BT_SCO_TX_VoLTE" value="1" />
+		<path name="voice-call bt-sco" />
 	</path>
 
 	<path name="volte-call bt-sco-wb">
-		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
-		<path name="volte-call bt-sco" />
+		<path name="voice-call bt-sco-wb" />
 	</path>
 
 	<path name="volte-call usb-headphones">
-		<ctl name="AFE_PCM_RX_Voice Mixer VoLTE" value="1" />
-		<ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="1" />
+		<path name="voice-call usb-headphones" />
 	</path>
 
 	<path name="volte-call afe-proxy">
@@ -1106,6 +1088,57 @@
 
 	<path name="speaker-and-line">
 		<path name="speaker-and-headphones" />
+	</path>
+
+	<!-- Device names used by the current msm8953 HAL. -->
+	<path name="speaker-reverse">
+		<path name="speaker" />
+	</path>
+
+	<path name="speaker-safe">
+		<path name="speaker" />
+	</path>
+
+	<path name="speaker-safe-and-headphones">
+		<path name="speaker-and-headphones" />
+	</path>
+
+	<path name="speaker-safe-and-line">
+		<path name="speaker-and-line" />
+	</path>
+
+	<path name="speaker-and-bt-sco">
+		<path name="speaker" />
+		<path name="bt-sco-headset" />
+	</path>
+
+	<path name="speaker-and-bt-sco-wb">
+		<path name="speaker" />
+		<path name="bt-sco-headset-wb" />
+	</path>
+
+	<path name="speaker-safe-and-bt-sco">
+		<path name="speaker-and-bt-sco" />
+	</path>
+
+	<path name="speaker-safe-and-bt-sco-wb">
+		<path name="speaker-and-bt-sco-wb" />
+	</path>
+
+	<path name="voice-headset">
+		<path name="voice-headphones" />
+	</path>
+
+	<path name="voice-tty-full-headset">
+		<path name="voice-tty-full-headphones" />
+	</path>
+
+	<path name="voice-speaker-hfp">
+		<path name="voice-speaker" />
+	</path>
+
+	<path name="voice-speaker-mic-hfp">
+		<path name="voice-speaker-mic" />
 	</path>
 
 </mixer>

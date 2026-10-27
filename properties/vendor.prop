@@ -1,6 +1,20 @@
 # Audio
+vendor.audio.feature.afe_proxy.enable=true
+vendor.audio.feature.compr_voip.enable=false
+vendor.audio.feature.compress_meta_data.enable=true
+vendor.audio.feature.custom_stereo.enable=true
+vendor.audio.feature.fluence.enable=true
+vendor.audio.feature.fm.enable=true
+vendor.audio.feature.hfp.enable=true
+vendor.audio.feature.hifi_audio.enable=true
 vendor.audio.feature.multi_voice_session.enable=true
-persist.vendor.audio.dualmic.config=endfire
+vendor.audio.feature.snd_mon.enable=true
+# Sanders uses a CS35L35 amplifier, without Qualcomm WSA/VBAT protection.
+vendor.audio.feature.spkr_prot.enable=false
+vendor.audio.feature.vbat.enable=false
+vendor.audio.feature.wsa.enable=false
+vendor.audio.platform_info_xml.path=/vendor/etc/audio_platform_info.xml
+persist.vendor.audio.fluence.mode=endfire
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
@@ -14,11 +28,9 @@ persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb
 persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb
 persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Handset_cal.acdb
 persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Speaker_cal.acdb
-vendor.persist.speaker.prot.enable=false
+persist.vendor.audio.speaker.prot.enable=false
 ro.vendor.audio.sdk.ssr=false
 ro.vendor.audio.sdk.fluencetype=none
-ro.qc.sdk.audio.fluencetype=none
-ro.qc.sdk.audio.ssr=false
 vendor.audio_hal.period_size=240
 vendor.audio.hw.aac.encoder=true
 vendor.audio.offload.buffer.size.kb=64
@@ -32,7 +44,6 @@ vendor.audio.safx.pbe.enabled=true
 vendor.audio.use.sw.alac.decoder=false
 vendor.audio.use.sw.ape.decoder=false
 vendor.voice.path.for.pcm.voip=false
-vendor.audio.offload.min.duration.secs=30
 
 # Bluetooth
 vendor.qcom.bluetooth.soc=pronto
