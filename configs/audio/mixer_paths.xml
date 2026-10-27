@@ -85,8 +85,10 @@
 	<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia6" value="0" />
 	<ctl name="MultiMedia1 Mixer TERT_MI2S_TX" value="0" />
 	<ctl name="MultiMedia5 Mixer TERT_MI2S_TX" value="0" />
+	<ctl name="MultiMedia10 Mixer TERT_MI2S_TX" value="0" />
 	<ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="MultiMedia5 Mixer INTERNAL_BT_SCO_TX" value="0" />
+	<ctl name="MultiMedia10 Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="MultiMedia8 Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="PRI_MI2S_RX Port Mixer INTERNAL_BT_SCO_TX" value="0" />
 	<ctl name="HFP_INT_UL_HL Switch" value="0" />
@@ -158,6 +160,7 @@
 
 	<!-- EC_REF -->
 	<ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
+	<ctl name="AUDIO_REF_EC_UL10 MUX" value="None" />
 
 	<!-- IIR -->
 	<ctl name="IIR1 Band1" id="0" value="268435456" />
@@ -404,15 +407,18 @@
 	</path>
 
 	<path name="audio-record-voip">
-		<ctl name="MultiMedia6 Mixer TERT_MI2S_TX" value="1" />
+		<ctl name="DEC1 Volume" value="90" />
+		<ctl name="DEC2 Volume" value="90" />
+		<ctl name="MultiMedia10 Mixer TERT_MI2S_TX" value="1" />
 	</path>
 
 	<path name="audio-record-voip bt-sco">
-		<path name="audio-record bt-sco" />
+		<ctl name="MultiMedia10 Mixer INTERNAL_BT_SCO_TX" value="1" />
 	</path>
 
 	<path name="audio-record-voip bt-sco-wb">
-		<path name="audio-record bt-sco-wb" />
+		<ctl name="Internal BTSCO SampleRate" value="BTSCO_RATE_16KHZ" />
+		<path name="audio-record-voip bt-sco" />
 	</path>
 
 	<path name="audio-record capture-fm">
@@ -1013,19 +1019,19 @@
 	</path>
 
 	<path name="echo-reference-voip">
-		<path name="echo-reference" />
+		<ctl name="AUDIO_REF_EC_UL10 MUX" value="I2S_RX" />
 	</path>
 
 	<path name="echo-reference-voip handset">
-		<path name="echo-reference" />
+		<path name="echo-reference-voip" />
 	</path>
 
 	<path name="echo-reference-voip headphones">
-		<path name="echo-reference" />
+		<path name="echo-reference-voip" />
 	</path>
 
 	<path name="echo-reference-voip speaker">
-		<path name="echo-reference speaker" />
+		<ctl name="AUDIO_REF_EC_UL10 MUX" value="QUIN_MI2S_RX" />
 	</path>
 
 	<!-- TTY devices -->
