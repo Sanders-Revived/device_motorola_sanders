@@ -59,7 +59,11 @@ drm.service.enabled=true
 persist.qfp=false
 
 # LMKD/PSI
-ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_heaviest_task=false
+ro.lmk.swap_compression_ratio=4
+ro.lmk.swap_free_low_percentage=5
+ro.lmk.psi_partial_stall_ms=100
+ro.lmk.medium=900
 
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
