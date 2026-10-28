@@ -290,6 +290,8 @@ PRODUCT_PACKAGES += \
     vendor_fsg_mountpoint
 
 # Power
+$(call soong_config_set_bool,qtipower,interaction_boost,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti \
