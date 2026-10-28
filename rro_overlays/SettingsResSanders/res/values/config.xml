@@ -30,4 +30,8 @@
     <!-- Show battery Maximum Capacity -->
     <bool name="config_show_battery_maximum_capacity">false</bool>
 
+    <!-- Use the classic compatibility and capability-filtered
+         security controls for the 2.4/5 GHz hotspot -->
+    <bool name="config_show_wifi_hotspot_speed">false</bool>
+
 </resources>
