@@ -152,4 +152,17 @@
       apn="IMS"
       type="ims"
       protocol="IPV6" />
+
+  <!-- Smartfren (Indonesia) -->
+  <apn carrier="Smartfren IMS"
+      mcc="510"
+      mnc="09"
+      apn="IMS"
+      type="ims" />
+
+  <apn carrier="Smartfren IMS"
+      mcc="510"
+      mnc="28"
+      apn="IMS"
+      type="ims" />
 </apns>
