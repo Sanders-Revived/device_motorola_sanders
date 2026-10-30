@@ -134,9 +134,11 @@ PRODUCT_PACKAGES += \
     libgnss:64
 
 PRODUCT_PACKAGES += \
+    apdr.conf \
     flp.conf \
     gps.conf \
     gnss_antenna_info.conf \
+    lowi.conf \
     gnss@2.0-base.policy \
     gnss@2.0-xtra-daemon.policy
 
