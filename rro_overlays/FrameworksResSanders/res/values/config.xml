@@ -304,6 +304,9 @@
     <!-- Let system files be reclaimed when apps need memory -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles" />
 
+    <!-- Keep launcher APKs and ART files reclaimable -->
+    <integer name="config_pinnerHomePinBytes">0</integer>
+
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item> <!-- COLOR_MODE_NATURAL -->
