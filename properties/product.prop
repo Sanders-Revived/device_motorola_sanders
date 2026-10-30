@@ -89,6 +89,7 @@ service.qti.ims.enabled=1
 telephony.active_modems.max_count=2
 
 # SurfaceFlinger
+ro.surface_flinger.supports_background_blur=0
 debug.sf.early_phase_offset_ns=1500000
 debug.sf.early_app_phase_offset_ns=1500000
 debug.sf.early_gl_phase_offset_ns=3000000
