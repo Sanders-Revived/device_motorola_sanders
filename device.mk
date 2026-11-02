@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
     flp.conf \
     gps.conf \
     gnss_antenna_info.conf \
+    libcurl.vendor \
     lowi.conf \
     gnss@2.0-base.policy \
     gnss@2.0-xtra-daemon.policy
