@@ -68,10 +68,6 @@ ro.lmk.medium=900
 # Media
 media.stagefright.thumbnail.prefer_hw_codecs=true
 
-# OMX
-# Rank OMX SW codecs lower than OMX HW codecs
-debug.stagefright.omx_default_rank.sw-audio=1
-debug.stagefright.omx_default_rank=0
 
 # Radio
 persist.radio.multisim.config=dsds
@@ -100,8 +96,6 @@ ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.protected_contents=true
 ro.surface_flinger.vsync_event_phase_offset_ns=2000000
 ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.use_color_management=true
 
 # SOC
 ro.soc.manufacturer=Qualcomm
