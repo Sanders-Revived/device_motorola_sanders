@@ -115,3 +115,6 @@ persist.timed.enable=true
 
 # Wifi
 wifi.interface=wlan0
+
+# Incremental FS
+ro.incremental.enable=yes
