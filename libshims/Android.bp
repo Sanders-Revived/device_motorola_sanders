@@ -1,0 +1,15 @@
+//
+// Copyright (C) 2024-2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libmmcamera_ppeiscore_shim",
+    vendor: true,
+    compile_multilib: "32",
+    srcs: ["libmmcamera_ppeiscore_shim.cpp"],
+    shared_libs: [
+        "libui",
+    ],
+}
