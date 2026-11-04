@@ -76,7 +76,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
@@ -92,6 +91,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Display / Graphics
+
+$(call soong_config_set_bool,surfaceflinger,register_displayservice,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl:64 \
     android.hardware.graphics.allocator@2.0-service \
@@ -103,6 +105,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libtinyxml \
     libvulkan \
+    lineage.frameworks.displayservice@1.0.vendor \
     vendor.display.config@1.0.vendor \
     vendor.qti.hardware.memtrack-service
 
