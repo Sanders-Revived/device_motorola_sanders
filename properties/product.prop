@@ -54,6 +54,9 @@ ro.sf.lcd_density=420
 # DRM
 drm.service.enabled=true
 
+# eBPF
+ro.bpf.kver_override=5.15.211
+
 # Fingerprint
 persist.qfp=false
 
