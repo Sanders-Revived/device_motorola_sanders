@@ -219,6 +219,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
 # Media & Codecs
+
+$(call soong_config_set_bool,libion,legacy_impl,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service \
     com.android.media.swcodec \
