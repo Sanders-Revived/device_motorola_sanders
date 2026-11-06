@@ -332,4 +332,10 @@
     <!-- The default vibration strength, must be between 1 and 255 inclusive. -->
     <integer name="config_defaultVibrationAmplitude">128</integer>
 
+    <!-- Lower-end devices do not support high-performance window transitions. -->
+    <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
+
+    <!-- Desktop mode is not supported by this device. -->
+    <bool name="config_isDesktopModeSupported">false</bool>
+
 </resources>
