@@ -887,8 +887,7 @@ void QCamera3YUVChannel::putStreamBufs()
 int32_t QCamera3ProcessingChannel::getRequestedBufferIndex(uint32_t frameNumber)
 {
     /* YUV postprocessing may queue a heap buffer instead of the framework buffer. */
-    int32_t index = mMemory.getHeapBufferIndex(frameNumber);
-    return index >= 0 ? index : mMemory.getGrallocBufferIndex(frameNumber);
+    return mMemory.getBufferIndex(frameNumber);
 }
 
 /*===========================================================================
