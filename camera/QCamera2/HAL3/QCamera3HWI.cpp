@@ -369,6 +369,9 @@ QCamera3HardwareInterface::QCamera3HardwareInterface(uint32_t cameraId,
       mOpMode(CAMERA3_STREAM_CONFIGURATION_NORMAL_MODE),
       mFirstFrameNumberInBatch(0),
       mNeedSensorRestart(false),
+      mIsManualExp(false),
+      mIsManualIso(false),
+      mRequestedFpsRange{0, 0},
       mMinInFlightRequests(MIN_INFLIGHT_REQUESTS),
       mMaxInFlightRequests(MAX_INFLIGHT_REQUESTS),
       mLdafCalibExist(false),
@@ -881,6 +884,9 @@ int QCamera3HardwareInterface::closeCamera()
         m_pRelCamSyncHeap = NULL;
         m_pRelCamSyncBuf = NULL;
     }
+
+    mIsManualExp = false;
+    mIsManualIso = false;
 
     rc = mCameraHandle->ops->close_camera(mCameraHandle->camera_handle);
     mCameraHandle = NULL;
@@ -4955,8 +4961,13 @@ QCamera3HardwareInterface::translateFromHalMetadata(
 
     IF_META_AVAILABLE(cam_fps_range_t, float_range, CAM_INTF_PARM_FPS_RANGE, metadata) {
         int32_t fps_range[2];
-        fps_range[0] = (int32_t)float_range->min_fps;
-        fps_range[1] = (int32_t)float_range->max_fps;
+        if (mRequestedFpsRange[1] > 0) {
+            fps_range[0] = mRequestedFpsRange[0];
+            fps_range[1] = mRequestedFpsRange[1];
+        } else {
+            fps_range[0] = (int32_t)float_range->min_fps;
+            fps_range[1] = (int32_t)float_range->max_fps;
+        }
         camMetadata.update(ANDROID_CONTROL_AE_TARGET_FPS_RANGE,
                                       fps_range, 2);
         LOGD("urgent Metadata : ANDROID_CONTROL_AE_TARGET_FPS_RANGE [%d, %d]",
@@ -5130,15 +5141,71 @@ QCamera3HardwareInterface::translateFromHalMetadata(
         camMetadata.update(ANDROID_SCALER_CROP_REGION, scalerCropRegion, 4);
     }
 
-    IF_META_AVAILABLE(int64_t, sensorExpTime, CAM_INTF_META_SENSOR_EXPOSURE_TIME, metadata) {
-        LOGD("sensorExpTime = %lld", *sensorExpTime);
-        camMetadata.update(ANDROID_SENSOR_EXPOSURE_TIME , sensorExpTime, 1);
+    uint32_t aecMode = CAM_AE_MODE_ON;
+    IF_META_AVAILABLE(uint32_t, pAeMode, CAM_INTF_META_AEC_MODE, metadata) {
+        aecMode = *pAeMode;
+    }
+
+    int64_t actualExpTime = 0;
+    int32_t actualSensitivity = 0;
+
+    if (aecMode == CAM_AE_MODE_OFF) {
+        // In manual exposure mode, prioritize direct sensor settings
+        IF_META_AVAILABLE(int64_t, sensorExpTime, CAM_INTF_META_SENSOR_EXPOSURE_TIME, metadata) {
+            actualExpTime = *sensorExpTime;
+        }
+        IF_META_AVAILABLE(int32_t, sensorSensitivity, CAM_INTF_META_SENSOR_SENSITIVITY, metadata) {
+            actualSensitivity = *sensorSensitivity;
+        }
+        // Fallback to AEC metadata if sensor tags are not populated
+        if (actualExpTime <= 0 || actualSensitivity <= 0) {
+            IF_META_AVAILABLE(cam_3a_params_t, aec_info, CAM_INTF_META_AEC_INFO, metadata) {
+                if (actualExpTime <= 0 && aec_info->exp_time > 0.0f) {
+                    actualExpTime = (int64_t)(aec_info->exp_time * 1000000000.0);
+                }
+                if (actualSensitivity <= 0 && aec_info->iso_value > 0) {
+                    actualSensitivity = aec_info->iso_value;
+                }
+            }
+        }
+    } else {
+        // In auto exposure mode (preview/video), the 3A AEC daemon calculates
+        // dynamic exposure time and ISO sensitivity in real time.
+        // Prioritize CAM_INTF_META_AEC_INFO so framework receives true dynamic AE results.
+        IF_META_AVAILABLE(cam_3a_params_t, aec_info, CAM_INTF_META_AEC_INFO, metadata) {
+            if (aec_info->exp_time > 0.0f) {
+                actualExpTime = (int64_t)(aec_info->exp_time * 1000000000.0);
+            }
+            if (aec_info->iso_value > 0) {
+                actualSensitivity = aec_info->iso_value;
+            }
+        }
+        // Fallback to sensor tags if AEC metadata is unavailable
+        if (actualExpTime <= 0) {
+            IF_META_AVAILABLE(int64_t, sensorExpTime, CAM_INTF_META_SENSOR_EXPOSURE_TIME, metadata) {
+                actualExpTime = *sensorExpTime;
+            }
+        }
+        if (actualSensitivity <= 0) {
+            IF_META_AVAILABLE(int32_t, sensorSensitivity, CAM_INTF_META_SENSOR_SENSITIVITY, metadata) {
+                actualSensitivity = *sensorSensitivity;
+            }
+        }
+    }
+
+    if (actualExpTime > 0) {
+        LOGD("sensorExpTime = %lld", actualExpTime);
+        camMetadata.update(ANDROID_SENSOR_EXPOSURE_TIME, &actualExpTime, 1);
     }
 
     IF_META_AVAILABLE(int64_t, sensorFameDuration,
             CAM_INTF_META_SENSOR_FRAME_DURATION, metadata) {
-        LOGD("sensorFameDuration = %lld", *sensorFameDuration);
-        camMetadata.update(ANDROID_SENSOR_FRAME_DURATION, sensorFameDuration, 1);
+        int64_t frameDuration = *sensorFameDuration;
+        if (actualExpTime > frameDuration) {
+            frameDuration = actualExpTime;
+        }
+        LOGD("sensorFameDuration = %lld", frameDuration);
+        camMetadata.update(ANDROID_SENSOR_FRAME_DURATION, &frameDuration, 1);
     }
 
     IF_META_AVAILABLE(int64_t, sensorRollingShutterSkew,
@@ -5148,14 +5215,14 @@ QCamera3HardwareInterface::translateFromHalMetadata(
                 sensorRollingShutterSkew, 1);
     }
 
-    IF_META_AVAILABLE(int32_t, sensorSensitivity, CAM_INTF_META_SENSOR_SENSITIVITY, metadata) {
-        if(*sensorSensitivity < 100) *sensorSensitivity = 100;
-        LOGD("sensorSensitivity = %d", *sensorSensitivity);
-        camMetadata.update(ANDROID_SENSOR_SENSITIVITY, sensorSensitivity, 1);
+    if (actualSensitivity > 0) {
+        if (actualSensitivity < 100) actualSensitivity = 100;
+        LOGD("sensorSensitivity = %d", actualSensitivity);
+        camMetadata.update(ANDROID_SENSOR_SENSITIVITY, &actualSensitivity, 1);
 
         //calculate the noise profile based on sensitivity
-        double noise_profile_S = computeNoiseModelEntryS(*sensorSensitivity);
-        double noise_profile_O = computeNoiseModelEntryO(*sensorSensitivity);
+        double noise_profile_S = computeNoiseModelEntryS(actualSensitivity);
+        double noise_profile_O = computeNoiseModelEntryO(actualSensitivity);
         double noise_profile[2 * gCamCapability[mCameraId]->num_color_channels];
         for (int i = 0; i < 2 * gCamCapability[mCameraId]->num_color_channels; i += 2) {
             noise_profile[i]   = noise_profile_S;
@@ -8969,8 +9036,26 @@ int32_t QCamera3HardwareInterface::setHalFpsRange(const CameraMetadata &settings
     fps_range.video_min_fps = fps_range.min_fps;
     fps_range.video_max_fps = fps_range.max_fps;
 
+    mRequestedFpsRange[0] = (int32_t)fps_range.min_fps;
+    mRequestedFpsRange[1] = (int32_t)fps_range.max_fps;
+
     LOGD("aeTargetFpsRange fps: [%f %f]",
             fps_range.min_fps, fps_range.max_fps);
+
+    // Workaround Qualcomm mm-camera backend AEC bug where high min FPS (such as [30, 30]
+    // in video recording / camcorder mode) restricts the low-light ISO gain tables and
+    // caps exposure time to 33.3ms, resulting in very dark video in dim/low-light scenes.
+    // The backend AEC expects min FPS <= 19.99 (ideally 15.0) to unlock full ISO range
+    // and dynamic shutter time down to 15fps.
+    if (CAMERA3_STREAM_CONFIGURATION_CONSTRAINED_HIGH_SPEED_MODE != mOpMode &&
+            fps_range.max_fps < MIN_FPS_FOR_BATCH_MODE) {
+        if (fps_range.min_fps > 15.0f) {
+            fps_range.min_fps = 15.0f;
+        }
+        if (fps_range.video_min_fps > 15.0f) {
+            fps_range.video_min_fps = 15.0f;
+        }
+    }
     /* In CONSTRAINED_HFR_MODE, sensor_fps is derived from aeTargetFpsRange as
      * follows:
      * ---------------------------------------------------------------|
@@ -9494,9 +9579,26 @@ int QCamera3HardwareInterface::translateToHalMetadata
         int64_t sensorExpTime =
                 frame_settings.find(ANDROID_SENSOR_EXPOSURE_TIME).data.i64[0];
         LOGD("setting sensorExpTime %lld", sensorExpTime);
-        if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_META_SENSOR_EXPOSURE_TIME,
-                sensorExpTime)) {
-            rc = BAD_VALUE;
+
+        uint8_t fwk_aeMode = ANDROID_CONTROL_AE_MODE_ON;
+        if (frame_settings.exists(ANDROID_CONTROL_AE_MODE)) {
+            fwk_aeMode = frame_settings.find(ANDROID_CONTROL_AE_MODE).data.u8[0];
+        }
+        if (fwk_aeMode == ANDROID_CONTROL_AE_MODE_OFF) {
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_META_SENSOR_EXPOSURE_TIME,
+                    sensorExpTime)) {
+                rc = BAD_VALUE;
+            }
+            cam_intf_parm_manual_3a_t manual_exp;
+            manual_exp.previewOnly = FALSE;
+            manual_exp.value = (uint64_t)sensorExpTime;
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_PARM_EXPOSURE_TIME,
+                    manual_exp)) {
+                rc = BAD_VALUE;
+            }
+            mIsManualExp = true;
+        } else if (mIsManualExp) {
+            mIsManualExp = false;
         }
     }
 
@@ -9521,9 +9623,39 @@ int QCamera3HardwareInterface::translateToHalMetadata
         if (sensorSensitivity > gCamCapability[mCameraId]->sensitivity_range.max_sensitivity)
                 sensorSensitivity = gCamCapability[mCameraId]->sensitivity_range.max_sensitivity;
         LOGD("clamp sensorSensitivity to %d", sensorSensitivity);
-        if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_META_SENSOR_SENSITIVITY,
-                sensorSensitivity)) {
-            rc = BAD_VALUE;
+
+        uint8_t fwk_aeMode = ANDROID_CONTROL_AE_MODE_ON;
+        if (frame_settings.exists(ANDROID_CONTROL_AE_MODE)) {
+            fwk_aeMode = frame_settings.find(ANDROID_CONTROL_AE_MODE).data.u8[0];
+        }
+
+        // Bridge manual sensitivity to CAM_INTF_PARM_ISO:
+        // - In manual mode (AE OFF): dispatch integer sensitivity directly to daemon
+        //   (mm-qcamera-daemon natively supports arbitrary integer ISO for values >= 9).
+        // - In auto mode (AE ON): do not spam CAM_INTF_PARM_ISO on every frame. When
+        //   transitioning back from manual mode, dispatch CAM_ISO_MODE_AUTO once to restore
+        //   unconstrained 3A dynamic AEC adaptation during video recording and preview.
+        if (fwk_aeMode == ANDROID_CONTROL_AE_MODE_OFF) {
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_META_SENSOR_SENSITIVITY,
+                    sensorSensitivity)) {
+                rc = BAD_VALUE;
+            }
+
+            cam_intf_parm_manual_3a_t manual_iso;
+            manual_iso.previewOnly = FALSE;
+            manual_iso.value = (uint64_t)sensorSensitivity;
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_PARM_ISO, manual_iso)) {
+                rc = BAD_VALUE;
+            }
+            mIsManualIso = true;
+        } else if (mIsManualIso) {
+            cam_intf_parm_manual_3a_t auto_iso;
+            auto_iso.previewOnly = FALSE;
+            auto_iso.value = (uint64_t)CAM_ISO_MODE_AUTO;
+            if (ADD_SET_PARAM_ENTRY_TO_BATCH(hal_metadata, CAM_INTF_PARM_ISO, auto_iso)) {
+                rc = BAD_VALUE;
+            }
+            mIsManualIso = false;
         }
     }
 

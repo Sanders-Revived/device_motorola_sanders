@@ -480,6 +480,9 @@ private:
     uint32_t mFirstFrameNumberInBatch;
     camera3_stream_t mDummyBatchStream;
     bool mNeedSensorRestart;
+    bool mIsManualExp;
+    bool mIsManualIso;
+    int32_t mRequestedFpsRange[2];
     uint32_t mMinInFlightRequests;
     uint32_t mMaxInFlightRequests;
 
