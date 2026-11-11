@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">دقة الشاشة</string>
+    <string name="settings_summary">اختر 720P أو 1080P</string>
+    <string name="screen_resolution_description">اختر الدقة المنطقية التي يستخدمها النظام. قد تنطفئ الشاشة مؤقتًا أثناء تطبيق الوضع الجديد.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">استعادة الدقة الأصلية</string>
+    <string name="resolution_note">يغيّر الدقة التي يبلّغ بها Android، ولا يغيّر اللوحة الفعلية.</string>
+    <string name="resolution_applied">تم تغيير الدقة</string>
+    <string name="resolution_restored">تمت استعادة الدقة الأصلية</string>
+    <string name="resolution_apply_error">تعذّر تغيير دقة الشاشة</string>
+    <string name="resolution_apply">تطبيق</string>
+</resources>

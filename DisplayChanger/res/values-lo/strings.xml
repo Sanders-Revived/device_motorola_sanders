@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">ຄວາມລະອຽດໜ້າຈໍ</string>
+    <string name="settings_summary">ເລືອກ 720P ຫຼື 1080P</string>
+    <string name="screen_resolution_description">ເລືອກຄວາມລະອຽດຕາມເຫດຜົນທີ່ລະບົບໃຊ້. ໜ້າຈໍອາດດັບຊົ່ວຄາວໃນຂະນະໃຊ້ໂໝດໃໝ່.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">ກູ້ຄືນຄວາມລະອຽດເດີມ</string>
+    <string name="resolution_note">ປ່ຽນຄວາມລະອຽດທີ່ Android ລາຍງານ ແຕ່ບໍ່ປ່ຽນແຜງທາງກາຍະພາບ.</string>
+    <string name="resolution_applied">ປ່ຽນຄວາມລະອຽດແລ້ວ</string>
+    <string name="resolution_restored">ກູ້ຄືນຄວາມລະອຽດເດີມແລ້ວ</string>
+    <string name="resolution_apply_error">ບໍ່ສາມາດປ່ຽນຄວາມລະອຽດໜ້າຈໍໄດ້</string>
+    <string name="resolution_apply">ນຳໃຊ້</string>
+</resources>

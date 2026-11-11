@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Képernyőfelbontás</string>
+    <string name="settings_summary">720P vagy 1080P kiválasztása</string>
+    <string name="screen_resolution_description">Válassza ki a rendszer által használt logikai felbontást. Az új mód alkalmazásakor a képernyő rövid időre kikapcsolhat.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Eredeti felbontás visszaállítása</string>
+    <string name="resolution_note">Az Androidnak jelentett felbontást módosítja, a fizikai panelt nem.</string>
+    <string name="resolution_applied">Felbontás módosítva</string>
+    <string name="resolution_restored">Eredeti felbontás visszaállítva</string>
+    <string name="resolution_apply_error">A képernyőfelbontás nem módosítható</string>
+    <string name="resolution_apply">Alkalmaz</string>
+</resources>

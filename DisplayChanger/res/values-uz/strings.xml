@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekran ruxsati</string>
+    <string name="settings_summary">720P yoki 1080P ni tanlang</string>
+    <string name="screen_resolution_description">Tizim foydalanadigan mantiqiy ruxsatni tanlang. Yangi rejim qo‘llanganda ekran qisqa vaqtga o‘chishi mumkin.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Asl ruxsatni tiklash</string>
+    <string name="resolution_note">Androidga xabar qilinadigan ruxsatni o‘zgartiradi, jismoniy panelni emas.</string>
+    <string name="resolution_applied">Ruxsat o‘zgartirildi</string>
+    <string name="resolution_restored">Asl ruxsat tiklandi</string>
+    <string name="resolution_apply_error">Ekran ruxsatini o‘zgartirib bo‘lmadi</string>
+    <string name="resolution_apply">Qo‘llash</string>
+</resources>

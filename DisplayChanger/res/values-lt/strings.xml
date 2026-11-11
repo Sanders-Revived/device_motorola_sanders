@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekrano skiriamoji geba</string>
+    <string name="settings_summary">Pasirinkite 720P arba 1080P</string>
+    <string name="screen_resolution_description">Pasirinkite sistemos naudojamą loginę skiriamąją gebą. Taikant naują režimą ekranas gali trumpam išsijungti.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Atkurti pradinę skiriamąją gebą</string>
+    <string name="resolution_note">Keičia „Android“ pranešamą skiriamąją gebą, bet ne fizinį skydelį.</string>
+    <string name="resolution_applied">Skiriamoji geba pakeista</string>
+    <string name="resolution_restored">Pradinė skiriamoji geba atkurta</string>
+    <string name="resolution_apply_error">Nepavyko pakeisti ekrano skiriamosios gebos</string>
+    <string name="resolution_apply">Taikyti</string>
+</resources>

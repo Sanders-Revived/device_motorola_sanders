@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">స్క్రీన్ రిజల్యూషన్</string>
+    <string name="settings_summary">720P లేదా 1080P ఎంచుకోండి</string>
+    <string name="screen_resolution_description">సిస్టమ్ ఉపయోగించే లాజికల్ రిజల్యూషన్‌ను ఎంచుకోండి. కొత్త మోడ్‌ను వర్తింపజేసేటప్పుడు స్క్రీన్ కొద్దిసేపు ఆఫ్ కావచ్చు.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">అసలు రిజల్యూషన్‌ను పునరుద్ధరించండి</string>
+    <string name="resolution_note">Androidకు నివేదించే రిజల్యూషన్‌ను మారుస్తుంది, భౌతిక ప్యానెల్‌ను కాదు.</string>
+    <string name="resolution_applied">రిజల్యూషన్ మార్చబడింది</string>
+    <string name="resolution_restored">అసలు రిజల్యూషన్ పునరుద్ధరించబడింది</string>
+    <string name="resolution_apply_error">స్క్రీన్ రిజల్యూషన్‌ను మార్చడం సాధ్యపడలేదు</string>
+    <string name="resolution_apply">వర్తింపజేయి</string>
+</resources>

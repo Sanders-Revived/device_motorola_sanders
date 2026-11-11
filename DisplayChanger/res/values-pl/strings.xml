@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Rozdzielczość ekranu</string>
+    <string name="settings_summary">Wybierz 720P lub 1080P</string>
+    <string name="screen_resolution_description">Wybierz logiczną rozdzielczość używaną przez system. Podczas stosowania nowego trybu ekran może na chwilę zgasnąć.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Przywróć oryginalną rozdzielczość</string>
+    <string name="resolution_note">Zmienia rozdzielczość zgłaszaną do Androida, ale nie zmienia fizycznego panelu.</string>
+    <string name="resolution_applied">Rozdzielczość zmieniona</string>
+    <string name="resolution_restored">Oryginalna rozdzielczość przywrócona</string>
+    <string name="resolution_apply_error">Nie można zmienić rozdzielczości ekranu</string>
+    <string name="resolution_apply">Zastosuj</string>
+</resources>

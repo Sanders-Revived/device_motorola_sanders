@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">තිර විභේදනය</string>
+    <string name="settings_summary">720P හෝ 1080P තෝරන්න</string>
+    <string name="screen_resolution_description">පද්ධතිය භාවිත කරන තාර්කික විභේදනය තෝරන්න. නව මාදිලිය යොදන විට තිරය මොහොතකට නිවිය හැක.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">මුල් විභේදනය ප්‍රතිසාධනය කරන්න</string>
+    <string name="resolution_note">Android වෙත වාර්තා කරන විභේදනය වෙනස් කරයි; භෞතික පැනලය වෙනස් නොකරයි.</string>
+    <string name="resolution_applied">විභේදනය වෙනස් කරන ලදී</string>
+    <string name="resolution_restored">මුල් විභේදනය ප්‍රතිසාධනය කරන ලදී</string>
+    <string name="resolution_apply_error">තිර විභේදනය වෙනස් කළ නොහැක</string>
+    <string name="resolution_apply">යොදන්න</string>
+</resources>

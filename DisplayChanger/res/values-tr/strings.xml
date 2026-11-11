@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekran çözünürlüğü</string>
+    <string name="settings_summary">720P veya 1080P seçin</string>
+    <string name="screen_resolution_description">Sistem tarafından kullanılacak mantıksal çözünürlüğü seçin. Yeni mod uygulanırken ekran kısa süreliğine kapanabilir.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Orijinal çözünürlüğü geri yükle</string>
+    <string name="resolution_note">Android’e bildirilen çözünürlüğü değiştirir; fiziksel paneli değiştirmez.</string>
+    <string name="resolution_applied">Çözünürlük değiştirildi</string>
+    <string name="resolution_restored">Orijinal çözünürlük geri yüklendi</string>
+    <string name="resolution_apply_error">Ekran çözünürlüğü değiştirilemedi</string>
+    <string name="resolution_apply">Uygula</string>
+</resources>

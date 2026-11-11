@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">គុណភាពបង្ហាញអេក្រង់</string>
+    <string name="settings_summary">ជ្រើសរើស 720P ឬ 1080P</string>
+    <string name="screen_resolution_description">ជ្រើសរើសគុណភាពបង្ហាញឡូជីខលដែលប្រព័ន្ធប្រើ។ អេក្រង់អាចរលត់មួយភ្លែតពេលអនុវត្តរបៀបថ្មី។</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">ស្តារគុណភាពបង្ហាញដើម</string>
+    <string name="resolution_note">ផ្លាស់ប្តូរគុណភាពបង្ហាញដែល Android រាយការណ៍ មិនមែនផ្ទាំងរូបវន្តទេ។</string>
+    <string name="resolution_applied">បានផ្លាស់ប្តូរគុណភាពបង្ហាញ</string>
+    <string name="resolution_restored">បានស្តារគុណភាពបង្ហាញដើម</string>
+    <string name="resolution_apply_error">មិនអាចផ្លាស់ប្តូរគុណភាពបង្ហាញអេក្រង់បានទេ</string>
+    <string name="resolution_apply">អនុវត្ត</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekrāna izšķirtspēja</string>
+    <string name="settings_summary">Izvēlieties 720P vai 1080P</string>
+    <string name="screen_resolution_description">Izvēlieties sistēmas izmantoto loģisko izšķirtspēju. Lietojot jauno režīmu, ekrāns uz brīdi var izslēgties.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Atjaunot sākotnējo izšķirtspēju</string>
+    <string name="resolution_note">Maina Android ziņoto izšķirtspēju, nevis fizisko paneli.</string>
+    <string name="resolution_applied">Izšķirtspēja mainīta</string>
+    <string name="resolution_restored">Sākotnējā izšķirtspēja atjaunota</string>
+    <string name="resolution_apply_error">Ekrāna izšķirtspēju nevarēja mainīt</string>
+    <string name="resolution_apply">Lietot</string>
+</resources>

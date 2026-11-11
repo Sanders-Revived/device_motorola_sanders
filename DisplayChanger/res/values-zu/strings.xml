@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ukulungiswa kwesikrini</string>
+    <string name="settings_summary">Khetha u-720P noma u-1080P</string>
+    <string name="screen_resolution_description">Khetha ukulungiswa okunengqondo okusetshenziswa isistimu. Isikrini singacima isikhashana ngenkathi kusetshenziswa imodi entsha.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Buyisela ukulungiswa kwasekuqaleni</string>
+    <string name="resolution_note">Kushintsha ukulungiswa okubikwa ku-Android, hhayi iphaneli elibonakalayo.</string>
+    <string name="resolution_applied">Ukulungiswa kushintshiwe</string>
+    <string name="resolution_restored">Ukulungiswa kwasekuqaleni kubuyiselwe</string>
+    <string name="resolution_apply_error">Ayikwazanga ukushintsha ukulungiswa kwesikrini</string>
+    <string name="resolution_apply">Faka</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekraani eraldusvõime</string>
+    <string name="settings_summary">Vali 720P või 1080P</string>
+    <string name="screen_resolution_description">Vali süsteemi kasutatav loogiline eraldusvõime. Uue režiimi rakendamisel võib ekraan korraks välja lülituda.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Taasta algne eraldusvõime</string>
+    <string name="resolution_note">Muudab Androidile teatatud eraldusvõimet, mitte füüsilist paneeli.</string>
+    <string name="resolution_applied">Eraldusvõime muudetud</string>
+    <string name="resolution_restored">Algne eraldusvõime taastatud</string>
+    <string name="resolution_apply_error">Ekraani eraldusvõimet ei saanud muuta</string>
+    <string name="resolution_apply">Rakenda</string>
+</resources>

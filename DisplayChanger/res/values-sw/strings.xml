@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ubora wa skrini</string>
+    <string name="settings_summary">Chagua 720P au 1080P</string>
+    <string name="screen_resolution_description">Chagua ubora wa kimantiki unaotumiwa na mfumo. Skrini inaweza kuzimika kwa muda mfupi wakati hali mpya inatumika.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Rejesha ubora asili</string>
+    <string name="resolution_note">Hii hubadilisha ubora unaoripotiwa kwa Android, si paneli halisi.</string>
+    <string name="resolution_applied">Ubora umebadilishwa</string>
+    <string name="resolution_restored">Ubora asili umerejeshwa</string>
+    <string name="resolution_apply_error">Haikuweza kubadilisha ubora wa skrini</string>
+    <string name="resolution_apply">Tumia</string>
+</resources>

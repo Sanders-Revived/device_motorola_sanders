@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">ಪರದೆಯ ರೆಸಲ್ಯೂಶನ್</string>
+    <string name="settings_summary">720P ಅಥವಾ 1080P ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="screen_resolution_description">ಸಿಸ್ಟಮ್ ಬಳಸುವ ತಾರ್ಕಿಕ ರೆಸಲ್ಯೂಶನ್ ಆಯ್ಕೆಮಾಡಿ. ಹೊಸ ಮೋಡ್ ಅನ್ವಯಿಸುವಾಗ ಪರದೆ ಸ್ವಲ್ಪ ಸಮಯ ಆಫ್ ಆಗಬಹುದು.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">ಮೂಲ ರೆಸಲ್ಯೂಶನ್ ಮರುಸ್ಥಾಪಿಸಿ</string>
+    <string name="resolution_note">Androidಗೆ ವರದಿಯಾಗುವ ರೆಸಲ್ಯೂಶನ್ ಬದಲಾಗುತ್ತದೆ, ಭೌತಿಕ ಪ್ಯಾನೆಲ್ ಅಲ್ಲ.</string>
+    <string name="resolution_applied">ರೆಸಲ್ಯೂಶನ್ ಬದಲಾಗಿದೆ</string>
+    <string name="resolution_restored">ಮೂಲ ರೆಸಲ್ಯೂಶನ್ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ</string>
+    <string name="resolution_apply_error">ಪರದೆಯ ರೆಸಲ್ಯೂಶನ್ ಬದಲಾಯಿಸಲಾಗಲಿಲ್ಲ</string>
+    <string name="resolution_apply">ಅನ್ವಯಿಸಿ</string>
+</resources>

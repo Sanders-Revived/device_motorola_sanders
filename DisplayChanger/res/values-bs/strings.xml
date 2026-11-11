@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Rezolucija ekrana</string>
+    <string name="settings_summary">Izaberite 720P ili 1080P</string>
+    <string name="screen_resolution_description">Izaberite logičku rezoluciju koju sistem koristi. Ekran se može nakratko isključiti dok se primjenjuje novi režim.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Vrati izvornu rezoluciju</string>
+    <string name="resolution_note">Mijenja rezoluciju koju Android prijavljuje, ali ne i fizički panel.</string>
+    <string name="resolution_applied">Rezolucija je promijenjena</string>
+    <string name="resolution_restored">Izvorna rezolucija je vraćena</string>
+    <string name="resolution_apply_error">Nije moguće promijeniti rezoluciju ekrana</string>
+    <string name="resolution_apply">Primijeni</string>
+</resources>

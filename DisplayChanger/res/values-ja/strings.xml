@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">画面解像度</string>
+    <string name="settings_summary">720P または 1080P を選択</string>
+    <string name="screen_resolution_description">システムで使用する論理解像度を選択します。新しいモードの適用中、画面が一時的に消えることがあります。</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">元の解像度に戻す</string>
+    <string name="resolution_note">Android に報告される解像度を変更します。物理パネルは変更されません。</string>
+    <string name="resolution_applied">解像度を変更しました</string>
+    <string name="resolution_restored">元の解像度に戻しました</string>
+    <string name="resolution_apply_error">画面解像度を変更できませんでした</string>
+    <string name="resolution_apply">適用</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ekran təsviri</string>
+    <string name="settings_summary">720P və ya 1080P seçin</string>
+    <string name="screen_resolution_description">Sistemin istifadə etdiyi məntiqi təsviri seçin. Yeni rejim tətbiq edilərkən ekran qısa müddətə sönə bilər.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Orijinal təsviri bərpa et</string>
+    <string name="resolution_note">Android-ə bildirilən təsviri dəyişir, fiziki paneli deyil.</string>
+    <string name="resolution_applied">Təsvir dəyişdirildi</string>
+    <string name="resolution_restored">Orijinal təsvir bərpa edildi</string>
+    <string name="resolution_apply_error">Ekran təsviri dəyişdirilə bilmədi</string>
+    <string name="resolution_apply">Tətbiq et</string>
+</resources>

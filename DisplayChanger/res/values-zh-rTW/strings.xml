@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">螢幕解析度</string>
+    <string name="settings_summary">選擇 720P 或 1080P</string>
+    <string name="screen_resolution_description">選擇系統使用的邏輯解析度。套用新模式時，螢幕可能會短暫熄滅。</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">還原原始解析度</string>
+    <string name="resolution_note">這會變更 Android 回報的解析度，不會變更實體面板。</string>
+    <string name="resolution_applied">解析度已變更</string>
+    <string name="resolution_restored">原始解析度已還原</string>
+    <string name="resolution_apply_error">無法變更螢幕解析度</string>
+    <string name="resolution_apply">套用</string>
+</resources>

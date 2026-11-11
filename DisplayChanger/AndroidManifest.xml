@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lineageos.sanders.displaychanger">
+
+    <uses-sdk android:minSdkVersion="26" />
+
+    <!-- WindowManagerService requires this for forced display size changes. -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
+    <application
+        android:icon="@drawable/ic_display"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.DisplayChanger"
+        android:supportsRtl="true">
+        <activity
+            android:name=".ResolutionActivity"
+            android:configChanges="density|orientation|screenLayout|screenSize|smallestScreenSize"
+            android:exported="true"
+            android:label="@string/screen_resolution_title"
+            android:permission="android.permission.WRITE_SECURE_SETTINGS" />
+
+        <provider
+            android:name=".DisplaySummaryProvider"
+            android:authorities="org.lineageos.sanders.displaychanger.summary"
+            android:exported="true"
+            android:readPermission="android.permission.WRITE_SECURE_SETTINGS" />
+
+        <!-- Adds the selector to Settings > Display, like the Lineage display parts. -->
+        <activity-alias
+            android:name=".DisplayResolution"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/screen_resolution_title"
+            android:permission="android.permission.WRITE_SECURE_SETTINGS"
+            android:targetActivity=".ResolutionActivity">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.group_key"
+                android:value="category_other" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-149" />
+            <meta-data
+                android:name="com.android.settings.profile"
+                android:value="primary_profile_only" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/settings_summary" />
+            <meta-data
+                android:name="com.android.settings.summary_uri"
+                android:value="content://org.lineageos.sanders.displaychanger.summary/get_summary" />
+        </activity-alias>
+    </application>
+</manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">ความละเอียดหน้าจอ</string>
+    <string name="settings_summary">เลือก 720P หรือ 1080P</string>
+    <string name="screen_resolution_description">เลือกความละเอียดเชิงตรรกะที่ระบบใช้ หน้าจออาจดับชั่วครู่ขณะใช้โหมดใหม่</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">คืนค่าความละเอียดเดิม</string>
+    <string name="resolution_note">เปลี่ยนความละเอียดที่รายงานให้ Android ไม่ได้เปลี่ยนแผงหน้าจอจริง</string>
+    <string name="resolution_applied">เปลี่ยนความละเอียดแล้ว</string>
+    <string name="resolution_restored">คืนค่าความละเอียดเดิมแล้ว</string>
+    <string name="resolution_apply_error">เปลี่ยนความละเอียดหน้าจอไม่ได้</string>
+    <string name="resolution_apply">ใช้</string>
+</resources>
