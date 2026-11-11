@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">സ്‌ക്രീൻ റെസല്യൂഷൻ</string>
+    <string name="settings_summary">720P അല്ലെങ്കിൽ 1080P തിരഞ്ഞെടുക്കുക</string>
+    <string name="screen_resolution_description">സിസ്റ്റം ഉപയോഗിക്കുന്ന ലോജിക്കൽ റെസല്യൂഷൻ തിരഞ്ഞെടുക്കുക. പുതിയ മോഡ് പ്രയോഗിക്കുമ്പോൾ സ്‌ക്രീൻ കുറച്ച് സമയത്തേക്ക് ഓഫായേക്കാം.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">യഥാർത്ഥ റെസല്യൂഷൻ പുനഃസ്ഥാപിക്കുക</string>
+    <string name="resolution_note">Android-ലേക്ക് റിപ്പോർട്ട് ചെയ്യുന്ന റെസല്യൂഷൻ മാറ്റുന്നു; ഫിസിക്കൽ പാനൽ മാറ്റുന്നില്ല.</string>
+    <string name="resolution_applied">റെസല്യൂഷൻ മാറ്റി</string>
+    <string name="resolution_restored">യഥാർത്ഥ റെസല്യൂഷൻ പുനഃസ്ഥാപിച്ചു</string>
+    <string name="resolution_apply_error">സ്‌ക്രീൻ റെസല്യൂഷൻ മാറ്റാനായില്ല</string>
+    <string name="resolution_apply">പ്രയോഗിക്കുക</string>
+</resources>

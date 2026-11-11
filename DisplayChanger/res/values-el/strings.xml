@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Ανάλυση οθόνης</string>
+    <string name="settings_summary">Επιλέξτε 720P ή 1080P</string>
+    <string name="screen_resolution_description">Επιλέξτε τη λογική ανάλυση που χρησιμοποιεί το σύστημα. Η οθόνη μπορεί να σβήσει για λίγο κατά την εφαρμογή της νέας λειτουργίας.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Επαναφορά αρχικής ανάλυσης</string>
+    <string name="resolution_note">Αλλάζει την ανάλυση που αναφέρει το Android, όχι το φυσικό πάνελ.</string>
+    <string name="resolution_applied">Η ανάλυση άλλαξε</string>
+    <string name="resolution_restored">Η αρχική ανάλυση επαναφέρθηκε</string>
+    <string name="resolution_apply_error">Δεν ήταν δυνατή η αλλαγή της ανάλυσης</string>
+    <string name="resolution_apply">Εφαρμογή</string>
+</resources>

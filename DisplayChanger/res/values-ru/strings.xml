@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Разрешение экрана</string>
+    <string name="settings_summary">Выберите 720P или 1080P</string>
+    <string name="screen_resolution_description">Выберите логическое разрешение, используемое системой. Экран может ненадолго погаснуть при применении нового режима.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Восстановить исходное разрешение</string>
+    <string name="resolution_note">Изменяется разрешение, сообщаемое Android, но не физическая панель.</string>
+    <string name="resolution_applied">Разрешение изменено</string>
+    <string name="resolution_restored">Исходное разрешение восстановлено</string>
+    <string name="resolution_apply_error">Не удалось изменить разрешение экрана</string>
+    <string name="resolution_apply">Применить</string>
+</resources>

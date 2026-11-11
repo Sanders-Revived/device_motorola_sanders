@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Độ phân giải màn hình</string>
+    <string name="settings_summary">Chọn 720P hoặc 1080P</string>
+    <string name="screen_resolution_description">Chọn độ phân giải logic mà hệ thống sử dụng. Màn hình có thể tắt trong giây lát khi áp dụng chế độ mới.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Khôi phục độ phân giải gốc</string>
+    <string name="resolution_note">Thay đổi độ phân giải Android báo cáo, không thay đổi tấm nền vật lý.</string>
+    <string name="resolution_applied">Đã thay đổi độ phân giải</string>
+    <string name="resolution_restored">Đã khôi phục độ phân giải gốc</string>
+    <string name="resolution_apply_error">Không thể thay đổi độ phân giải màn hình</string>
+    <string name="resolution_apply">Áp dụng</string>
+</resources>

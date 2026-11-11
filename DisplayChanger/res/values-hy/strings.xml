@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Էկրանի թույլատրելիություն</string>
+    <string name="settings_summary">Ընտրեք 720P կամ 1080P</string>
+    <string name="screen_resolution_description">Ընտրեք համակարգի օգտագործած տրամաբանական թույլատրելիությունը։ Նոր ռեժիմը կիրառելիս էկրանը կարող է կարճ ժամանակով անջատվել։</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Վերականգնել սկզբնական թույլատրելիությունը</string>
+    <string name="resolution_note">Փոխում է Android-ին հաղորդվող թույլատրելիությունը, բայց ոչ ֆիզիկական վահանակը։</string>
+    <string name="resolution_applied">Թույլատրելիությունը փոխվեց</string>
+    <string name="resolution_restored">Սկզբնական թույլատրելիությունը վերականգնվեց</string>
+    <string name="resolution_apply_error">Չհաջողվեց փոխել էկրանի թույլատրելիությունը</string>
+    <string name="resolution_apply">Կիրառել</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">স্ক্রিনের রেজোলিউশন</string>
+    <string name="settings_summary">৭২০P বা ১০৮০P বেছে নিন</string>
+    <string name="screen_resolution_description">সিস্টেমে ব্যবহৃত লজিক্যাল রেজোলিউশন বেছে নিন। নতুন মোড প্রয়োগের সময় স্ক্রিন কিছুক্ষণ বন্ধ হতে পারে।</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">আসল রেজোলিউশন পুনরুদ্ধার করুন</string>
+    <string name="resolution_note">Android-কে জানানো রেজোলিউশন বদলায়, ভৌত প্যানেল নয়।</string>
+    <string name="resolution_applied">রেজোলিউশন বদলানো হয়েছে</string>
+    <string name="resolution_restored">আসল রেজোলিউশন পুনরুদ্ধার করা হয়েছে</string>
+    <string name="resolution_apply_error">স্ক্রিনের রেজোলিউশন বদলানো যায়নি</string>
+    <string name="resolution_apply">প্রয়োগ করুন</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Resolution ng screen</string>
+    <string name="settings_summary">Pumili ng 720P o 1080P</string>
+    <string name="screen_resolution_description">Piliin ang lohikal na resolution na gagamitin ng system. Maaaring pansamantalang mamatay ang screen habang ina-apply ang bagong mode.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Ibalik ang orihinal na resolution</string>
+    <string name="resolution_note">Binabago nito ang resolution na iniuulat sa Android, hindi ang pisikal na panel.</string>
+    <string name="resolution_applied">Nabago ang resolution</string>
+    <string name="resolution_restored">Naibalik ang orihinal na resolution</string>
+    <string name="resolution_apply_error">Hindi mabago ang resolution ng screen</string>
+    <string name="resolution_apply">Ilapat</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Skjermoppløsning</string>
+    <string name="settings_summary">Velg 720P eller 1080P</string>
+    <string name="screen_resolution_description">Velg den logiske oppløsningen systemet skal bruke. Skjermen kan slås av et øyeblikk når den nye modusen brukes.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Gjenopprett opprinnelig oppløsning</string>
+    <string name="resolution_note">Endrer oppløsningen som rapporteres til Android, ikke det fysiske panelet.</string>
+    <string name="resolution_applied">Oppløsning endret</string>
+    <string name="resolution_restored">Opprinnelig oppløsning gjenopprettet</string>
+    <string name="resolution_apply_error">Kan ikke endre skjermoppløsningen</string>
+    <string name="resolution_apply">Bruk</string>
+</resources>

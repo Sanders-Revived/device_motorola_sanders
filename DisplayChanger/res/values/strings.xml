@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Screen resolution</string>
+    <string name="settings_summary">Current resolution</string>
+    <string name="settings_summary_resolution">%1$d × %2$d</string>
+    <string name="screen_resolution_description">Choose the logical resolution used by the system. The display may briefly turn off while the new mode is applied.</string>
+    <string name="resolution_720p_title">HD</string>
+    <string name="resolution_720p_size">720 × 1280</string>
+    <string name="resolution_1080p_title">FHD</string>
+    <string name="resolution_1080p_size">1080 × 1920</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_apply">Apply</string>
+    <string name="resolution_restore">Restore original resolution</string>
+    <string name="resolution_note">This changes the logical resolution reported to Android. Some apps may not respect this setting and may continue using the native resolution of the panel.</string>
+    <string name="resolution_applied">Resolution changed</string>
+    <string name="resolution_restored">Original resolution restored</string>
+    <string name="resolution_apply_error">Could not change the screen resolution</string>
+</resources>

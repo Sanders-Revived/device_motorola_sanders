@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Дэлгэцийн нягтрал</string>
+    <string name="settings_summary">720P эсвэл 1080P сонгох</string>
+    <string name="screen_resolution_description">Системийн ашиглах логик нягтралыг сонгоно уу. Шинэ горим хэрэгжих үед дэлгэц түр унтарч болно.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Анхны нягтралыг сэргээх</string>
+    <string name="resolution_note">Android-д мэдээлэх нягтралыг өөрчлөх боловч физик самбарыг өөрчлөхгүй.</string>
+    <string name="resolution_applied">Нягтрал өөрчлөгдсөн</string>
+    <string name="resolution_restored">Анхны нягтралыг сэргээсэн</string>
+    <string name="resolution_apply_error">Дэлгэцийн нягтралыг өөрчилж чадсангүй</string>
+    <string name="resolution_apply">Хэрэглэх</string>
+</resources>

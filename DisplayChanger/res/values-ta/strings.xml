@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">திரைத் தெளிவுத்திறன்</string>
+    <string name="settings_summary">720P அல்லது 1080P தேர்வு செய்யவும்</string>
+    <string name="screen_resolution_description">கணினி பயன்படுத்தும் தருக்கத் தெளிவுத்திறனைத் தேர்வு செய்யவும். புதிய பயன்முறையைப் பயன்படுத்தும்போது திரை சிறிது நேரம் அணையலாம்.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">அசல் தெளிவுத்திறனை மீட்டமைக்கவும்</string>
+    <string name="resolution_note">Android-க்கு தெரிவிக்கப்படும் தெளிவுத்திறனை மாற்றும்; இயற்பியல் பேனலை மாற்றாது.</string>
+    <string name="resolution_applied">தெளிவுத்திறன் மாற்றப்பட்டது</string>
+    <string name="resolution_restored">அசல் தெளிவுத்திறன் மீட்டமைக்கப்பட்டது</string>
+    <string name="resolution_apply_error">திரைத் தெளிவுத்திறனை மாற்ற முடியவில்லை</string>
+    <string name="resolution_apply">பயன்படுத்து</string>
+</resources>

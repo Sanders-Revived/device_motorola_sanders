@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">မျက်နှာပြင် ကြည်လင်ပြတ်သားမှု</string>
+    <string name="settings_summary">720P သို့မဟုတ် 1080P ရွေးပါ</string>
+    <string name="screen_resolution_description">စနစ်အသုံးပြုမည့် လော့ဂျစ်ကယ် ကြည်လင်ပြတ်သားမှုကို ရွေးပါ။ မုဒ်အသစ်ကို အသုံးပြုချိန်တွင် မျက်နှာပြင် ခဏပိတ်သွားနိုင်သည်။</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">မူရင်း ကြည်လင်ပြတ်သားမှုကို ပြန်ထားပါ</string>
+    <string name="resolution_note">Android သို့ အစီရင်ခံသည့် ကြည်လင်ပြတ်သားမှုကို ပြောင်းလဲပြီး ရုပ်ပိုင်းဆိုင်ရာ panel ကို မပြောင်းလဲပါ။</string>
+    <string name="resolution_applied">ကြည်လင်ပြတ်သားမှု ပြောင်းပြီးပါပြီ</string>
+    <string name="resolution_restored">မူရင်း ကြည်လင်ပြတ်သားမှု ပြန်ထားပြီးပါပြီ</string>
+    <string name="resolution_apply_error">မျက်နှာပြင် ကြည်လင်ပြတ်သားမှုကို မပြောင်းနိုင်ပါ</string>
+    <string name="resolution_apply">အသုံးချပါ</string>
+</resources>

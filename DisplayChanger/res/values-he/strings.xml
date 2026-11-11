@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">רזולוציית המסך</string>
+    <string name="settings_summary">בחירת 720P או 1080P</string>
+    <string name="screen_resolution_description">בחרו את הרזולוציה הלוגית שבה המערכת תשתמש. המסך עשוי להיכבות לרגע בעת החלת המצב החדש.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">שחזור הרזולוציה המקורית</string>
+    <string name="resolution_note">משנה את הרזולוציה המדווחת ל-Android, אך לא את הפאנל הפיזי.</string>
+    <string name="resolution_applied">הרזולוציה שונתה</string>
+    <string name="resolution_restored">הרזולוציה המקורית שוחזרה</string>
+    <string name="resolution_apply_error">לא ניתן לשנות את רזולוציית המסך</string>
+    <string name="resolution_apply">החל</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Resolusi layar</string>
+    <string name="settings_summary">Pilih 720P atau 1080P</string>
+    <string name="screen_resolution_description">Pilih resolusi logis yang digunakan sistem. Layar mungkin mati sebentar saat mode baru diterapkan.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Pulihkan resolusi asli</string>
+    <string name="resolution_note">Ini mengubah resolusi yang dilaporkan ke Android, bukan panel fisik.</string>
+    <string name="resolution_applied">Resolusi diubah</string>
+    <string name="resolution_restored">Resolusi asli dipulihkan</string>
+    <string name="resolution_apply_error">Tidak dapat mengubah resolusi layar</string>
+    <string name="resolution_apply">Terapkan</string>
+</resources>

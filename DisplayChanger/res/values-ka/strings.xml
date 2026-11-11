@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">ეკრანის გარჩევადობა</string>
+    <string name="settings_summary">აირჩიეთ 720P ან 1080P</string>
+    <string name="screen_resolution_description">აირჩიეთ სისტემის მიერ გამოყენებული ლოგიკური გარჩევადობა. ახალი რეჟიმის გამოყენებისას ეკრანი შეიძლება მცირე ხნით გამოირთოს.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">ორიგინალი გარჩევადობის აღდგენა</string>
+    <string name="resolution_note">ცვლის Android-ისთვის მოხსენებულ გარჩევადობას და არა ფიზიკურ პანელს.</string>
+    <string name="resolution_applied">გარჩევადობა შეიცვალა</string>
+    <string name="resolution_restored">ორიგინალი გარჩევადობა აღდგა</string>
+    <string name="resolution_apply_error">ეკრანის გარჩევადობის შეცვლა ვერ მოხერხდა</string>
+    <string name="resolution_apply">გამოყენება</string>
+</resources>

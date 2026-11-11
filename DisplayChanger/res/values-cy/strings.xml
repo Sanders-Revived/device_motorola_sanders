@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Cydraniad sgrin</string>
+    <string name="settings_summary">Dewiswch 720P neu 1080P</string>
+    <string name="screen_resolution_description">Dewiswch y cydraniad rhesymegol a ddefnyddir gan y system. Gall y sgrin ddiffodd am eiliad wrth gymhwyso’r modd newydd.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Adfer y cydraniad gwreiddiol</string>
+    <string name="resolution_note">Mae hyn yn newid y cydraniad a adroddir i Android, nid y panel ffisegol.</string>
+    <string name="resolution_applied">Cydraniad wedi’i newid</string>
+    <string name="resolution_restored">Cydraniad gwreiddiol wedi’i adfer</string>
+    <string name="resolution_apply_error">Ni ellir newid cydraniad y sgrin</string>
+    <string name="resolution_apply">Cymhwyso</string>
+</resources>

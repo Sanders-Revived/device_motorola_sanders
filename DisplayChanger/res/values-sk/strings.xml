@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Rozlíšenie obrazovky</string>
+    <string name="settings_summary">Vyberte 720P alebo 1080P</string>
+    <string name="screen_resolution_description">Vyberte logické rozlíšenie používané systémom. Pri použití nového režimu sa obrazovka môže krátko vypnúť.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Obnoviť pôvodné rozlíšenie</string>
+    <string name="resolution_note">Zmení rozlíšenie hlásené systému Android, nie fyzický panel.</string>
+    <string name="resolution_applied">Rozlíšenie zmenené</string>
+    <string name="resolution_restored">Pôvodné rozlíšenie obnovené</string>
+    <string name="resolution_apply_error">Rozlíšenie obrazovky sa nedá zmeniť</string>
+    <string name="resolution_apply">Použiť</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Skjáupplausn</string>
+    <string name="settings_summary">Veldu 720P eða 1080P</string>
+    <string name="screen_resolution_description">Veldu rökrétta upplausn kerfisins. Skjárinn gæti slokknað í stutta stund þegar nýja stillingin er notuð.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Endurheimta upprunalega upplausn</string>
+    <string name="resolution_note">Breytingin á upplausninni sem Android skráir breytir ekki skjánum sjálfum.</string>
+    <string name="resolution_applied">Upplausn breytt</string>
+    <string name="resolution_restored">Upprunaleg upplausn endurheimt</string>
+    <string name="resolution_apply_error">Ekki tókst að breyta skjáupplausn</string>
+    <string name="resolution_apply">Nota</string>
+</resources>

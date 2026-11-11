@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Resolução da tela</string>
+    <string name="settings_summary">Resolução atual</string>
+    <string name="settings_summary_resolution">%1$d × %2$d</string>
+    <string name="screen_resolution_description">Escolha a resolução lógica usada pelo sistema. A tela pode apagar brevemente enquanto o novo modo é aplicado.</string>
+    <string name="resolution_720p_title">HD</string>
+    <string name="resolution_720p_size">720 × 1280</string>
+    <string name="resolution_1080p_title">FHD</string>
+    <string name="resolution_1080p_size">1080 × 1920</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Restaurar resolução original</string>
+    <string name="resolution_note">Isso altera a resolução lógica informada ao Android. Alguns aplicativos podem não respeitar essa configuração e continuar usando a resolução nativa do painel.</string>
+    <string name="resolution_applied">Resolução alterada</string>
+    <string name="resolution_restored">Resolução original restaurada</string>
+    <string name="resolution_apply_error">Não foi possível alterar a resolução da tela</string>
+    <string name="resolution_apply">Aplicar</string>
+</resources>

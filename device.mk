@@ -277,6 +277,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworksResSanders \
     SettingsResSanders \
+    DisplayChanger \
     SystemUIResSanders \
     TelephonyResSanders
 

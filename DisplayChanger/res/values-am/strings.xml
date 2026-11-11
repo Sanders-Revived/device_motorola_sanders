@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">የማያ ጥራት</string>
+    <string name="settings_summary">720P ወይም 1080P ይምረጡ</string>
+    <string name="screen_resolution_description">ስርዓቱ የሚጠቀምበትን የሎጂካዊ ጥራት ይምረጡ። አዲሱን ሁነታ ሲተገብሩ ማያው ለአጭር ጊዜ ሊጠፋ ይችላል።</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">የመጀመሪያውን ጥራት መልስ</string>
+    <string name="resolution_note">ለAndroid የሚነገረውን ጥራት ይቀይራል፤ አካላዊውን ፓነል አይቀይርም።</string>
+    <string name="resolution_applied">ጥራቱ ተቀይሯል</string>
+    <string name="resolution_restored">የመጀመሪያው ጥራት ተመልሷል</string>
+    <string name="resolution_apply_error">የማያ ጥራትን መቀየር አልተቻለም</string>
+    <string name="resolution_apply">ተግብር</string>
+</resources>

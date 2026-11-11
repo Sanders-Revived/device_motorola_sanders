@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Экран ажыратымдылығы</string>
+    <string name="settings_summary">720P немесе 1080P таңдаңыз</string>
+    <string name="screen_resolution_description">Жүйе пайдаланатын логикалық ажыратымдылықты таңдаңыз. Жаңа режим қолданылғанда экран қысқа уақытқа өшуі мүмкін.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Бастапқы ажыратымдылықты қалпына келтіру</string>
+    <string name="resolution_note">Android хабарлайтын ажыратымдылықты өзгертеді, физикалық панельді өзгертпейді.</string>
+    <string name="resolution_applied">Ажыратымдылық өзгертілді</string>
+    <string name="resolution_restored">Бастапқы ажыратымдылық қалпына келтірілді</string>
+    <string name="resolution_apply_error">Экран ажыратымдылығын өзгерту мүмкін емес</string>
+    <string name="resolution_apply">Қолдану</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Разделителна способност на екрана</string>
+    <string name="settings_summary">Изберете 720P или 1080P</string>
+    <string name="screen_resolution_description">Изберете логическата разделителна способност, използвана от системата. Екранът може да изгасне за кратко при прилагане на новия режим.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Възстановяване на оригиналната разделителна способност</string>
+    <string name="resolution_note">Променя разделителната способност, съобщавана на Android, но не и физическия панел.</string>
+    <string name="resolution_applied">Разделителната способност е променена</string>
+    <string name="resolution_restored">Оригиналната разделителна способност е възстановена</string>
+    <string name="resolution_apply_error">Разделителната способност не може да бъде променена</string>
+    <string name="resolution_apply">Прилагане</string>
+</resources>

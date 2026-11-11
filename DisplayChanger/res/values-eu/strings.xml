@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Pantailaren bereizmena</string>
+    <string name="settings_summary">Aukeratu 720P edo 1080P</string>
+    <string name="screen_resolution_description">Aukeratu sistemak erabiliko duen bereizmen logikoa. Pantaila une batez itzal daiteke modu berria aplikatzean.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Berrezarri jatorrizko bereizmena</string>
+    <string name="resolution_note">Androidi jakinarazten zaion bereizmena aldatzen du, ez panel fisikoa.</string>
+    <string name="resolution_applied">Bereizmena aldatu da</string>
+    <string name="resolution_restored">Jatorrizko bereizmena berrezarri da</string>
+    <string name="resolution_apply_error">Ezin izan da pantailaren bereizmena aldatu</string>
+    <string name="resolution_apply">Aplikatu</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">Näytön tarkkuus</string>
+    <string name="settings_summary">Valitse 720P tai 1080P</string>
+    <string name="screen_resolution_description">Valitse järjestelmän käyttämä looginen tarkkuus. Näyttö voi sammua hetkeksi uutta tilaa käytettäessä.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">Palauta alkuperäinen tarkkuus</string>
+    <string name="resolution_note">Muuttaa Androidille ilmoitettua tarkkuutta, ei fyysistä paneelia.</string>
+    <string name="resolution_applied">Tarkkuus muutettu</string>
+    <string name="resolution_restored">Alkuperäinen tarkkuus palautettu</string>
+    <string name="resolution_apply_error">Näytön tarkkuutta ei voitu muuttaa</string>
+    <string name="resolution_apply">Käytä</string>
+</resources>

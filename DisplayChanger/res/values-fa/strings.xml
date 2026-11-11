@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DisplayChanger</string>
+    <string name="screen_resolution_title">وضوح صفحه‌نمایش</string>
+    <string name="settings_summary">انتخاب 720P یا 1080P</string>
+    <string name="screen_resolution_description">وضوح منطقی مورد استفاده سیستم را انتخاب کنید. هنگام اعمال حالت جدید، صفحه ممکن است برای لحظه‌ای خاموش شود.</string>
+    <string name="resolution_720p">720P (720 × 1280)</string>
+    <string name="resolution_1080p">1080P (1080 × 1920)</string>
+    <string name="resolution_restore">بازگردانی وضوح اصلی</string>
+    <string name="resolution_note">وضوح گزارش‌شده به Android را تغییر می‌دهد، نه پنل فیزیکی را.</string>
+    <string name="resolution_applied">وضوح تغییر کرد</string>
+    <string name="resolution_restored">وضوح اصلی بازگردانده شد</string>
+    <string name="resolution_apply_error">تغییر وضوح صفحه‌نمایش ممکن نیست</string>
+    <string name="resolution_apply">اعمال</string>
+</resources>
