@@ -59,6 +59,8 @@ persist.vendor.mwqem.enable=1
 
 # Display
 vendor.gralloc.enable_fb_ubwc=1
+# Legacy gralloc compatibility.
+vendor.gralloc.disable_ahardware_buffer=1
 vendor.video.disable.ubwc=1
 vendor.display.disable_scaler=1
 
