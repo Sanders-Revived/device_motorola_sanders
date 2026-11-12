@@ -114,6 +114,9 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0.vendor \
     vendor.qti.hardware.memtrack-service
 
+# Disable Vulkan feature level 1
+TARGET_NOT_SUPPORT_VULKAN_FEATURE_LEVEL_1 := true
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
