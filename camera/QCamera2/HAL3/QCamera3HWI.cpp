@@ -382,9 +382,7 @@ QCamera3HardwareInterface::QCamera3HardwareInterface(uint32_t cameraId,
       mIsMainCamera(true),
       mLinkedCameraId(0),
       m_pRelCamSyncHeap(NULL),
-      m_pRelCamSyncBuf(NULL),
-      mBootToMonoTimestampOffset(0),
-      mUseAVTimer(false)
+      m_pRelCamSyncBuf(NULL)
 {
     getLogLevel();
     m_perfLock.lock_init();
@@ -796,23 +794,6 @@ int QCamera3HardwareInterface::openCamera()
         }
         pthread_mutex_unlock(&gCamLock);
     }
-
-    // Setprop to decide the time source (whether boottime or monotonic).
-    // By default, use monotonic time.
-    property_get("persist.vendor.camera.time.monotonic", value, "1");
-    mBootToMonoTimestampOffset = 0;
-    if (atoi(value) == 1) {
-        // if monotonic is set, then need to use time in monotonic.
-        // So, Measure the clock offset between BOOTTIME and MONOTONIC
-        // The clock domain source for ISP is BOOTTIME and
-        // for display is MONOTONIC
-        // The below offset is used to convert from clock domain of other subsystem
-        // (hardware composer) to that of camera. Assumption is that this
-        // offset won't change during the life cycle of the camera device. In other
-        // words, camera device shouldn't be open during CPU suspend.
-        mBootToMonoTimestampOffset = QCameraCommon::getBootToMonoTimeOffset();
-    }
-    LOGH("mBootToMonoTimestampOffset = %lld", mBootToMonoTimestampOffset);
 
     //fill the session id needed while linking dual cam
     pthread_mutex_lock(&gCamLock);
@@ -2924,11 +2905,9 @@ void QCamera3HardwareInterface::handleMetadataWithLock(
     int64_t capture_time;
     nsecs_t currentSysTime;
 
-    // Convert Boottime from camera to Monotime except for VT usecase where AVTimer is used.
-    uint8_t timestampSource = TIME_SOURCE;
-    nsecs_t timeOffset = mBootToMonoTimestampOffset;
-    if (mUseAVTimer || (ANDROID_SENSOR_INFO_TIMESTAMP_SOURCE_UNKNOWN != timestampSource))
-        timeOffset = 0;
+    // Sanders supplies CAM_INTF_META_SENSOR_TIMESTAMP in CLOCK_MONOTONIC.
+    // Forward it unchanged; subtracting the BOOTTIME-to-MONOTONIC offset
+    // would make the timestamp negative.
 
     int32_t *p_frame_number_valid =
             POINTER_OF_META(CAM_INTF_META_FRAME_NUMBER_VALID, metadata);
@@ -2955,7 +2934,7 @@ void QCamera3HardwareInterface::handleMetadataWithLock(
     }
     frame_number_valid =        *p_frame_number_valid;
     frame_number =              *p_frame_number;
-    capture_time =              *p_capture_time - timeOffset;
+    capture_time =              *p_capture_time;
     urgent_frame_number_valid = *p_urgent_frame_number_valid;
     urgent_frame_number =       *p_urgent_frame_number;
     currentSysTime =            systemTime(CLOCK_MONOTONIC);
@@ -3663,8 +3642,6 @@ int QCamera3HardwareInterface::processCaptureRequest(
 
             if (ADD_SET_PARAM_ENTRY_TO_BATCH(mParameters, CAM_INTF_META_USE_AV_TIMER, *use_av_timer)) {
                 rc = BAD_VALUE;
-            } else {
-                mUseAVTimer = *use_av_timer;
             }
         }
 
