@@ -5,6 +5,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# RisingOS Revived
+RISING_MAINTAINER := Lightzin021
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 625" \
+    RisingMaintainer="Lightzin021"
+
+# Vanilla build: no Google apps, blur disabled, keep the bundled Aperture camera.
+WITH_GMS := false
+WITH_MICROG := false
+TARGET_ENABLE_BLUR := false
+PRODUCT_NO_CAMERA := false
+
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := sanders
 PRODUCT_MANUFACTURER := motorola
